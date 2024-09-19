@@ -1,0 +1,228 @@
+"use client"
+import Image from 'next/image'
+import Link from 'next/link'
+import React, { useState } from 'react';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars, faLanguage, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { useRouter } from 'next/navigation';
+
+
+export const Navbar = ({ language }: any) => {
+
+    const router = useRouter();
+
+    let texts = {
+        changeLanguage: "Change Language: ",
+        homeLink: "HOME",
+        productLink: "PRODUCT",
+        pricingLink: "PRICING",
+        accountLink: "ACCOUNT",
+    }
+
+    switch (language) {
+        case "ru":
+            texts = {
+                changeLanguage: "Изменить язык: ",
+                homeLink: "ГЛАВНАЯ",
+                productLink: "ТОВАР",
+                pricingLink: "ЦЕНЫ",
+                accountLink: "АККАУНТ",
+            }
+            break;
+        case "zh":
+            texts = {
+                changeLanguage: "更改语言：",
+                homeLink: "主页",
+                productLink: "产品",
+                pricingLink: "定价",
+                accountLink: "帐户",
+            }
+            break;
+        case "fr":
+            texts = {
+                changeLanguage: "Changer de langue :",
+                homeLink: "ACCUEIL",
+                productLink: "PRODUIT",
+                pricingLink: "TARIFICATION",
+                accountLink: "COMPTE",
+            }
+            break;
+        case "po":
+            texts = {
+                changeLanguage: "alterar a língua: ",
+                homeLink: "CASA",
+                productLink: "PRODUTO",
+                pricingLink: "PREÇOS",
+                accountLink: "CONTA",
+            }
+            break;
+        case "es":
+            texts = {
+                changeLanguage: "Cambiar idioma: ",
+                homeLink: "INICIO",
+                productLink: "PRODUCTO",
+                pricingLink: "PRECIOS",
+                accountLink: "CUENTA",
+            }
+            break;
+        case "ja":
+            texts = {
+                changeLanguage: "言語を変更：",
+                homeLink: "ホーム",
+                productLink: "製品",
+                pricingLink: "価格",
+                accountLink: "アカウント",
+            }
+            break;
+        case "hi":
+            texts = {
+                changeLanguage: "भाषा बदलें: ",
+                homeLink: "होम",
+                productLink: "उत्पाद",
+                pricingLink: "मूल्य निर्धारण",
+                accountLink: "खाता",
+            }
+            break;
+        default:
+            texts = {
+                changeLanguage: "Change Language: ",
+                homeLink: "HOME",
+                productLink: "PRODUCT",
+                pricingLink: "PRICING",
+                accountLink: "ACCOUNT",
+            }
+            break;
+    }
+
+
+    const [menuActive, setmenuActive] = useState(false);
+    const [showLenguageMenu, setshowLenguageMenu] = useState(false);
+
+    const handleMenu = () => {
+        setmenuActive(!menuActive)
+    }
+
+    const goToLink = () => {
+        setmenuActive(false)
+    }
+
+    const closeMenuWindow = () => {
+        setshowLenguageMenu(false);
+    }
+
+    const openMenuWindow = () => {
+        setshowLenguageMenu(true);
+    }
+
+    const setNewLenguage = (link: string, code: string) => {
+        localStorage.setItem("language", code);
+        router.push(link);
+    }
+
+    return (
+        <>
+            <nav className='flex justify-between items-center w-full py-12 px-[10%] z-50'>
+
+                {
+                    showLenguageMenu && <div className='z-[997] fixed w-full top-0 bottom-0 left-0 bg-black bg-opacity-25 flex justify-center items-center'>
+                        <div onClick={closeMenuWindow} className='cursor-pointer z-[998] fixed w-full top-0 bottom-0 left-0'></div>
+                        <div className='bg-white p-10 rounded z-[999] overflow-y-scroll lg:overflow-hidden max-h-[80vh]'>
+                            <h3 className='font-bold mb-8 text-xl'>{texts.changeLanguage}</h3>
+                            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
+                                <button onClick={() => setNewLenguage("/", "")} className={`${(location.pathname === "/") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
+                                    English
+                                </button>
+                                <button onClick={() => setNewLenguage("/es", "es")} className={`${(location.pathname === "/es") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
+                                    Español
+                                </button>
+                                <button onClick={() => setNewLenguage("/fr", "fr")} className={`${(location.pathname === "/fr") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
+                                    Français
+                                </button>
+                                <button onClick={() => setNewLenguage("/zh", "zh")} className={`${(location.pathname === "/zh") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
+                                    中文繁體
+                                </button>
+                                <button onClick={() => setNewLenguage("/ja", "ja")} className={`${(location.pathname === "/ja") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
+                                    日本語
+                                </button>
+                                <button onClick={() => setNewLenguage("/po", "po")} className={`${(location.pathname === "/po") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
+                                    Português
+                                </button>
+                                <button onClick={() => setNewLenguage("/hi", "hi")} className={`${(location.pathname === "/hi") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
+                                    हिंदी
+                                </button>
+                                <button onClick={() => setNewLenguage("/ru", "ru")} className={`${(location.pathname === "/ru") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
+                                    Русский
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+                <Link href={`/${language}`} title='logo'>
+                    <Image
+                        src={require('../assets/simpliterms-logo.png')}
+                        alt='logo image'
+                        width={60}
+                        height={60}
+                        className='rounded-full'
+                    />
+                </Link>
+
+                <div className='hidden md:block'>
+                    <ul className='flex items-center text-[#5712DF]'>
+                        <li className='pr-5'>
+                            <Link onClick={goToLink} className='text-xl font-bold' href={`/${language}/#home`}>{texts.homeLink}</Link>
+                        </li>
+                        <li className='pr-5'>
+                            <Link onClick={goToLink} className='text-xl font-bold' href={`/${language}/#product`}>{texts.productLink}</Link>
+                        </li>
+                        <li className='pr-5'>
+                            <Link onClick={goToLink} className='text-xl font-bold' href={`/${language}/#pricing`}>{texts.pricingLink}</Link>
+                        </li>
+                        <li className='mr-4'>
+                            <Link onClick={goToLink} className='text-xl font-bold' href={"/account"}>{texts.accountLink}</Link>
+                        </li>
+                        <li>
+                            <FontAwesomeIcon className='cursor-pointer' icon={faLanguage} size='2x' onClick={openMenuWindow} />
+                        </li>
+                    </ul>
+                </div>
+
+                <div className='md:hidden flex items-center'>
+                    <FontAwesomeIcon className='cursor-pointer text-[#5712DF] mr-4' icon={faLanguage} size='2x' onClick={openMenuWindow} />
+                    <FontAwesomeIcon icon={faBars}
+                        className='text-[3rem] text-[#5712DF] cursor-pointer'
+                        onClick={handleMenu}
+                    />
+                </div>
+
+                {menuActive && (
+                    <div className='bg-[#5712DF] w-full z-50 fixed top-0 left-0 h-screen flex justify-center items-center'>
+                        <ul className='flex flex-col items-center text-white'>
+                            <li>
+                                <FontAwesomeIcon icon={faXmark}
+                                    className='text-[3rem] cursor-pointer'
+                                    onClick={handleMenu}
+                                />
+                            </li>
+                            <li className='py-4'>
+                                <Link onClick={goToLink} className='text-2xl font-bold' href={`/${language}/#home`}>{texts.homeLink}</Link>
+                            </li>
+                            <li className='py-4'>
+                                <Link onClick={goToLink} className='text-2xl font-bold' href={`/${language}/#pricing`}>{texts.productLink}</Link>
+                            </li>
+                            <li className='py-4'>
+                                <Link onClick={goToLink} className='text-2xl font-bold' href={`/${language}/#product`}>{texts.pricingLink}</Link>
+                            </li>
+                            <li className='py-4'>
+                                <Link onClick={goToLink} className='text-2xl font-bold' href={"/account"}>{texts.accountLink}</Link>
+                            </li>
+                        </ul>
+                    </div>
+                )}
+
+            </nav>
+        </>
+    )
+}
