@@ -1,147 +1,151 @@
-import { NextRequest, NextResponse } from 'next/server';
-import createIntlMiddleware from 'next-intl/middleware';
-import { routing } from './i18n/routing';
-import { backendUri } from './helpers/url';
-import { validateIfAuthenticated } from './helpers/middlewareFunctions';
+import createMiddleware from 'next-intl/middleware';
+import { NextRequest, NextResponse } from "next/server";
+import { backendUri } from "./helpers/url";
+import { validateIfAuthenticated } from "./helpers/middlewareFunctions";
+ 
+export default async function middleware(request: NextRequest) {
 
-const intlMiddleware = createIntlMiddleware(routing);
+  const responseWithI18n = (request: NextRequest) => {
 
-interface AuthResponse {
-  token: string;
-  user: {
-    uid: string | number;
-    email: string;
-    username: string;
-    planType: string;
-    credits: string | number;
-    summariesLanguage: string;
+    const defaultLocale = 'en';  
+
+    // Create and call the next-intl middleware (example)
+    const handleI18nRouting = createMiddleware({
+      locales: ['en', 'de', "es", "fr", "zh", "hi", "ja", "ru", "pt"],
+      defaultLocale
+    });
+
+    const response = handleI18nRouting(request);
+
+    // set custom headers
+    response.headers.set('X-Frame-Options', 'DENY');
+  
+    return response;
+
   };
-}
 
-export async function middleware(req: NextRequest): Promise<NextResponse | undefined> {
-  // Run the intl middleware first
-  const intlResponse = intlMiddleware(req);
+    switch (request.nextUrl.pathname) {
 
-  // If intlMiddleware returns a response, return it immediately
-  if (intlResponse) {
-    return intlResponse;
-  }
+        case "/account": {
 
-  // Proceed with your custom middleware logic
-  const { pathname } = req.nextUrl;
-  const segments = pathname.split('/').filter(Boolean);
+            const cookieToken = request.cookies.get('x-token');
+            const redirectUrl = new URL('/auth/login', request.nextUrl);
 
-  let locale = '';
-  if (segments.length > 0 && ['en', 'de'].includes(segments[0])) {
-    locale = segments[0];
-    segments.shift();
-  }
+            if (!cookieToken) {
+                return NextResponse.redirect(redirectUrl);
+            }
 
-  const pathWithoutLocale = '/' + segments.join('/');
+            try {
+                const response = await fetch(`${backendUri}/api/auth/renew-token`, {
+                                                method: 'GET',
+                                                headers: {
+                                                    'Authorization': `Bearer ${cookieToken.value}`
+                                                },
+                                            })
+                if (!response.ok) {
+                    request.cookies.delete("x-token");
+                    request.cookies.delete("uid");
+                    request.cookies.delete("email");
+                    request.cookies.delete("username");
+                    request.cookies.delete("plan-type");
+                    request.cookies.delete("credits");
+                    request.cookies.delete("summaries-language");
+                    return NextResponse.redirect(redirectUrl);
+                }
 
-  // Now, apply your custom middleware logic with adjusted paths
-  if (pathWithoutLocale.startsWith('/buy-credits/')) {
-    const redirectUrl = new URL(`/${locale}/auth/login`, req.url);
-    const isAuthenticated = await validateIfAuthenticated(req);
+                try {
+                    const jsonresponse = await response.json();
 
-    if (!isAuthenticated) {
-      // User is not authenticated, redirect to login
-      return NextResponse.redirect(redirectUrl);
-    } else {
-      // User is authenticated, proceed
-      const response = NextResponse.next();
-      response.headers.set('X-Frame-Options', 'DENY');
-      return response;
-    }
-  }
+                    if (!jsonresponse.token) {
+                        request.cookies.delete("x-token");
+                        request.cookies.delete("uid");
+                        request.cookies.delete("email");
+                        request.cookies.delete("username");
+                        request.cookies.delete("plan-type");
+                        request.cookies.delete("credits");
+                        request.cookies.delete("summaries-language");
+                        return NextResponse.redirect(redirectUrl);
 
-  switch (pathWithoutLocale) {
-    case '/account': {
-      const cookieToken = req.cookies.get('x-token');
-      const redirectUrl = new URL(`/${locale}/auth/login`, req.url);
+                    }else{
+                        
+                        const response = NextResponse.next();
+                        response.headers.set('X-Frame-Options', 'DENY');
 
-      if (!cookieToken) {
-        return NextResponse.redirect(redirectUrl);
-      }
+                        
+                        response.cookies.set('x-token', jsonresponse.token, {path: '/', maxAge: 60 * 60 * 12});
 
-      try {
-        const response = await fetch(`${backendUri}/api/auth/renew-token`, {
-          method: 'GET',
-          headers: {
-            'Authorization': `Bearer ${cookieToken.value}`,
-          },
-        });
+                        response.cookies.set('uid', jsonresponse.user.uid.toString(), {path: '/', maxAge: 60 * 60 * 12});
 
-        if (!response.ok) {
-          const redirectResponse = NextResponse.redirect(redirectUrl);
-          clearAuthCookies(redirectResponse);
-          return redirectResponse;
+                        response.cookies.set('email', jsonresponse.user.email.toString(), {path: '/', maxAge: 60 * 60 * 12});
+
+                        response.cookies.set('username', jsonresponse.user.username.toString(), {path: '/', maxAge: 60 * 60 * 12});
+
+                        response.cookies.set('plan-type', jsonresponse.user.planType.toString(), {path: '/', maxAge: 60 * 60 * 12});
+
+                        response.cookies.set('credits', jsonresponse.user.credits.toString(), {path: '/', maxAge: 60 * 60 * 12});
+
+                        response.cookies.set('summaries-language', jsonresponse.user.summariesLanguage.toString(), {path: '/', maxAge: 60 * 60 * 12});
+
+                        return response;
+                    }
+                    
+                } catch (error) {
+                    request.cookies.delete("x-token");
+                    request.cookies.delete("uid");
+                    request.cookies.delete("email");
+                    request.cookies.delete("username");
+                    request.cookies.delete("plan-type");
+                    request.cookies.delete("credits");
+                    request.cookies.delete("summaries-language");
+                    return NextResponse.redirect(redirectUrl);
+                }    
+                
+                
+            } catch (error) {
+                request.cookies.delete("x-token");
+                request.cookies.delete("uid");
+                request.cookies.delete("email");
+                request.cookies.delete("username");
+                request.cookies.delete("plan-type");
+                request.cookies.delete("credits");
+                request.cookies.delete("summaries-language");
+                return NextResponse.redirect(redirectUrl);
+            }
+            
         }
-
-        const jsonResponse = (await response.json()) as AuthResponse;
-
-        if (!jsonResponse.token) {
-          const redirectResponse = NextResponse.redirect(redirectUrl);
-          clearAuthCookies(redirectResponse);
-          return redirectResponse;
-        } else {
-          const nextResponse = NextResponse.next();
-          nextResponse.headers.set('X-Frame-Options', 'DENY');
-          setAuthCookies(nextResponse, jsonResponse);
-          return nextResponse;
+        case "/auth/login": {
+            const redirectUrl = new URL('/account', request.url);
+            const res = await validateIfAuthenticated(request);
+            if (res) {
+                const response = NextResponse.next();
+                response.headers.set('X-Frame-Options', 'DENY');
+                return response;
+            }else{
+                return NextResponse.redirect(redirectUrl);
+            }
         }
-      } catch (error) {
-        const redirectResponse = NextResponse.redirect(redirectUrl);
-        clearAuthCookies(redirectResponse);
-        return redirectResponse;
-      }
+        case "/auth/register": {
+            const redirectUrl = new URL('/account', request.url);
+            const res = await validateIfAuthenticated(request);
+            if (res) {
+                const response = NextResponse.next();
+                response.headers.set('X-Frame-Options', 'DENY');
+                return response;
+            }else{
+                return NextResponse.redirect(redirectUrl);
+            }
+        }
+        default: {
+                const response = NextResponse.next();
+                response.headers.set('X-Frame-Options', 'DENY');
+                return response;
+        }
+        
     }
-
-    case '/auth/login':
-    case '/auth/register': {
-      const redirectUrl = new URL(`/${locale}/account`, req.url);
-      const isAuthenticated = await validateIfAuthenticated(req);
-
-      if (isAuthenticated) {
-        // User is authenticated, redirect to account page
-        return NextResponse.redirect(redirectUrl);
-      } else {
-        // User is not authenticated, proceed to login or register page
-        const response = NextResponse.next();
-        response.headers.set('X-Frame-Options', 'DENY');
-        return response;
-      }
-    }
-
-    default: {
-      const response = NextResponse.next();
-      response.headers.set('X-Frame-Options', 'DENY');
-      return response;
-    }
-  }
+  
 }
-
-// Helper functions to manage cookies
-function clearAuthCookies(response: NextResponse) {
-  response.cookies.delete('x-token');
-  response.cookies.delete('uid');
-  response.cookies.delete('email');
-  response.cookies.delete('username');
-  response.cookies.delete('plan-type');
-  response.cookies.delete('credits');
-  response.cookies.delete('summaries-language');
-}
-
-function setAuthCookies(response: NextResponse, data: AuthResponse) {
-  response.cookies.set('x-token', data.token, { path: '/', maxAge: 60 * 60 * 12 });
-  response.cookies.set('uid', data.user.uid.toString(), { path: '/', maxAge: 60 * 60 * 12 });
-  response.cookies.set('email', data.user.email.toString(), { path: '/', maxAge: 60 * 60 * 12 });
-  response.cookies.set('username', data.user.username.toString(), { path: '/', maxAge: 60 * 60 * 12 });
-  response.cookies.set('plan-type', data.user.planType.toString(), { path: '/', maxAge: 60 * 60 * 12 });
-  response.cookies.set('credits', data.user.credits.toString(), { path: '/', maxAge: 60 * 60 * 12 });
-  response.cookies.set('summaries-language', data.user.summariesLanguage.toString(), { path: '/', maxAge: 60 * 60 * 12 });
-}
-
+ 
 export const config = {
-  matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
+  // Match only internationalized pathnames
+  matcher: ['/', '/(de|en)/:path*']
 };
