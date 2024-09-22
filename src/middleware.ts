@@ -5,6 +5,16 @@ import { validateIfAuthenticated } from "./helpers/middlewareFunctions";
  
 export default async function middleware(request: NextRequest) {
 
+  const clearCookies = (request:NextRequest) => {
+    request.cookies.delete("x-token");
+    request.cookies.delete("uid");
+    request.cookies.delete("email");
+    request.cookies.delete("username");
+    request.cookies.delete("plan-type");
+    request.cookies.delete("credits");
+    request.cookies.delete("summaries-language");
+  }
+
   const responseWithI18n = (request: NextRequest) => {
 
     const defaultLocale = 'en';  
@@ -24,7 +34,7 @@ export default async function middleware(request: NextRequest) {
 
   };
 
-    switch (request.nextUrl.pathname) {
+  switch (request.nextUrl.pathname) {
 
         case "/account": {
 
@@ -43,13 +53,7 @@ export default async function middleware(request: NextRequest) {
                                                 },
                                             })
                 if (!response.ok) {
-                    request.cookies.delete("x-token");
-                    request.cookies.delete("uid");
-                    request.cookies.delete("email");
-                    request.cookies.delete("username");
-                    request.cookies.delete("plan-type");
-                    request.cookies.delete("credits");
-                    request.cookies.delete("summaries-language");
+                    clearCookies(request);
                     return NextResponse.redirect(redirectUrl);
                 }
 
@@ -57,13 +61,7 @@ export default async function middleware(request: NextRequest) {
                     const jsonresponse = await response.json();
 
                     if (!jsonresponse.token) {
-                        request.cookies.delete("x-token");
-                        request.cookies.delete("uid");
-                        request.cookies.delete("email");
-                        request.cookies.delete("username");
-                        request.cookies.delete("plan-type");
-                        request.cookies.delete("credits");
-                        request.cookies.delete("summaries-language");
+                        clearCookies(request);
                         return NextResponse.redirect(redirectUrl);
 
                     }else{
@@ -90,25 +88,13 @@ export default async function middleware(request: NextRequest) {
                     }
                     
                 } catch (error) {
-                    request.cookies.delete("x-token");
-                    request.cookies.delete("uid");
-                    request.cookies.delete("email");
-                    request.cookies.delete("username");
-                    request.cookies.delete("plan-type");
-                    request.cookies.delete("credits");
-                    request.cookies.delete("summaries-language");
+                    clearCookies(request);
                     return NextResponse.redirect(redirectUrl);
                 }    
                 
                 
             } catch (error) {
-                request.cookies.delete("x-token");
-                request.cookies.delete("uid");
-                request.cookies.delete("email");
-                request.cookies.delete("username");
-                request.cookies.delete("plan-type");
-                request.cookies.delete("credits");
-                request.cookies.delete("summaries-language");
+                clearCookies(request);
                 return NextResponse.redirect(redirectUrl);
             }
             
@@ -136,9 +122,9 @@ export default async function middleware(request: NextRequest) {
             }
         }
         default: {
-                const response = NextResponse.next();
-                response.headers.set('X-Frame-Options', 'DENY');
-                return response;
+            const response = NextResponse.next();
+            response.headers.set('X-Frame-Options', 'DENY');
+            return response;
         }
         
     }
