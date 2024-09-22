@@ -7,94 +7,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faLanguage, faXmark } from '@fortawesome/free-solid-svg-icons'
 import { useRouter } from 'next/navigation';
 
+interface NavbarInterface {
+    changeLanguage: any,
+    homeLink: any,
+    productLink: any,
+    pricingLink: any,
+    accountLink: any
+};
 
-export const Navbar = ({ language }: any) => {
+export const Navbar = ({
+    changeLanguage,
+    homeLink,
+    productLink,
+    pricingLink,
+    accountLink
+}: NavbarInterface) => {
 
     const router = useRouter();
-
-    let texts = {
-        changeLanguage: "Change Language: ",
-        homeLink: "HOME",
-        productLink: "PRODUCT",
-        pricingLink: "PRICING",
-        accountLink: "ACCOUNT",
-    }
-
-    switch (language) {
-        case "ru":
-            texts = {
-                changeLanguage: "Изменить язык: ",
-                homeLink: "ГЛАВНАЯ",
-                productLink: "ТОВАР",
-                pricingLink: "ЦЕНЫ",
-                accountLink: "АККАУНТ",
-            }
-            break;
-        case "zh":
-            texts = {
-                changeLanguage: "更改语言：",
-                homeLink: "主页",
-                productLink: "产品",
-                pricingLink: "定价",
-                accountLink: "帐户",
-            }
-            break;
-        case "fr":
-            texts = {
-                changeLanguage: "Changer de langue :",
-                homeLink: "ACCUEIL",
-                productLink: "PRODUIT",
-                pricingLink: "TARIFICATION",
-                accountLink: "COMPTE",
-            }
-            break;
-        case "po":
-            texts = {
-                changeLanguage: "alterar a língua: ",
-                homeLink: "CASA",
-                productLink: "PRODUTO",
-                pricingLink: "PREÇOS",
-                accountLink: "CONTA",
-            }
-            break;
-        case "es":
-            texts = {
-                changeLanguage: "Cambiar idioma: ",
-                homeLink: "INICIO",
-                productLink: "PRODUCTO",
-                pricingLink: "PRECIOS",
-                accountLink: "CUENTA",
-            }
-            break;
-        case "ja":
-            texts = {
-                changeLanguage: "言語を変更：",
-                homeLink: "ホーム",
-                productLink: "製品",
-                pricingLink: "価格",
-                accountLink: "アカウント",
-            }
-            break;
-        case "hi":
-            texts = {
-                changeLanguage: "भाषा बदलें: ",
-                homeLink: "होम",
-                productLink: "उत्पाद",
-                pricingLink: "मूल्य निर्धारण",
-                accountLink: "खाता",
-            }
-            break;
-        default:
-            texts = {
-                changeLanguage: "Change Language: ",
-                homeLink: "HOME",
-                productLink: "PRODUCT",
-                pricingLink: "PRICING",
-                accountLink: "ACCOUNT",
-            }
-            break;
-    }
-
 
     const [menuActive, setmenuActive] = useState(false);
     const [showLenguageMenu, setshowLenguageMenu] = useState(false);
@@ -128,7 +57,7 @@ export const Navbar = ({ language }: any) => {
                     showLenguageMenu && <div className='z-[997] fixed w-full top-0 bottom-0 left-0 bg-black bg-opacity-25 flex justify-center items-center'>
                         <div onClick={closeMenuWindow} className='cursor-pointer z-[998] fixed w-full top-0 bottom-0 left-0'></div>
                         <div className='bg-white p-10 rounded z-[999] overflow-y-scroll lg:overflow-hidden max-h-[80vh]'>
-                            <h3 className='font-bold mb-8 text-xl'>{texts.changeLanguage}</h3>
+                            <h3 className='font-bold mb-8 text-xl'>{changeLanguage}</h3>
                             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
                                 <button onClick={() => setNewLenguage("/", "")} className={`${(location.pathname === "/") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
                                     English
@@ -159,7 +88,7 @@ export const Navbar = ({ language }: any) => {
                     </div>
                 }
 
-                <Link href={`/${language}`} title='logo'>
+                <Link href={`/`} title='logo'>
                     <Image
                         src={require('../assets/simpliterms-logo.png')}
                         alt='logo image'
@@ -172,16 +101,16 @@ export const Navbar = ({ language }: any) => {
                 <div className='hidden md:block'>
                     <ul className='flex items-center text-[#5712DF]'>
                         <li className='pr-5'>
-                            <Link onClick={goToLink} className='text-xl font-bold' href={`/${language}/#home`}>{texts.homeLink}</Link>
+                            <Link onClick={goToLink} className='text-xl font-bold' href={`/#home`}>{homeLink}</Link>
                         </li>
                         <li className='pr-5'>
-                            <Link onClick={goToLink} className='text-xl font-bold' href={`/${language}/#product`}>{texts.productLink}</Link>
+                            <Link onClick={goToLink} className='text-xl font-bold' href={`/#product`}>{productLink}</Link>
                         </li>
                         <li className='pr-5'>
-                            <Link onClick={goToLink} className='text-xl font-bold' href={`/${language}/#pricing`}>{texts.pricingLink}</Link>
+                            <Link onClick={goToLink} className='text-xl font-bold' href={`/#pricing`}>{pricingLink}</Link>
                         </li>
                         <li className='mr-4'>
-                            <Link onClick={goToLink} className='text-xl font-bold' href={"/account"}>{texts.accountLink}</Link>
+                            <Link onClick={goToLink} className='text-xl font-bold' href={"/account"}>{accountLink}</Link>
                         </li>
                         <li>
                             <FontAwesomeIcon className='cursor-pointer' icon={faLanguage} size='2x' onClick={openMenuWindow} />
@@ -207,16 +136,16 @@ export const Navbar = ({ language }: any) => {
                                 />
                             </li>
                             <li className='py-4'>
-                                <Link onClick={goToLink} className='text-2xl font-bold' href={`/${language}/#home`}>{texts.homeLink}</Link>
+                                <Link onClick={goToLink} className='text-2xl font-bold' href={`/#home`}>{homeLink}</Link>
                             </li>
                             <li className='py-4'>
-                                <Link onClick={goToLink} className='text-2xl font-bold' href={`/${language}/#pricing`}>{texts.productLink}</Link>
+                                <Link onClick={goToLink} className='text-2xl font-bold' href={`/#pricing`}>{productLink}</Link>
                             </li>
                             <li className='py-4'>
-                                <Link onClick={goToLink} className='text-2xl font-bold' href={`/${language}/#product`}>{texts.pricingLink}</Link>
+                                <Link onClick={goToLink} className='text-2xl font-bold' href={`/#product`}>{pricingLink}</Link>
                             </li>
                             <li className='py-4'>
-                                <Link onClick={goToLink} className='text-2xl font-bold' href={"/account"}>{texts.accountLink}</Link>
+                                <Link onClick={goToLink} className='text-2xl font-bold' href={"/account"}>{accountLink}</Link>
                             </li>
                         </ul>
                     </div>

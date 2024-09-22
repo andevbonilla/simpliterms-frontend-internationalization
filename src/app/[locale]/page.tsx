@@ -54,11 +54,17 @@ const termsSummaryExample = [
 
 export default function HomePage() {
 
-    const t = useTranslations('HomePage');
+    const navbari18n = useTranslations('Navbar');
 
     return (
         <>
-            <Navbar language={""} />
+            <Navbar
+                changeLanguage={navbari18n("changeLanguage")}
+                homeLink={navbari18n("homeLink")}
+                productLink={navbari18n("productLink")}
+                pricingLink={navbari18n("pricingLink")}
+                accountLink={navbari18n("accountLink")}
+            />
             <main className='px-[10%]'>
 
                 <h2 className={`mb-5 mt-14 text-5xl font-bold text-center ${bebas.className}`} id="home">

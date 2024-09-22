@@ -1,0 +1,9 @@
+{
+  "Navbar": {
+    "changeLanguage": "Cambiar idioma: ",
+    "homeLink": "INICIO",
+    "productLink": "PRODUCTO",
+    "pricingLink": "PRECIOS",
+    "accountLink": "CUENTA"
+  }
+}
