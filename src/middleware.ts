@@ -58,33 +58,26 @@ export default async function middleware(request: NextRequest) {
                 }
 
                 try {
+
                     const jsonresponse = await response.json();
 
                     if (!jsonresponse.token) {
+
                         clearCookies(request);
                         return NextResponse.redirect(redirectUrl);
 
                     }else{
                         
-                        const response = NextResponse.next();
-                        response.headers.set('X-Frame-Options', 'DENY');
-
-                        
+                        const response = responseWithI18n(request);
                         response.cookies.set('x-token', jsonresponse.token, {path: '/', maxAge: 60 * 60 * 12});
-
                         response.cookies.set('uid', jsonresponse.user.uid.toString(), {path: '/', maxAge: 60 * 60 * 12});
-
                         response.cookies.set('email', jsonresponse.user.email.toString(), {path: '/', maxAge: 60 * 60 * 12});
-
                         response.cookies.set('username', jsonresponse.user.username.toString(), {path: '/', maxAge: 60 * 60 * 12});
-
                         response.cookies.set('plan-type', jsonresponse.user.planType.toString(), {path: '/', maxAge: 60 * 60 * 12});
-
                         response.cookies.set('credits', jsonresponse.user.credits.toString(), {path: '/', maxAge: 60 * 60 * 12});
-
                         response.cookies.set('summaries-language', jsonresponse.user.summariesLanguage.toString(), {path: '/', maxAge: 60 * 60 * 12});
-
                         return response;
+
                     }
                     
                 } catch (error) {
@@ -103,9 +96,7 @@ export default async function middleware(request: NextRequest) {
             const redirectUrl = new URL('/account', request.url);
             const res = await validateIfAuthenticated(request);
             if (res) {
-                const response = NextResponse.next();
-                response.headers.set('X-Frame-Options', 'DENY');
-                return response;
+                return responseWithI18n(request);
             }else{
                 return NextResponse.redirect(redirectUrl);
             }
@@ -114,17 +105,13 @@ export default async function middleware(request: NextRequest) {
             const redirectUrl = new URL('/account', request.url);
             const res = await validateIfAuthenticated(request);
             if (res) {
-                const response = NextResponse.next();
-                response.headers.set('X-Frame-Options', 'DENY');
-                return response;
+                return responseWithI18n(request);
             }else{
                 return NextResponse.redirect(redirectUrl);
             }
         }
         default: {
-            const response = NextResponse.next();
-            response.headers.set('X-Frame-Options', 'DENY');
-            return response;
+            return responseWithI18n(request);
         }
         
     }
@@ -133,5 +120,5 @@ export default async function middleware(request: NextRequest) {
  
 export const config = {
   // Match only internationalized pathnames
-  matcher: ['/', '/(de|en)/:path*']
+  matcher: ['/', '/(en|de|es|fr|zh|hi|ja|ru|pt)/:path*']
 };
