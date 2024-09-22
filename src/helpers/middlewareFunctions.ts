@@ -17,13 +17,13 @@ export const validateIfAuthenticated = async(req: any) => {
                                                 },
                                             });
                 if (!response.ok) {
-                    return true
+                    return true;
                 }
 
                 try {
                     const jsonresponse = await response.json();
                     if (!jsonresponse.token) {
-                        return true
+                        return true;
                     }else{
                         return false;
                     }
