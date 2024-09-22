@@ -18,40 +18,40 @@ interface AuthResponse {
   };
 }
 
-export async function middleware(req: NextRequest): Promise<NextResponse> {
+export async function middleware(req: NextRequest): Promise<NextResponse | undefined> {
   // Run the intl middleware first
-  const intlResponse:any = intlMiddleware(req);
+  const intlResponse = intlMiddleware(req);
 
-  // If the intl middleware returns a response (e.g., a redirect), update the request
+  // If intlMiddleware returns a response, return it immediately
   if (intlResponse) {
-    req = intlResponse.request as NextRequest;
+    return intlResponse;
   }
 
-  // Extract the pathname and handle locale prefixes
+  // Proceed with your custom middleware logic
   const { pathname } = req.nextUrl;
-  const segments = pathname.split('/').filter(Boolean); 
-  // The filter(Boolean) method removes any elements from the array that are falsy values.
-  //In JavaScript, falsy values include: false, 0, '' (empty string), null, undefined, and NaN
+  const segments = pathname.split('/').filter(Boolean);
 
   let locale = '';
-  const localesList = ['en', 'de', "es", "fr", "zh", "hi", "ja", "ru", "pt"];
-  if (segments.length > 0 && localesList.includes(segments[0])) {
+  if (segments.length > 0 && ['en', 'de'].includes(segments[0])) {
     locale = segments[0];
     segments.shift();
   }
 
   const pathWithoutLocale = '/' + segments.join('/');
 
+  // Now, apply your custom middleware logic with adjusted paths
   if (pathWithoutLocale.startsWith('/buy-credits/')) {
     const redirectUrl = new URL(`/${locale}/auth/login`, req.url);
     const isAuthenticated = await validateIfAuthenticated(req);
 
     if (!isAuthenticated) {
+      // User is not authenticated, redirect to login
+      return NextResponse.redirect(redirectUrl);
+    } else {
+      // User is authenticated, proceed
       const response = NextResponse.next();
       response.headers.set('X-Frame-Options', 'DENY');
       return response;
-    } else {
-      return NextResponse.redirect(redirectUrl);
     }
   }
 
@@ -103,11 +103,13 @@ export async function middleware(req: NextRequest): Promise<NextResponse> {
       const isAuthenticated = await validateIfAuthenticated(req);
 
       if (isAuthenticated) {
+        // User is authenticated, redirect to account page
+        return NextResponse.redirect(redirectUrl);
+      } else {
+        // User is not authenticated, proceed to login or register page
         const response = NextResponse.next();
         response.headers.set('X-Frame-Options', 'DENY');
         return response;
-      } else {
-        return NextResponse.redirect(redirectUrl);
       }
     }
 
@@ -143,4 +145,3 @@ function setAuthCookies(response: NextResponse, data: AuthResponse) {
 export const config = {
   matcher: ['/((?!_next/static|_next/image|favicon.ico).*)'],
 };
-
