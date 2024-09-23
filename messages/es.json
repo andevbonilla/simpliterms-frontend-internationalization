@@ -54,12 +54,14 @@
   "FQAsPart": {
     "title": "PREGUNTAS FRECUENTES",
     "question1": "Que es una extension para navegadores?",
-    "answer1": "Una extension es como una aplicacion que puedes descargar en la tienda de extensiones ",
-    "question2": "",
-    "answer2": "",
-    "question3": "",
-    "answer3": "",
-    "question4": "",
-    "answer4": ""
+    "answer1": "Una extension es una aplicacion que puedes usar en tu navegador y que te ayuda en muchas cosas como traducir una pagina, cambiar el estiilo de la pagina o en este caso resumir terminos de cualquier pagina como lo hace simpliterms. Cada navegador tiene una tienda oficial donde puedes descargar estas extensiones algo asi como la app store en celulares. Por ejemplo si usas google, puedes buscar Chrome web store y ahi podras desacargar la que quieras.",
+    "question2": "Puedo pedir un rembolso?",
+    "answer2": "Claro que si, en el siguiente enlace veras las politcas de rembolso y si las cumples, te rembolsaremos el total de tu compra.",
+    "buttonRefund":"Pedir Rembolso",
+    "question3": "Como se generan los resumenes de las politicas y terminos de cualquier web?",
+    "answer3": "Simpliterms busca los enlaces que esten relacionados con politicas y terminos de uso de la pagina sobre la que estes parado. depues los evalua y si cumplen con ciertos criterios, usa el modelo de GPT-4o de Open AI para resumirlos.",
+    "question4": "Que son los creditos?",
+    "answer4": "Cada resumen que se genera requiere de procesamiento en servidores de Open AI lo que nos cuesta dinero y este coste depende de factores como el idioma en el que esten los terminos o que tan largos sean. por esto para no incurrir en perdidas, decidimos darte una x cantidad de creditos dependiendo el plan que hayas pagado. Por lo tanto si un resumen cuesta 10 creditos de hacer, te descontaremos estos 10 creditos, lo que significa que si no tienes suficiente creditos no se podra hacer el resumen si esto te ocurre en el siguiente enlace podras comprar mas:",
+    "buttonBuyCredits": "Comprar mas Creditos"
   }
 }

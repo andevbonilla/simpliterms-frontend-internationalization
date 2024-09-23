@@ -23,7 +23,7 @@ export default function HomePage() {
     const summaryExamplei18n = useTranslations('SummariesPart');
     const howitworksi18n = useTranslations('HowItWorksPart');
     const advantagesi18n = useTranslations('AdvantagesPart');
-    const fqasi18n = useTranslations('AdvantagesPart');
+    const fqasi18n = useTranslations('FQAsPart');
 
     return (
         <>
