@@ -5,5 +5,47 @@
     "productLink": "PRODUCTO",
     "pricingLink": "PRECIOS",
     "accountLink": "CUENTA"
+  },
+  "Part1": {
+    "TitlePart1": "Nunca mas aceptes",
+    "TitlePart2": "Terminos",
+    "TitlePart3": "y",
+    "TitlePart4": "Politicas de privacidad",
+    "TitlePart5": "sin saber.",
+    "TitlePart6": "Simpliterms",
+    "TitlePart7": "Te resume lo importante",
+    "Subtitle": "Los términos de uso y privacidad suelen tener entre 3,000 y 10,000+ palabras y son dificiles de entender. SimpliTerms con tan solo un click sobre su icono te informara rapidamente que estas aceptando.",
+    "ButtonStart": "Empieza GRATIS ahora"
+  },
+  "SummariesPart": {
+    "header1": "Sin simpliterms:",
+    "header2": "Con simpliterms:",
+    "summarieHeader1": "Datos Recopilados:",
+    "summarieText1": "Google recopila información de los usuarios al utilizar sus servicios, incluyendo datos de cuenta, contenido generado y actividad en sus plataformas.",
+    "summarieHeader2": "Derechos del Usuario:",
+    "summarieText2": " Los usuarios mantienen derechos sobre su contenido, aunque otorgan a Google una licencia para usarlo. Tienen derecho a acceder, actualizar y eliminar su información personal.",
+    "summarieHeader3": "Compartición de Datos:",
+    "summarieText3": "Google puede compartir datos con terceros para mejorar sus servicios o cumplir con obligaciones legales, pero se compromete a proteger la privacidad del usuario.",
+    "summarieHeader4": "Responsabilidades:",
+    "summarieText4": "Los usuarios deben cumplir con las condiciones, respetar a otros y no abusar de los servicios. Google se reserva el derecho de eliminar contenido inapropiado y suspender cuentas.",
+    "summarieHeader5": "Duración del Acuerdo:",
+    "summarieText5": "Las condiciones son válidas mientras el usuario utilice los servicios. Los cambios se comunicarán con antelación.",
+    "summarieHeader6": "Conclusión:",
+    "summarieText6": "Aceptar estos términos es crucial para usar los servicios de Google. Beneficia al usuario al garantizar el acceso a herramientas útiles, pero implica una responsabilidad en su uso."
+  },
+  "HowItWorksPart": {
+    "title": "COMO FUNCIONA?"
+  },
+  "AdvantagesPart": {
+    "title": "VENTAJAS DE USAR SIMPLITERMS",
+    "Advantage1Title": "Ahorra tiempo",
+    "Advantage1Text": "Descubre que estas aceptando sin estar horas leyendo politicas de cada pagina que uses.",
+    "Advantage2Title": "Evita problemas legales",
+    "Advantage2Text": "Evita tener problemas legales con una empresa por aceptar políticas que no habrías querido aceptar.",
+    "Advantage3Title": "Protege tu privacidad",
+    "Advantage3Text": "Descubre qué datos extrae cada sitio web de ti con solo un clic.",
+    "Advantage4Title": "Fácil de usar",
+    "Advantage4Text": "Simplemente descarga la extension de google, inicia secion y dale click sobre el logo de la extension y ya tendras un resumen en tiempo real de la pagina en la que estes al momento de hacer el resumen.",
+    "buttonDownload": "Descarga AHORA la extension"
   }
 }
