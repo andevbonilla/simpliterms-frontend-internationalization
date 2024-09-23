@@ -4,7 +4,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faInstagram, faTwitter, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons'
 
 
-export const Footer = ({ language }: any) => {
+export const Footer = (
+  {
+    language
+  }: any) => {
 
   let texts = {
     copyright: "SimpliTerms © All rights reserved.",

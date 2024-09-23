@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import PricePage from '@/components/PricePage';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
@@ -6,7 +5,6 @@ import { Navbar } from '@/components/Navbar';
 import { BoxExample } from '@/components/BoxExample';
 import { Advantage } from '@/components/Advantage';
 import { ListFeatured } from '@/components/ListFeatured';
-import { BuyMoreCredits } from '@/components/BuyMoreCredits';
 import { Fqas } from '@/components/Fqas';
 import { Footer } from '@/components/Footer';
 import { Bebas_Neue } from 'next/font/google';
@@ -25,6 +23,7 @@ export default function HomePage() {
     const summaryExamplei18n = useTranslations('SummariesPart');
     const howitworksi18n = useTranslations('HowItWorksPart');
     const advantagesi18n = useTranslations('AdvantagesPart');
+    const fqasi18n = useTranslations('AdvantagesPart');
 
     return (
         <>
@@ -133,21 +132,24 @@ export default function HomePage() {
                     <ListFeatured />
                 </div>
 
-                <div id="buycredits"></div>
-                <div className="pt-12 flex flex-col items-center md:px-[20%]">
-                    <h3 className={`font-bold text-3xl pt-6 pb-6 text-center ${bebas.className} underline decoration-[#5712DF] underline-offset-8`}>DO YOU NEED MORE CREDITS?</h3>
-                    <BuyMoreCredits />
-                </div>
-
-
                 <div className="md:px-[15%]" id="fqas">
-                    <h2 className={`font-bold text-3xl py-16 text-center ${bebas.className} underline decoration-[#5712DF] underline-offset-8`}>Frequently asked questions</h2>
-                    <Fqas language={""} />
+                    <h2 className={`font-bold text-3xl py-16 text-center ${bebas.className} underline decoration-[#5712DF] underline-offset-8`}>{fqasi18n("title")}</h2>
+                    <Fqas
+                        question1={fqasi18n("question1")}
+                        answer1={fqasi18n("answer1")}
+                        question2={fqasi18n("question2")}
+                        answer2={fqasi18n("answer2")}
+                        question3={fqasi18n("question3")}
+                        answer3={fqasi18n("answer3")}
+                        question4={fqasi18n("question4")}
+                        answer4={fqasi18n("answer4")}
+                    />
                 </div>
 
 
             </main>
-            <Footer language={""} />
+            <Footer
+            />
         </>
     )
 }

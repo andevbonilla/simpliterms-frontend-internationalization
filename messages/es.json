@@ -47,5 +47,19 @@
     "Advantage4Title": "Fácil de usar",
     "Advantage4Text": "Simplemente descarga la extension de google, inicia secion y dale click sobre el logo de la extension y ya tendras un resumen en tiempo real de la pagina en la que estes al momento de hacer el resumen.",
     "buttonDownload": "Descarga AHORA la extension"
+  },
+  "FeaturedPart": {
+    "title": "Lanzado en:"
+  },
+  "FQAsPart": {
+    "title": "PREGUNTAS FRECUENTES",
+    "question1": "Que es una extension para navegadores?",
+    "answer1": "Una extension es como una aplicacion que puedes descargar en la tienda de extensiones ",
+    "question2": "",
+    "answer2": "",
+    "question3": "",
+    "answer3": "",
+    "question4": "",
+    "answer4": ""
   }
 }

@@ -1,6 +1,26 @@
-import { Question } from "./Question"
+import { Question } from "./Question";
 
-export const Fqas = ({ language }: any) => {
+interface questions {
+  question1: string,
+  answer1: string,
+  question2: string,
+  answer2: string,
+  question3: string,
+  answer3: string,
+  question4: string,
+  answer4: string
+}
+
+export const Fqas = ({
+  question1,
+  answer1,
+  question2,
+  answer2,
+  question3,
+  answer3,
+  question4,
+  answer4
+}: questions) => {
 
   let texts = {
     question1: "What are static summaries?",
@@ -13,105 +33,35 @@ export const Fqas = ({ language }: any) => {
     answer4: "If you're browsing any webpage and wish to quickly understand the privacy policies, terms of use, or similar information in under 2 minutes, just click on our extension. It efficiently scans the page for privacy policies and terms of use, and if detected, it instantly initiates the process of generating concise summaries for each in parallel. This way, you'll have the information you need in no time, making your online experience seamless and informed.",
   }
 
-  switch (language) {
-    case "ru":
-      texts = {
-        question1: "Что такое статические резюме?",
-        answer1: "Статические резюме - это резюме, созданные искусственным интеллектом для пользователей премиум-аккаунтов. Если у вас подписка на бесплатный план, у вас есть доступ к одному статическому резюме каждые 24 часа. Если у вас подписка на базовый или профессиональный план, все ваши резюме будут создаваться в режиме реального времени искусственным интеллектом.",
-        question2: "Как отменить подписку?",
-        answer2: "Вы можете отменить подписку в любое время. Для этого перейдите в свой аккаунт, затем нажмите на кнопку отписки, и все готово.",
-        question3: "Что означают кредиты?",
-        answer3: "Кредиты необходимы, чтобы Simpleterms мог точно отслеживать количество созданных пользователем резюме. Например, если вы входите на страницу, такую как example.com, и создаете резюме его политики, и это стоит 300 кредитов, они будут вычтены с вашего счета. Так что они являются фундаментальными для создания резюме искусственным интеллектом.",
-        question4: "Как работают резюме, созданные искусственным интеллектом в реальном времени?",
-        answer4: "Если вы просматриваете любую веб-страницу и хотите быстро понять политику конфиденциальности, условия использования или подобную информацию менее чем за 2 минуты, просто нажмите на наше расширение. Оно эффективно сканирует страницу на наличие политики конфиденциальности и условий использования, и если обнаружено, оно мгновенно начинает процесс создания кратких резюме для каждого из них параллельно. Таким образом, у вас будет необходимая информация в кратчайшие сроки, делая ваш опыт онлайн беспроблемным и информированным.",
-      };
-      break;
-    case "zh":
-      texts = {
-        question1: "什么是静态摘要？",
-        answer1: "静态摘要是由高级用户的AI生成的摘要。因此，如果您订阅了免费计划，您将每24小时访问一个静态摘要。如果您订阅了基本或专业计划，您的所有摘要将由AI实时生成。",
-        question2: "我如何取消订阅？",
-        answer2: "您可以随时取消订阅，只需转到您的帐户，然后单击取消订阅按钮即可。",
-        question3: "积分是什么意思？",
-        answer3: "积分是Simpleterms准确跟踪用户生成的摘要数量的必要条件。例如，如果您访问example.com并创建其政策摘要，费用为300积分，这些积分将从您的帐户中扣除。因此，它们对于通过AI生成摘要至关重要。",
-        question4: "实时生成的AI摘要是如何工作的？",
-        answer4: "如果您浏览任何网页并希望在2分钟内快速了解隐私政策、使用条款或类似信息，只需单击我们的扩展程序。它会高效地扫描页面，检测到隐私政策和使用条款后，立即启动并行生成每个摘要的过程。这样，您将在最短时间内获得所需的信息，使您的在线体验更加流畅和知情。",
-      };
-      break;
-    case "fr":
-      texts = {
-        question1: "Qu'est-ce que des résumés statiques ?",
-        answer1: "Les résumés statiques sont des résumés générés par l'IA pour les utilisateurs premium. Ainsi, si vous êtes abonné au plan gratuit, vous aurez accès à un seul résumé statique toutes les 24 heures. Si vous êtes abonné au plan de base ou pro, tous vos résumés seront générés en temps réel par l'IA.",
-        question2: "Comment puis-je annuler mon abonnement ?",
-        answer2: "Vous pouvez annuler votre abonnement à tout moment. Pour ce faire, rendez-vous sur votre compte, cliquez sur le bouton de désabonnement, et c'est tout.",
-        question3: "Que signifient les crédits ?",
-        answer3: "Les crédits sont nécessaires pour que Simpleterms puisse suivre avec précision le nombre de résumés générés par l'utilisateur. Par exemple, si vous entrez sur une page telle que example.com et créez un résumé de ses politiques, et cela coûte 300 crédits, ceux-ci seront déduits de votre compte. Ils sont donc fondamentaux pour la génération de résumés par l'IA.",
-        question4: "Comment fonctionnent les résumés générés par l'IA en temps réel ?",
-        answer4: "Si vous parcourez n'importe quelle page Web et souhaitez comprendre rapidement les politiques de confidentialité, les conditions d'utilisation ou des informations similaires en moins de 2 minutes, il vous suffit de cliquer sur notre extension. Elle analyse efficacement la page pour détecter les politiques de confidentialité et les conditions d'utilisation, et si elles sont détectées, elle lance instantanément le processus de génération de résumés concis pour chacune en parallèle. De cette façon, vous aurez l'information dont vous avez besoin en un rien de temps, rendant votre expérience en ligne fluide et informée.",
-      };
-      break;
-    case "po":
-      texts = {
-        question1: "O que são resumos estáticos?",
-        answer1: "Resumos estáticos são resumos gerados por IA para usuários premium. Portanto, se você estiver inscrito no plano gratuito, terá acesso a um único resumo estático a cada 24 horas. Se estiver inscrito no plano básico ou pro, todos os seus resumos serão gerados em tempo real por IA.",
-        question2: "Como posso cancelar minha assinatura?",
-        answer2: "Você pode cancelar sua assinatura a qualquer momento. Para fazer isso, vá para sua conta, clique no botão de cancelamento e pronto.",
-        question3: "O que significam os créditos?",
-        answer3: "Os créditos são necessários para que o Simpleterms possa rastrear com precisão quantos resumos o usuário está gerando. Por exemplo, se você acessar uma página como example.com e criar um resumo de suas políticas, e isso custar 300 créditos, esses serão deduzidos de sua conta. Portanto, eles são fundamentais para a geração de resumos por IA.",
-        question4: "Como os resumos gerados por IA funcionam em tempo real?",
-        answer4: "Se você estiver navegando em qualquer página da web e desejar entender rapidamente as políticas de privacidade, termos de uso ou informações semelhantes em menos de 2 minutos, basta clicar em nossa extensão. Ela escaneia eficientemente a página em busca de políticas de privacidade e termos de uso, e se detectado, inicia instantaneamente o processo de geração de resumos concisos para cada um em paralelo. Dessa forma, você terá as informações que precisa em pouco tempo, tornando sua experiência online fácil e informada.",
-      };
-      break;
-    case "es":
-      texts = {
-        question1: "¿Qué son los resúmenes estáticos?",
-        answer1: "Los resúmenes estáticos son resúmenes generados por la IA para usuarios premium. Entonces, si estás suscrito al plan gratuito, tendrás acceso a un único resumen estático cada 24 horas. Si estás suscrito al plan básico o pro, todos tus resúmenes se generarán en tiempo real por la IA.",
-        question2: "¿Cómo puedo cancelar mi suscripción?",
-        answer2: "Puedes cancelar tu suscripción en cualquier momento. Para hacerlo, ve a tu cuenta, una vez allí haz clic en el botón de cancelar suscripción y eso será todo.",
-        question3: "¿Qué significan los créditos?",
-        answer3: "Los créditos son necesarios para que Simpleterms pueda hacer un seguimiento preciso de cuántos resúmenes está generando el usuario. Por ejemplo, si ingresas a una página como example.com y creas un resumen de sus políticas, y eso cuesta 300 créditos, estos se deducirán de tu cuenta. Por lo tanto, son fundamentales para la generación de resúmenes por la IA.",
-        question4: "¿Cómo funcionan los resúmenes generados por la IA en tiempo real?",
-        answer4: "Si estás navegando por cualquier página web y deseas entender rápidamente las políticas de privacidad, términos de uso u otra información similar en menos de 2 minutos, simplemente haz clic en nuestra extensión. Escanea eficientemente la página en busca de políticas de privacidad y términos de uso, y si se detectan, inicia instantáneamente el proceso de generación de resúmenes concisos para cada uno en paralelo. De esta manera, tendrás la información que necesitas en poco tiempo, haciendo que tu experiencia en línea sea fluida e informada.",
-      };
-      break;
-    case "ja":
-      texts = {
-        question1: "静的な要約とは何ですか？",
-        answer1: "静的な要約は、プレミアムユーザーによってAIによって生成された要約です。したがって、無料プランに登録している場合、24時間ごとに1つの静的な要約にアクセスできます。基本またはプロプランに登録している場合、すべての要約はAIによってリアルタイムで生成されます。",
-        question2: "どのようにしてサブスクリプションをキャンセルできますか？",
-        answer2: "いつでもサブスクリプションをキャンセルできます。アカウントに移動して、そこで購読解除ボタンをクリックするだけです。",
-        question3: "クレジットとは何を意味しますか？",
-        answer3: "クレジットは、Simpletermsがユーザーが生成した要約の数を正確に追跡できるようにするために必要です。たとえば、example.comのようなページにアクセスしてそのポリシーの要約を作成し、それが300クレジットかかる場合、これらはあなたのアカウントから差し引かれます。したがって、これらはAIによる要約の生成には不可欠です。",
-        question4: "リアルタイムで生成されたAI要約はどのように機能しますか？",
-        answer4: "`ウェブページを閲覧してプライバシーポリシー、利用規約、または同様の情報を2分未満で理解したい場合は、拡張機能をクリックするだけです。それは効率的にページをスキャンしてプライバシーポリシーと利用規約を検出し、検出されるとそれぞれの要約の生成プロセスを即座に並列で開始します。この方法で、必要な情報がすぐに手に入り、オンラインエクスペリエンスがスムーズで情報豊富になります。",
-      };
-      break;
-    case "hi":
-      texts = {
-        question1: "स्थिर संक्षेप क्या हैं?",
-        answer1: "स्थिर संक्षेप वह संक्षेप हैं जो प्रीमियम उपयोगकर्ताओं द्वारा AI द्वारा उत्पन्न किए गए हैं। तो यदि आप मुफ्त योजना में सब्सक्राइब हैं तो आपके पास प्रति 24 घंटे एक स्थिर संक्षेप का उपयोग करने का अधिकार होगा। यदि आप बेसिक या प्रो योजना में सब्सक्राइब हैं तो आपके सभी संक्षेप AI द्वारा वास्तविक समय में उत्पन्न होंगे।",
-        question2: "मैं अपनी सदस्यता को कैसे रद्द कर सकता हूँ?",
-        answer2: "आप अपनी सदस्यता को जब चाहें रद्द कर सकते हैं, इसके लिए अपने खाते पर जाएं, वहां क्लिक करें और रद्द करने वाले बटन पर क्लिक करें और बस।",
-        question3: "क्रेडिट्स का क्या मतलब है?",
-        answer3: "क्रेडिट्स आवश्यक हैं ताकि Simpleterms यह सटीकता से ट्रैक कर सके कि उपयोगकर्ता कितने संक्षेप बना रहा है। उदाहरण के लिए, यदि आप example.com जैसी पेज पर जाते हैं और उसकी नीतियों का संक्षेप बनाते हैं, और यह 300 क्रेडिट का खर्च है, तो ये आपके खाते से कटा जाएगा। इसलिए, इन्हें AI द्वारा संक्षेप बनाने के लिए मौद्रिक हैं।",
-        question4: "रियल-टाइम में उत्पन्न होने वाले AI संक्षेप कैसे काम करते हैं?",
-        answer4: "`यदि आप किसी भी वेब पृष्ठ को ब्राउज़ कर रहे हैं और जल्दी से गोपनीयता नीतियों, उपयोग की शर्तों या समान जानकारी को 2 मिनट के भीतर समझना चाहते हैं, तो हमारी एक्सटेंशन पर क्लिक करें। यह पृष्ठ को गोपनीयता नीतियों और उपयोग की शर्तों के लिए अच्छी तरह से स्कैन करता है, और यदि पहचाना जाता है, तो यह स्थिति प्रति कंक्रीट संक्षेप उत्पन्न करने की प्रक्रिया को तुरंत शुरू करता है। इस तरह, आपको तुरंत वह जानकारी मिलेगी और आपका ऑनलाइन अनुभव सरल और सूचित होगा।",
-      };
-      break;
-    default:
-      break;
-  }
-
-
   return (
     <>
-      <Question last={false} question={texts.question1} answer={texts.answer1}></Question>
+      <Question
+        last={false}
+        question={question1}
+        answer={answer1}
+      >
+      </Question>
 
-      <Question last={false} question={texts.question2} answer={texts.answer2}></Question>
+      <Question
+        last={false}
+        question={question2}
+        answer={answer2}
+      >
+      </Question>
 
-      <Question last={false} question={texts.question3} answer={texts.answer3}></Question>
+      <Question
+        last={false}
+        question={question3}
+        answer={answer3}
+      >
+      </Question>
 
-      <Question last={true} question={texts.question4} answer={texts.answer4}></Question>
+      <Question
+        last={true}
+        question={question4}
+        answer={answer4}
+      >
+      </Question>
     </>
   )
 }
