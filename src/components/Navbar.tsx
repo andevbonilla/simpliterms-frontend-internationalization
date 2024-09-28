@@ -74,7 +74,7 @@ export const Navbar = ({
                                 <button onClick={() => setNewLenguage("/ja", "ja")} className={`${(location.pathname === "/ja") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
                                     日本語
                                 </button>
-                                <button onClick={() => setNewLenguage("/po", "po")} className={`${(location.pathname === "/po") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
+                                <button onClick={() => setNewLenguage("/pt", "pt")} className={`${(location.pathname === "/po") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
                                     Português
                                 </button>
                                 <button onClick={() => setNewLenguage("/hi", "hi")} className={`${(location.pathname === "/hi") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
