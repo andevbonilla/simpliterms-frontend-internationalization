@@ -378,7 +378,7 @@ const SigninPage = () => {
               />
               {
                 emailError.length > 0 &&
-                <p className="text-red-600 text-sm mt-2">{emailError}</p>
+                <p className="text-red-600 text-start ml-2 text-sm mt-2">{emailError}</p>
               }
             </div>
 
@@ -393,7 +393,7 @@ const SigninPage = () => {
               />
               {
                 passwordError.length > 0 &&
-                <p className="text-red-600 text-sm mt-2">{passwordError}</p>
+                <p className="text-red-600 text-start ml-2 text-sm mt-2">{passwordError}</p>
               }
             </div>
 
