@@ -1,9 +1,76 @@
 {
   "Navbar": {
-    "changeLanguage": "Cambiar idioma: ",
-    "homeLink": "INICIO",
-    "productLink": "PRODUCTO",
-    "pricingLink": "PRECIOS",
-    "accountLink": "CUENTA"
+    "changeLanguage": "Mudar idioma: ",
+    "homeLink": "INÍCIO",
+    "productLink": "PRODUTO",
+    "pricingLink": "PREÇOS",
+    "accountLink": "CONTA"
+  },
+  "Part1": {
+    "TitlePart1": "Nunca aceite",
+    "TitlePart2": "Termos",
+    "TitlePart3": "e",
+    "TitlePart4": "Políticas de Privacidade",
+    "TitlePart5": "sem saber.",
+    "TitlePart6": "SimpliTerms",
+    "TitlePart7": "Resume o importante",
+    "Subtitle": "Os termos de uso e políticas de privacidade normalmente têm entre 3.000 e 10.000+ palavras e são difíceis de entender. SimpliTerms, com apenas um clique no ícone, informa rapidamente o que você está aceitando.",
+    "ButtonStart": "Comece AGORA grátis"
+  },
+  "SummariesPart": {
+    "header1": "Sem SimpliTerms:",
+    "header2": "Com SimpliTerms:",
+    "summarieHeader1": "Dados Coletados:",
+    "summarieText1": "O Google coleta informações dos usuários ao usar seus serviços, incluindo dados de conta, conteúdo gerado e atividades nas plataformas.",
+    "summarieHeader2": "Direitos do Usuário:",
+    "summarieText2": "Os usuários mantêm direitos sobre seu conteúdo, embora concedam ao Google uma licença para usá-lo. Eles têm o direito de acessar, atualizar e excluir suas informações pessoais.",
+    "summarieHeader3": "Compartilhamento de Dados:",
+    "summarieText3": "O Google pode compartilhar dados com terceiros para melhorar seus serviços ou cumprir obrigações legais, mas compromete-se a proteger a privacidade do usuário.",
+    "summarieHeader4": "Responsabilidades:",
+    "summarieText4": "Os usuários devem cumprir as condições, respeitar os outros e não abusar dos serviços. O Google se reserva o direito de remover conteúdo inadequado e suspender contas.",
+    "summarieHeader5": "Duração do Acordo:",
+    "summarieText5": "As condições são válidas enquanto o usuário utilizar os serviços. As alterações serão comunicadas com antecedência.",
+    "summarieHeader6": "Conclusão:",
+    "summarieText6": "Aceitar esses termos é essencial para usar os serviços do Google. Isso beneficia o usuário ao garantir acesso a ferramentas úteis, mas também implica responsabilidade no uso."
+  },
+  "HowItWorksPart": {
+    "title": "COMO FUNCIONA?"
+  },
+  "AdvantagesPart": {
+    "title": "VANTAGENS DE USAR SIMPLITERMS",
+    "Advantage1Title": "Economize tempo",
+    "Advantage1Text": "Descubra o que você está aceitando sem gastar horas lendo as políticas de cada site que você visita.",
+    "Advantage2Title": "Evite problemas legais",
+    "Advantage2Text": "Evite problemas legais com uma empresa ao aceitar políticas que você não gostaria de ter aceitado.",
+    "Advantage3Title": "Proteja sua privacidade",
+    "Advantage3Text": "Descubra quais dados cada site coleta de você com apenas um clique.",
+    "Advantage4Title": "Fácil de usar",
+    "Advantage4Text": "Basta baixar a extensão do Google, fazer login e clicar no ícone da extensão para obter um resumo em tempo real da página em que você está.",
+    "buttonDownload": "Baixe AGORA a extensão"
+  },
+  "FeaturedPart": {
+    "title": "Lançado em:"
+  },
+  "FQAsPart": {
+    "title": "PERGUNTAS FREQUENTES",
+    "question1": "O que é uma extensão de navegador?",
+    "answer1": "Uma extensão é um aplicativo que você pode usar em seu navegador e que ajuda em muitas tarefas, como traduzir uma página, mudar o estilo da página ou, neste caso, resumir os termos de qualquer página, como faz o SimpliTerms. Cada navegador possui uma loja oficial onde você pode baixar essas extensões, algo semelhante à App Store nos celulares. Por exemplo, se você usa o Google, pode procurar pela Chrome Web Store e baixar a que você quiser.",
+    "question2": "Posso solicitar um reembolso?",
+    "answer2": "Claro, no link a seguir você verá as políticas de reembolso e, se atender aos requisitos, reembolsaremos o valor total da sua compra.",
+    "buttonRefund": "Solicitar Reembolso",
+    "question3": "Como os resumos de políticas e termos de qualquer site são gerados?",
+    "answer3": "O SimpliTerms busca os links relacionados às políticas e termos de uso da página em que você está. Em seguida, avalia-os e, se cumprirem certos critérios, usa o modelo GPT-4o da OpenAI para resumi-los.",
+    "question4": "O que são créditos?",
+    "answer4": "Cada resumo gerado requer processamento em servidores da OpenAI, o que nos custa dinheiro. Esse custo depende de fatores como o idioma dos termos ou o tamanho deles. Por isso, para evitar prejuízos, decidimos fornecer a você uma certa quantidade de créditos, dependendo do plano que você pagou. Se um resumo custar 10 créditos, descontaremos esses 10 créditos de sua conta. Se você não tiver créditos suficientes, não poderá gerar o resumo. Se isso acontecer, você pode comprar mais créditos no link a seguir:",
+    "buttonBuyCredits": "Comprar mais Créditos"
+  },
+  "Footer": {
+    "copywright": "SimpliTerms © Todos os direitos reservados.",
+    "supportTitle": "SUPORTE",
+    "supportLink1": "Fale Conosco",
+    "supportLink2": "FAQs",
+    "companyTitle": "EMPRESA",
+    "companytLink1": "Privacidade",
+    "companytLink2": "Termos de Uso"
   }
 }

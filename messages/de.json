@@ -1,9 +1,76 @@
 {
   "Navbar": {
-    "changeLanguage": "Cambiar idioma: ",
-    "homeLink": "INICIO",
-    "productLink": "PRODUCTO",
-    "pricingLink": "PRECIOS",
-    "accountLink": "CUENTA"
+    "changeLanguage": "Sprache ändern: ",
+    "homeLink": "STARTSEITE",
+    "productLink": "PRODUKT",
+    "pricingLink": "PREISE",
+    "accountLink": "KONTO"
+  },
+  "Part1": {
+    "TitlePart1": "Akzeptiere nie",
+    "TitlePart2": "Bedingungen",
+    "TitlePart3": "und",
+    "TitlePart4": "Datenschutzrichtlinien",
+    "TitlePart5": "ohne zu wissen.",
+    "TitlePart6": "SimpliTerms",
+    "TitlePart7": "Fasst das Wichtige zusammen",
+    "Subtitle": "Die Nutzungsbedingungen und Datenschutzrichtlinien haben in der Regel zwischen 3.000 und 10.000+ Wörter und sind schwer zu verstehen. SimpliTerms informiert dich mit nur einem Klick auf das Symbol schnell darüber, was du akzeptierst.",
+    "ButtonStart": "Starte JETZT kostenlos"
+  },
+  "SummariesPart": {
+    "header1": "Ohne SimpliTerms:",
+    "header2": "Mit SimpliTerms:",
+    "summarieHeader1": "Gesammelte Daten:",
+    "summarieText1": "Google sammelt Informationen von Nutzern, wenn sie seine Dienste nutzen, einschließlich Kontodaten, generierter Inhalte und Aktivitäten auf seinen Plattformen.",
+    "summarieHeader2": "Nutzerrechte:",
+    "summarieText2": "Nutzer behalten die Rechte an ihren Inhalten, obwohl sie Google eine Lizenz zur Nutzung erteilen. Sie haben das Recht, auf ihre persönlichen Daten zuzugreifen, sie zu aktualisieren und zu löschen.",
+    "summarieHeader3": "Datenweitergabe:",
+    "summarieText3": "Google kann Daten mit Dritten teilen, um seine Dienste zu verbessern oder gesetzlichen Verpflichtungen nachzukommen, verpflichtet sich jedoch, die Privatsphäre der Nutzer zu schützen.",
+    "summarieHeader4": "Verantwortlichkeiten:",
+    "summarieText4": "Nutzer müssen die Bedingungen einhalten, andere respektieren und die Dienste nicht missbrauchen. Google behält sich das Recht vor, unangemessene Inhalte zu entfernen und Konten zu sperren.",
+    "summarieHeader5": "Vertragsdauer:",
+    "summarieText5": "Die Bedingungen gelten, solange der Nutzer die Dienste nutzt. Änderungen werden im Voraus mitgeteilt.",
+    "summarieHeader6": "Fazit:",
+    "summarieText6": "Die Annahme dieser Bedingungen ist entscheidend für die Nutzung der Google-Dienste. Es kommt dem Nutzer zugute, indem es den Zugang zu nützlichen Tools gewährleistet, beinhaltet jedoch auch Verantwortung bei der Nutzung."
+  },
+  "HowItWorksPart": {
+    "title": "WIE FUNKTIONIERT ES?"
+  },
+  "AdvantagesPart": {
+    "title": "VORTEILE DER NUTZUNG VON SIMPLITERMS",
+    "Advantage1Title": "Spare Zeit",
+    "Advantage1Text": "Erfahre, was du akzeptierst, ohne Stunden damit zu verbringen, die Richtlinien jeder Website zu lesen, die du besuchst.",
+    "Advantage2Title": "Vermeide rechtliche Probleme",
+    "Advantage2Text": "Vermeide rechtliche Probleme mit einem Unternehmen, indem du Richtlinien akzeptierst, denen du nicht zugestimmt hättest.",
+    "Advantage3Title": "Schütze deine Privatsphäre",
+    "Advantage3Text": "Erfahre mit nur einem Klick, welche Daten jede Website von dir sammelt.",
+    "Advantage4Title": "Einfach zu bedienen",
+    "Advantage4Text": "Lade einfach die Google-Erweiterung herunter, melde dich an und klicke auf das Symbol der Erweiterung, um eine Echtzeit-Zusammenfassung der Seite zu erhalten, auf der du dich befindest.",
+    "buttonDownload": "Lade die Erweiterung JETZT herunter"
+  },
+  "FeaturedPart": {
+    "title": "Veröffentlicht in:"
+  },
+  "FQAsPart": {
+    "title": "HÄUFIG GESTELLTE FRAGEN",
+    "question1": "Was ist eine Browser-Erweiterung?",
+    "answer1": "Eine Erweiterung ist eine Anwendung, die du in deinem Browser verwenden kannst und die dir bei vielen Aufgaben hilft, z. B. beim Übersetzen einer Seite, beim Ändern des Seitenstils oder in diesem Fall beim Zusammenfassen von Bedingungen jeder Seite, wie es SimpliTerms tut. Jeder Browser hat einen offiziellen Store, in dem du diese Erweiterungen herunterladen kannst, ähnlich wie der App Store auf Mobiltelefonen. Wenn du zum Beispiel Google verwendest, kannst du nach dem Chrome Web Store suchen und die Erweiterung herunterladen, die du möchtest.",
+    "question2": "Kann ich eine Rückerstattung beantragen?",
+    "answer2": "Natürlich, im folgenden Link findest du die Rückerstattungsrichtlinien, und wenn du die Voraussetzungen erfüllst, erstatten wir dir den vollen Kaufbetrag zurück.",
+    "buttonRefund": "Rückerstattung beantragen",
+    "question3": "Wie werden die Zusammenfassungen der Richtlinien und Bedingungen jeder Website erstellt?",
+    "answer3": "SimpliTerms sucht nach Links, die mit den Richtlinien und Nutzungsbedingungen der Seite zusammenhängen, auf der du dich befindest. Es bewertet sie dann und verwendet das GPT-4o-Modell von OpenAI, um sie zusammenzufassen, wenn sie bestimmten Kriterien entsprechen.",
+    "question4": "Was sind Credits?",
+    "answer4": "Jede generierte Zusammenfassung erfordert eine Verarbeitung auf OpenAI-Servern, was Geld kostet. Diese Kosten hängen von Faktoren wie der Sprache der Bedingungen oder deren Länge ab. Um Verluste zu vermeiden, geben wir dir je nach deinem bezahlten Plan eine bestimmte Anzahl von Credits. Wenn eine Zusammenfassung 10 Credits kostet, ziehen wir diese 10 Credits von deinem Konto ab. Wenn du nicht genügend Credits hast, kannst du die Zusammenfassung nicht erstellen. Wenn dies der Fall ist, kannst du über den folgenden Link mehr Credits kaufen:",
+    "buttonBuyCredits": "Mehr Credits kaufen"
+  },
+  "Footer": {
+    "copywright": "SimpliTerms © Alle Rechte vorbehalten.",
+    "supportTitle": "SUPPORT",
+    "supportLink1": "Kontaktiere uns",
+    "supportLink2": "FAQs",
+    "companyTitle": "UNTERNEHMEN",
+    "companytLink1": "Datenschutz",
+    "companytLink2": "Nutzungsbedingungen"
   }
 }

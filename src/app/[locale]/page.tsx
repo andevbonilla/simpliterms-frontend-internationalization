@@ -23,7 +23,9 @@ export default function HomePage() {
     const summaryExamplei18n = useTranslations('SummariesPart');
     const howitworksi18n = useTranslations('HowItWorksPart');
     const advantagesi18n = useTranslations('AdvantagesPart');
+    const featuredi18n = useTranslations('FeaturedPart');
     const fqasi18n = useTranslations('FQAsPart');
+    const footeri18n = useTranslations('Footer');
 
     return (
         <>
@@ -128,7 +130,7 @@ export default function HomePage() {
                 <PricePage language={"en"} />
 
                 <div className="md:px-[15%]">
-                    <h2 className={`font-bold text-3xl py-16 text-center ${bebas.className} underline decoration-[#5712DF] underline-offset-8`}>Featured on</h2>
+                    <h2 className={`font-bold text-3xl py-16 text-center ${bebas.className} underline decoration-[#5712DF] underline-offset-8`}>{featuredi18n("title")}</h2>
                     <ListFeatured />
                 </div>
 
@@ -148,8 +150,17 @@ export default function HomePage() {
 
 
             </main>
+
             <Footer
+                copywright={footeri18n("copywright")}
+                supportTitle={footeri18n("supportTitle")}
+                supportLink1={footeri18n("supportLink1")}
+                supportLink2={footeri18n("supportLink2")}
+                companyTitle={footeri18n("companyTitle")}
+                companytLink1={footeri18n("companytLink1")}
+                companytLink2={footeri18n("companytLink2")}
             />
+
         </>
     )
 }

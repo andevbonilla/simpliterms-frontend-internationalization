@@ -1,9 +1,76 @@
 {
   "Navbar": {
-    "changeLanguage": "Cambiar idioma: ",
-    "homeLink": "INICIO",
-    "productLink": "PRODUCTO",
-    "pricingLink": "PRECIOS",
-    "accountLink": "CUENTA"
+    "changeLanguage": "言語を変更する: ",
+    "homeLink": "ホーム",
+    "productLink": "製品",
+    "pricingLink": "価格",
+    "accountLink": "アカウント"
+  },
+  "Part1": {
+    "TitlePart1": "条件を決して受け入れないでください",
+    "TitlePart2": "利用規約",
+    "TitlePart3": "および",
+    "TitlePart4": "プライバシーポリシー",
+    "TitlePart5": "知らないうちに。",
+    "TitlePart6": "SimpliTerms",
+    "TitlePart7": "重要なポイントをまとめます",
+    "Subtitle": "利用規約とプライバシーポリシーは通常、3,000から10,000語以上あり、理解が難しいです。SimpliTermsは、アイコンをクリックするだけで、あなたが受け入れている内容をすばやく通知します。",
+    "ButtonStart": "今すぐ無料で始める"
+  },
+  "SummariesPart": {
+    "header1": "SimpliTermsを使わない場合:",
+    "header2": "SimpliTermsを使用する場合:",
+    "summarieHeader1": "収集されたデータ:",
+    "summarieText1": "Googleは、ユーザーがサービスを利用する際に、アカウントデータ、生成されたコンテンツ、プラットフォーム上の活動を含む情報を収集します。",
+    "summarieHeader2": "ユーザーの権利:",
+    "summarieText2": "ユーザーは、自分のコンテンツに対する権利を保持しますが、Googleにその使用を許可します。ユーザーは、個人情報にアクセスし、更新し、削除する権利を持っています。",
+    "summarieHeader3": "データの共有:",
+    "summarieText3": "Googleは、サービスを改善するため、または法的義務を果たすために、データを第三者と共有することがありますが、ユーザーのプライバシーを保護することを約束しています。",
+    "summarieHeader4": "責任:",
+    "summarieText4": "ユーザーは、条件に従い、他者を尊重し、サービスを乱用してはなりません。Googleは、不適切なコンテンツを削除し、アカウントを停止する権利を有します。",
+    "summarieHeader5": "契約の期間:",
+    "summarieText5": "条件は、ユーザーがサービスを利用している限り有効です。変更は事前に通知されます。",
+    "summarieHeader6": "結論:",
+    "summarieText6": "これらの条件を受け入れることは、Googleのサービスを利用するために不可欠です。ユーザーに役立つツールへのアクセスを保証することで利益をもたらしますが、使用において責任も伴います。"
+  },
+  "HowItWorksPart": {
+    "title": "それはどうやって動作しますか？"
+  },
+  "AdvantagesPart": {
+    "title": "SIMPLITERMSを使用する利点",
+    "Advantage1Title": "時間を節約",
+    "Advantage1Text": "訪問するすべてのサイトのポリシーを読むのに何時間もかけずに、受け入れている内容をすぐに確認できます。",
+    "Advantage2Title": "法的トラブルを回避",
+    "Advantage2Text": "受け入れたくなかったポリシーを受け入れることで、企業との法的トラブルを避けることができます。",
+    "Advantage3Title": "プライバシーを保護",
+    "Advantage3Text": "どのウェブサイトがあなたのデータを収集しているのか、ワンクリックで確認できます。",
+    "Advantage4Title": "使いやすい",
+    "Advantage4Text": "Google拡張機能をダウンロードし、ログインして拡張機能のロゴをクリックするだけで、現在のページのリアルタイムの要約が表示されます。",
+    "buttonDownload": "今すぐ拡張機能をダウンロード"
+  },
+  "FeaturedPart": {
+    "title": "リリースされた年:"
+  },
+  "FQAsPart": {
+    "title": "よくある質問",
+    "question1": "ブラウザ拡張機能とは何ですか？",
+    "answer1": "拡張機能は、ブラウザ内で使用できるアプリケーションで、ページの翻訳、スタイルの変更、またはこの場合、SimpliTermsが行うように任意のページの条件を要約するなど、さまざまな作業に役立ちます。すべてのブラウザには、これらの拡張機能をダウンロードできる公式ストアがあり、携帯電話のアプリストアに似ています。たとえば、Googleを使用している場合は、Chrome Web Storeを検索して、必要な拡張機能をダウンロードできます。",
+    "question2": "返金をリクエストできますか？",
+    "answer2": "もちろん、次のリンクで返金ポリシーを確認できます。条件を満たしている場合は、購入全額を返金いたします。",
+    "buttonRefund": "返金をリクエスト",
+    "question3": "任意のウェブサイトのポリシーと利用規約の要約はどのように生成されますか？",
+    "answer3": "SimpliTermsは、ページ上のポリシーや利用規約に関連するリンクを検索します。次に、それらを評価し、特定の基準を満たしている場合は、OpenAIのGPT-4oモデルを使用してそれらを要約します。",
+    "question4": "クレジットとは何ですか？",
+    "answer4": "生成される各要約には、OpenAIのサーバーでの処理が必要であり、これには費用がかかります。このコストは、条件の言語や長さなどの要因によって異なります。したがって、損失を回避するために、支払ったプランに応じて一定量のクレジットを提供します。要約を生成するのに10クレジットが必要な場合、それらの10クレジットをあなたのアカウントから差し引きます。クレジットが不足している場合、要約を生成できません。その場合は、次のリンクでクレジットを追加購入できます:",
+    "buttonBuyCredits": "クレジットを追加購入"
+  },
+  "Footer": {
+    "copywright": "SimpliTerms © 全著作権所有。",
+    "supportTitle": "サポート",
+    "supportLink1": "お問い合わせ",
+    "supportLink2": "FAQ",
+    "companyTitle": "会社情報",
+    "companytLink1": "プライバシー",
+    "companytLink2": "利用規約"
   }
 }

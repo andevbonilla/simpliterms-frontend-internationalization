@@ -1,9 +1,76 @@
 {
   "Navbar": {
-    "changeLanguage": "Cambiar idioma: ",
-    "homeLink": "INICIO",
-    "productLink": "PRODUCTO",
-    "pricingLink": "PRECIOS",
-    "accountLink": "CUENTA"
+    "changeLanguage": "更改语言: ",
+    "homeLink": "首页",
+    "productLink": "产品",
+    "pricingLink": "价格",
+    "accountLink": "账户"
+  },
+  "Part1": {
+    "TitlePart1": "永远不要接受",
+    "TitlePart2": "条款",
+    "TitlePart3": "和",
+    "TitlePart4": "隐私政策",
+    "TitlePart5": "在不知情的情况下。",
+    "TitlePart6": "SimpliTerms",
+    "TitlePart7": "总结重要内容",
+    "Subtitle": "使用条款和隐私政策通常有 3,000 到 10,000+ 字，并且难以理解。SimpliTerms 只需点击图标即可快速告知您所接受的内容。",
+    "ButtonStart": "立即免费开始"
+  },
+  "SummariesPart": {
+    "header1": "没有 SimpliTerms:",
+    "header2": "使用 SimpliTerms:",
+    "summarieHeader1": "收集的数据:",
+    "summarieText1": "Google 在用户使用其服务时收集信息，包括帐户数据、生成的内容和平台活动。",
+    "summarieHeader2": "用户权利:",
+    "summarieText2": "用户保留其内容的权利，尽管他们授予 Google 使用的许可。他们有权访问、更新和删除个人信息。",
+    "summarieHeader3": "数据共享:",
+    "summarieText3": "Google 可以与第三方共享数据，以改进其服务或履行法律义务，但承诺保护用户隐私。",
+    "summarieHeader4": "责任:",
+    "summarieText4": "用户必须遵守条款，尊重他人，不滥用服务。Google 保留删除不当内容和暂停帐户的权利。",
+    "summarieHeader5": "协议期限:",
+    "summarieText5": "只要用户使用服务，这些条件就有效。更改将提前通知。",
+    "summarieHeader6": "结论:",
+    "summarieText6": "接受这些条款对于使用 Google 的服务至关重要。它通过确保访问有用工具为用户带来好处，但也意味着在使用中的责任。"
+  },
+  "HowItWorksPart": {
+    "title": "它如何运作?"
+  },
+  "AdvantagesPart": {
+    "title": "使用 SIMPLITERMS 的优势",
+    "Advantage1Title": "节省时间",
+    "Advantage1Text": "无需花费数小时阅读每个使用的网站政策，即可了解您所接受的内容。",
+    "Advantage2Title": "避免法律问题",
+    "Advantage2Text": "避免因接受不愿意接受的政策而与公司产生法律问题。",
+    "Advantage3Title": "保护您的隐私",
+    "Advantage3Text": "只需点击一下，即可了解每个网站从您那里收集的数据。",
+    "Advantage4Title": "易于使用",
+    "Advantage4Text": "只需下载 Google 扩展程序，登录，然后点击扩展程序图标，即可实时查看您所在页面的摘要。",
+    "buttonDownload": "立即下载扩展程序"
+  },
+  "FeaturedPart": {
+    "title": "发布于:"
+  },
+  "FQAsPart": {
+    "title": "常见问题",
+    "question1": "什么是浏览器扩展?",
+    "answer1": "扩展是您可以在浏览器中使用的应用程序，可以帮助您完成许多任务，如翻译页面、更改页面样式，或在本例中总结任何页面的条款，正如 SimpliTerms 所做的那样。每个浏览器都有一个官方商店，您可以从中下载这些扩展程序，就像手机上的应用商店一样。例如，如果您使用 Google，您可以搜索 Chrome Web Store 并从中下载您想要的扩展程序。",
+    "question2": "我可以申请退款吗?",
+    "answer2": "当然可以，通过以下链接，您可以查看退款政策，如果符合条件，我们将全额退还您的购买费用。",
+    "buttonRefund": "申请退款",
+    "question3": "如何生成任何网站的政策和条款摘要?",
+    "answer3": "SimpliTerms 会查找与您所在页面的政策和使用条款相关的链接。然后对其进行评估，如果符合某些标准，它将使用 OpenAI 的 GPT-4o 模型进行总结。",
+    "question4": "什么是积分?",
+    "answer4": "每次生成的摘要都需要在 OpenAI 服务器上进行处理，这需要花费费用。此费用取决于条款的语言或条款的长度。为避免损失，我们根据您支付的计划为您提供一定数量的积分。因此，如果生成一个摘要需要 10 个积分，我们将从您的账户中扣除这 10 个积分。如果您没有足够的积分，您将无法生成摘要。如果发生这种情况，您可以通过以下链接购买更多积分:",
+    "buttonBuyCredits": "购买更多积分"
+  },
+  "Footer": {
+    "copywright": "SimpliTerms © 版权所有。",
+    "supportTitle": "支持",
+    "supportLink1": "联系我们",
+    "supportLink2": "常见问题",
+    "companyTitle": "公司",
+    "companytLink1": "隐私",
+    "companytLink2": "使用条款"
   }
 }
