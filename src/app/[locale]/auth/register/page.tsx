@@ -1,4 +1,4 @@
-import { RegisterWraper } from "@/components/auth/RegisterWraper";
+import { RegisterWraper } from "@/components/pages/auth/RegisterWraper";
 import { useTranslations } from "next-intl";
 
 const SigninPage = () => {

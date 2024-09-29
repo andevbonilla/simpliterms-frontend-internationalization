@@ -1,12 +1,12 @@
 import PricePage from '@/components/PricePage';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
-import { Navbar } from '@/components/Navbar';
-import { BoxExample } from '@/components/BoxExample';
-import { Advantage } from '@/components/Advantage';
+import { Navbar } from '@/components/ui/Navbar';
+import { BoxExample } from '@/components/ui/BoxExample';
+import { Advantage } from '@/components/ui/Advantage';
 import { ListFeatured } from '@/components/ListFeatured';
-import { Fqas } from '@/components/Fqas';
-import { Footer } from '@/components/Footer';
+import { Fqas } from '@/components/ui/Fqas';
+import { Footer } from '@/components/ui/Footer';
 import { Bebas_Neue } from 'next/font/google';
 
 const bebas = Bebas_Neue({

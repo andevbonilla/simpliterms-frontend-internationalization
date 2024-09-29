@@ -461,7 +461,15 @@ const AccountPage = () => {
 
             </main>
 
-            <Footer language={languageLink} />
+            <Footer
+                copywright={footeri18n("copywright")}
+                supportTitle={footeri18n("supportTitle")}
+                supportLink1={footeri18n("supportLink1")}
+                supportLink2={footeri18n("supportLink2")}
+                companyTitle={footeri18n("companyTitle")}
+                companytLink1={footeri18n("companytLink1")}
+                companytLink2={footeri18n("companytLink2")}
+            />
         </>
 
     )

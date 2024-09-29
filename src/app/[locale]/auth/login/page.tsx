@@ -1,4 +1,4 @@
-import { LoginWraper } from "@/components/auth/LoginWraper";
+import { LoginWraper } from "@/components/pages/auth/LoginWraper";
 import { useTranslations } from "next-intl";
 
 const loginPage = () => {

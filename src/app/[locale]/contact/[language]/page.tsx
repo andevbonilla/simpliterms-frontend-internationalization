@@ -1,6 +1,6 @@
 "use client"
-import { Footer } from '@/components/Footer';
-import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/ui/Footer';
+import { Navbar } from '@/components/ui/Navbar';
 import { useParams } from 'next/navigation';
 import React from 'react';
 
