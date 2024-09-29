@@ -115,5 +115,16 @@
     "errorPassword": "Password must have at least 8 characters.",
     "errorPasswordRequired": "Password is required.",
     "errorPasswordToolong": "Password is too long."
+  },
+  "AccountPage": {
+    "nameInput": "NAME: ",
+    "emailInput": "EMAIL: ",
+    "availableCreditsInput": "AVAILABLE CREDITS: ",
+    "summariesLanguage": "LANGUAGE OF SUMMARIES: ",
+    "changeLanguageSummaries": "Change Language of Summaries",
+    "cancelSubButton": "Cancel Subscription",
+    "logOutButton": "Log Out",
+    "changeLanguage": "Change Language",
+    "selectNewLanguage": "Select a New Language"
   }
 }

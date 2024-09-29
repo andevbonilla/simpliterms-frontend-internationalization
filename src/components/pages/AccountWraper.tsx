@@ -16,7 +16,49 @@ import 'react-toastify/dist/ReactToastify.css';
 import { AskPopup } from '@/components/AskPopup';
 import { LoadingComponent } from '@/components/Loading';
 
-const AccountPage = () => {
+export const AccountWraper = ({
+    nameInput,
+    emailInput,
+    availableCreditsInput,
+    summariesLanguage,
+    changeLanguageSummaries,
+    cancelSubButton,
+    logOutButton,
+    changeLanguage,
+    selectNewLanguage,
+    homeLink,
+    productLink,
+    pricingLink,
+    accountLink,
+    copywright,
+    supportTitle,
+    supportLink1,
+    supportLink2,
+    companyTitle,
+    companytLink1,
+    companytLink2,
+}: {
+    nameInput: string,
+    emailInput: string,
+    availableCreditsInput: string,
+    summariesLanguage: string,
+    changeLanguageSummaries: string,
+    cancelSubButton: string,
+    logOutButton: string,
+    changeLanguage: string,
+    selectNewLanguage: string,
+    homeLink: string,
+    productLink: string,
+    pricingLink: string,
+    accountLink: string,
+    copywright: string,
+    supportTitle: string,
+    supportLink1: string,
+    supportLink2: string,
+    companyTitle: string,
+    companytLink1: string,
+    companytLink2: string
+}) => {
 
     const notifyError = (message: string) => toast.error(message);
     const notifySuccess = (message: string) => toast.success(message);
@@ -25,28 +67,15 @@ const AccountPage = () => {
     const [showLanguagesWindow, setShowLanguagesWindow] = useState(false);
 
     const [userInfo, setuserInfo] = useState({
-        username: 'Loading...',
-        email: 'Loading...',
+        username: '',
+        email: '',
         credits: '0',
-        planType: 'Loading...',
-        uid: 'Loading...',
+        planType: '',
+        uid: '',
         summariesLanguage: ""
     });
 
     const [openPopup, setOpenPopup] = useState(false);
-    const [texts, settexts] = useState({
-        nameInput: "NAME: ",
-        emailInput: "EMAIL: ",
-        availableCreditsInput: "AVAILABLE CREDITS: ",
-        summariesLanguage: "LANGUAGE OF SUMMARIES: ",
-        changeLanguageSummaries: "Change Language of Summaries",
-        cancelSubButton: "Cancel Subscription",
-        logOutButton: "Log Out",
-        changeLanguage: "Change Language",
-        selectNewLanguage: "Select a New Language"
-
-    })
-    const [languageLink, setLanguageLink] = useState("");
 
     const [loading, setLoading] = useState(true);
 
@@ -86,122 +115,6 @@ const AccountPage = () => {
     }
 
     useEffect(() => {
-
-        const language: any = localStorage.getItem("language");
-        if (language !== null && language !== undefined) {
-            setLanguageLink(language);
-        }
-
-        switch (language) {
-            case "en":
-                settexts({
-                    nameInput: "NAME: ",
-                    emailInput: "EMAIL: ",
-                    availableCreditsInput: "AVAILABLE CREDITS: ",
-                    summariesLanguage: "LANGUAGE OF SUMMARIES: ",
-                    changeLanguageSummaries: "Change Language of Summaries",
-                    cancelSubButton: "Cancel Subscription",
-                    logOutButton: "Log Out",
-                    changeLanguage: "Change Language",
-                    selectNewLanguage: "Select a New Language"
-                });
-                break;
-            case "ru":
-                settexts({
-                    nameInput: "ИМЯ: ",
-                    emailInput: "ЭЛЕКТРОННАЯ ПОЧТА: ",
-                    availableCreditsInput: "ДОСТУПНЫЕ КРЕДИТЫ: ",
-                    summariesLanguage: "ЯЗЫК СУЖЕТОВ: ",
-                    changeLanguageSummaries: "Изменить язык сюжетов",
-                    cancelSubButton: "Отменить подписку",
-                    logOutButton: "Выйти",
-                    changeLanguage: "Изменить язык",
-                    selectNewLanguage: "Выберите новый язык"
-                });
-                break;
-            case "zh":
-                settexts({
-                    nameInput: "姓名: ",
-                    emailInput: "电子邮件: ",
-                    availableCreditsInput: "可用学分: ",
-                    summariesLanguage: "摘要语言: ",
-                    changeLanguageSummaries: "更改摘要语言",
-                    cancelSubButton: "取消订阅",
-                    logOutButton: "退出登录",
-                    changeLanguage: "更改语言",
-                    selectNewLanguage: "选择新语言"
-                });
-                break;
-            case "fr":
-                settexts({
-                    nameInput: "NOM: ",
-                    emailInput: "EMAIL: ",
-                    availableCreditsInput: "CRÉDITS DISPONIBLES: ",
-                    summariesLanguage: "LANGUE DES RÉSUMÉS: ",
-                    changeLanguageSummaries: "Changer la langue des résumés",
-                    cancelSubButton: "Annuler l'abonnement",
-                    logOutButton: "Déconnexion",
-                    changeLanguage: "Changer la langue",
-                    selectNewLanguage: "Sélectionner une nouvelle langue"
-                });
-                break;
-            case "po":
-                settexts({
-                    nameInput: "NOME: ",
-                    emailInput: "E-MAIL: ",
-                    availableCreditsInput: "CRÉDITOS DISPONÍVEIS: ",
-                    summariesLanguage: "IDIOMA DOS RESUMOS: ",
-                    changeLanguageSummaries: "Mudar Idioma dos Resumos",
-                    cancelSubButton: "Cancelar Assinatura",
-                    logOutButton: "Sair",
-                    changeLanguage: "Mudar Idioma",
-                    selectNewLanguage: "Selecionar um Novo Idioma"
-                });
-                break;
-            case "es":
-                settexts({
-                    nameInput: "NOMBRE: ",
-                    emailInput: "CORREO ELECTRÓNICO: ",
-                    availableCreditsInput: "CRÉDITOS DISPONIBLES: ",
-                    summariesLanguage: "IDIOMA DE LOS RESÚMENES: ",
-                    changeLanguageSummaries: "Cambiar Idioma de Resúmenes",
-                    cancelSubButton: "Cancelar Suscripción",
-                    logOutButton: "Cerrar Sesión",
-                    changeLanguage: "Cambiar Idioma",
-                    selectNewLanguage: "Seleccionar un Nuevo Idioma"
-                });
-                break;
-            case "ja":
-                settexts({
-                    nameInput: "名前: ",
-                    emailInput: "Eメール: ",
-                    availableCreditsInput: "利用可能なクレジット: ",
-                    summariesLanguage: "要約の言語: ",
-                    changeLanguageSummaries: "要約の言語を変更する",
-                    cancelSubButton: "購読をキャンセル",
-                    logOutButton: "ログアウト",
-                    changeLanguage: "言語を変更",
-                    selectNewLanguage: "新しい言語を選択"
-                });
-                break;
-            case "hi":
-                settexts({
-                    nameInput: "नाम: ",
-                    emailInput: "ईमेल: ",
-                    availableCreditsInput: "उपलब्ध क्रेडिट: ",
-                    summariesLanguage: "संक्षेप भाषा: ",
-                    changeLanguageSummaries: "संक्षेप भाषा बदलें",
-                    cancelSubButton: "सदस्यता रद्द करें",
-                    logOutButton: "लॉग आउट",
-                    changeLanguage: "भाषा बदलें",
-                    selectNewLanguage: "नई भाषा का चयन करें"
-                });
-                break;
-            default:
-                break;
-        }
-
-
 
         obtainUserData();
 
@@ -378,7 +291,7 @@ const AccountPage = () => {
                 showLanguagesWindow && <div className='z-[997] fixed w-full top-0 bottom-0 left-0 bg-black bg-opacity-25 flex justify-center items-center'>
                     <div onClick={closeLanguagesWindow} className='cursor-pointer z-[998] fixed w-full top-0 bottom-0 left-0'></div>
                     <div className='bg-white p-10 rounded z-[999] overflow-y-scroll lg:overflow-hidden max-h-[80vh]'>
-                        <h3 className='font-bold mb-8 text-xl'>{texts.selectNewLanguage}</h3>
+                        <h3 className='font-bold mb-8 text-xl'>{selectNewLanguage}</h3>
                         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
                             <button onClick={() => setNewLenguage("en")} className={`${(newLanguage === "en") ? "bg-[#5712DF] text-white" : "text-black hover:bg-slate-300"} transition-all p-4 rounded`}>
                                 English
@@ -406,7 +319,7 @@ const AccountPage = () => {
                             </button>
                         </div>
                         <div className='flex justify-end items-end mt-6'>
-                            <button onClick={changeSummariesLanguageDB} type='button' className={`${newLanguage === "" ? "bg-slate-300 text-black" : "bg-[#5712DF] text-white"} py-2 px-3 rounded`}>{texts.changeLanguage}</button>
+                            <button onClick={changeSummariesLanguageDB} type='button' className={`${newLanguage === "" ? "bg-slate-300 text-black" : "bg-[#5712DF] text-white"} py-2 px-3 rounded`}>{changeLanguage}</button>
                         </div>
                     </div>
                 </div>
@@ -418,11 +331,11 @@ const AccountPage = () => {
             />
 
             <Navbar
-                changeLanguage={navbari18n("changeLanguage")}
-                homeLink={navbari18n("homeLink")}
-                productLink={navbari18n("productLink")}
-                pricingLink={navbari18n("pricingLink")}
-                accountLink={navbari18n("accountLink")}
+                changeLanguage={changeLanguage}
+                homeLink={homeLink}
+                productLink={productLink}
+                pricingLink={pricingLink}
+                accountLink={accountLink}
             />
             <main className="flex justify-center px-[10%]">
 
@@ -432,28 +345,28 @@ const AccountPage = () => {
                     </div>
                     <div className="p-6">
                         <div>
-                            <span className="text-[0.8rem] opacity-50">{texts.nameInput}</span>
+                            <span className="text-[0.8rem] opacity-50">{nameInput}</span>
                             <p>{userInfo.username}</p>
                         </div>
                         <div className="mb-6">
-                            <span className="text-[0.8rem] opacity-50">{texts.emailInput}</span>
+                            <span className="text-[0.8rem] opacity-50">{emailInput}</span>
                             <p>{userInfo.email}</p>
                         </div>
                         <div className="mb-6">
-                            <span className="text-[0.8rem] opacity-50">{texts.availableCreditsInput}</span>
+                            <span className="text-[0.8rem] opacity-50">{availableCreditsInput}</span>
                             <p>{addDotsToNumber(Math.round(parseInt(userInfo.credits)))}</p>
                         </div>
                         <div className="mb-6">
-                            <span className="text-[0.8rem] opacity-50">{texts.summariesLanguage}</span>
+                            <span className="text-[0.8rem] opacity-50">{summariesLanguage}</span>
                             <p>{modifyLenguageOfSummaries(userInfo.summariesLanguage)}</p>
                         </div>
 
                         <div className='flex flex-col items-start justify-start overflow-hidden '>
-                            <button type='button' onClick={changeSummariesLanguage} className="text-[#5712DF] rounded-lg mb-4 text-start"><FontAwesomeIcon className='mr-1' icon={faLanguage} /> {texts.changeLanguageSummaries}</button>
+                            <button type='button' onClick={changeSummariesLanguage} className="text-[#5712DF] rounded-lg mb-4 text-start"><FontAwesomeIcon className='mr-1' icon={faLanguage} /> {changeLanguageSummaries}</button>
                             {
-                                (userInfo.planType !== "") && <button type='button' onClick={showPopup} className="text-[#5712DF] rounded-lg mb-4"><FontAwesomeIcon className='mr-1' width={20} height={20} icon={faBan} /> {texts.cancelSubButton}</button>
+                                (userInfo.planType !== "") && <button type='button' onClick={showPopup} className="text-[#5712DF] rounded-lg mb-4"><FontAwesomeIcon className='mr-1' width={20} height={20} icon={faBan} /> {cancelSubButton}</button>
                             }
-                            <button type='button' onClick={logOut} className="text-[#5712DF] rounded-lg"><FontAwesomeIcon className='mr-1' width={20} height={20} icon={faRightFromBracket} /> {texts.logOutButton}</button>
+                            <button type='button' onClick={logOut} className="text-[#5712DF] rounded-lg"><FontAwesomeIcon className='mr-1' width={20} height={20} icon={faRightFromBracket} /> {logOutButton}</button>
                         </div>
 
                     </div>
@@ -462,16 +375,15 @@ const AccountPage = () => {
             </main>
 
             <Footer
-                copywright={footeri18n("copywright")}
-                supportTitle={footeri18n("supportTitle")}
-                supportLink1={footeri18n("supportLink1")}
-                supportLink2={footeri18n("supportLink2")}
-                companyTitle={footeri18n("companyTitle")}
-                companytLink1={footeri18n("companytLink1")}
-                companytLink2={footeri18n("companytLink2")}
+                copywright={copywright}
+                supportTitle={supportTitle}
+                supportLink1={supportLink1}
+                supportLink2={supportLink2}
+                companyTitle={companyTitle}
+                companytLink1={companytLink1}
+                companytLink2={companytLink2}
             />
         </>
 
     )
-}
-export default AccountPage;
+};
