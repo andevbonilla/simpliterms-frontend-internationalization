@@ -1,4 +1,4 @@
-import PricePage from '@/components/pages/PricePage';
+import { PriceWraper } from '@/components/pages/PricePage';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/routing';
 import { Navbar } from '@/components/ui/Navbar';
@@ -127,7 +127,8 @@ export default function HomePage() {
                     <h3 className={`font-bold text-3xl pt-6 text-center ${bebas.className} underline decoration-[#5712DF] underline-offset-8`}>PRICING</h3>
                 </div>
 
-                <PricePage language={"en"} />
+                <PriceWraper
+                />
 
                 <div className="md:px-[15%]">
                     <h2 className={`font-bold text-3xl py-16 text-center ${bebas.className} underline decoration-[#5712DF] underline-offset-8`}>{featuredi18n("title")}</h2>

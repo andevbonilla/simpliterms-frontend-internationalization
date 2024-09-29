@@ -1,34 +1,11 @@
-"use client"
-import { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
-import axios from "axios";
-import Cookies from 'js-cookie';
-
-import { faCheck } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Bebas_Neue } from "next/font/google";
-import { backendUri } from "@/helpers/url";
-import { FreePayButton } from './FreePayButton';
-
+import React, { useEffect, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { useRouter } from 'next/router';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import Cookies from 'js-cookie';
+import axios from 'axios';
 
-
-interface freePricingBox {
-    type: string,
-    price: string,
-    characteristics: string[],
-    desc: string,
-    month: string
-}
-
-const bebas = Bebas_Neue({
-    weight: ["400"], // bold de la fuente
-    subsets: ["latin"],
-    display: 'swap'
-})
-
-export const FreePricing = ({ type, price, characteristics, desc, month }: freePricingBox) => {
+export const PriceBox = () => {
 
     const notifyError = (message: string) => toast.error(message);
     const notifySuccess = (message: string) => toast.success(message);
