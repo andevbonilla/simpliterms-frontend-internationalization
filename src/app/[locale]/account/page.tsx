@@ -4,6 +4,8 @@ import { useTranslations } from "next-intl";
 const AccountPage = () => {
 
     const accounti18n = useTranslations('AccountPage');
+    const footeri18n = useTranslations('Footer');
+    const navbari18n = useTranslations('Navbar');
 
     return (
         <AccountWraper
@@ -16,17 +18,19 @@ const AccountPage = () => {
             logOutButton={accounti18n("logOutButton")}
             changeLanguage={accounti18n("changeLanguage")}
             selectNewLanguage={accounti18n("selectNewLanguage")}
-            homeLink={accounti18n("homeLink")}
-            productLink={accounti18n("productLink")}
-            pricingLink={accounti18n("pricingLink")}
-            accountLink={accounti18n("accountLink")}
-            copywright={accounti18n("copywright")}
-            supportTitle={accounti18n("supportTitle")}
-            supportLink1={accounti18n("supportLink1")}
-            supportLink2={accounti18n("supportLink2")}
-            companyTitle={accounti18n("companyTitle")}
-            companytLink1={accounti18n("companytLink1")}
-            companytLink2={accounti18n("companytLink2")}
+
+            homeLink={navbari18n("homeLink")}
+            productLink={navbari18n("productLink")}
+            pricingLink={navbari18n("pricingLink")}
+            accountLink={navbari18n("accountLink")}
+
+            copywright={footeri18n("copywright")}
+            supportTitle={footeri18n("supportTitle")}
+            supportLink1={footeri18n("supportLink1")}
+            supportLink2={footeri18n("supportLink2")}
+            companyTitle={footeri18n("companyTitle")}
+            companytLink1={footeri18n("companytLink1")}
+            companytLink2={footeri18n("companytLink2")}
         />
 
     )

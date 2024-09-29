@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 const TermsOfUse = () => {
 
   const footeri18n = useTranslations('Footer');
-  const navbari18n = useTranslations('Navbar'); 4
+  const navbari18n = useTranslations('Navbar');
   const termsi18n = useTranslations('TermsAndConditionsPage');
 
   return (
