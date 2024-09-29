@@ -1,5 +1,5 @@
 'use client'
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import axios from "axios";
@@ -84,6 +84,21 @@ export const LoginWraper = ({
         setPasswordError("");
         return false;
     };
+
+    // change disable fucntion of button
+    const [buttonDisabled, setButtonDisabled] = useState(true);
+    useEffect(() => {
+        if (email.length > 0 || password.length > 0) {
+            const resultEmail = changeEmail(email);
+            const resultPassword = changePassword(password);
+            if (resultEmail === false && resultPassword === false) {
+                setButtonDisabled(false);
+            } else {
+                setButtonDisabled(true);
+            }
+        }
+    }, [email, password]);
+
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
 
@@ -240,7 +255,8 @@ export const LoginWraper = ({
 
 
                         <button
-                            className="bg-[#5712DF] text-white py-2 px-4 rounded-full w-[18rem]"
+                            disabled={buttonDisabled}
+                            className={`${buttonDisabled ? "bg-opacity-50 text-opacity-50" : ""} bg-[#5712DF] text-white py-2 px-4 rounded-full w-[18rem]`}
                             type="submit"
                         >
                             {actionButton}

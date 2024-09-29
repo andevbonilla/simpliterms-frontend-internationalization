@@ -1,5 +1,5 @@
 'use client'
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -75,7 +75,7 @@ export const RegisterWraper = ({
     const [username, setUsername] = useState("");
     const [usernameError, setUsernameError] = useState("");
     const changeUsername = (value: string) => {
-        const regexUsername = /^[A-Z.]+$/;
+        const regexUsername = /^[a-zA-Z0-9]+$/;
         setUsername(value);
         if (value.length > 100) {
             setUsernameError(errorUsernameLong);
@@ -158,6 +158,22 @@ export const RegisterWraper = ({
         setCPasswordError("");
         return false;
     };
+
+    // change disable fucntion of button
+    const [buttonDisabled, setButtonDisabled] = useState(true);
+    useEffect(() => {
+        if (email.length > 0 || password.length > 0 || username.length > 0 || cpassword.length > 0) {
+            const resultEmail = changeEmail(email);
+            const resultUsername = changeUsername(username);
+            const resultPassword = changePassword(password);
+            const resultCpassword = changeConfirmPassword(cpassword);
+            if (!resultEmail && !resultPassword && !resultUsername && !resultCpassword) {
+                setButtonDisabled(false);
+            } else {
+                setButtonDisabled(true);
+            }
+        }
+    }, [email, password, username, cpassword]);
 
 
     const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
@@ -356,7 +372,13 @@ export const RegisterWraper = ({
                             <Link className="text-[#5712DF] font-bold pl-1" href={'/privacy'}>{privacyLink}</Link>
                         </p>
 
-                        <button className="bg-[#5712DF] text-white py-2 px-4 rounded-full w-full" type="submit">{actionButton}</button>
+                        <button
+                            disabled={buttonDisabled}
+                            className={`${buttonDisabled ? "bg-opacity-50 text-opacity-50" : ""} bg-[#5712DF] text-white py-2 px-4 rounded-full w-[18rem]`}
+                            type="submit"
+                        >
+                            {actionButton}
+                        </button>
 
                         {error && <span className="text-red-500 mt-4">{error}</span>}
 
