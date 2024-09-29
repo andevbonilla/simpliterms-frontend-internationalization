@@ -1,8 +1,8 @@
 "use client"
 import { PayPalScriptProvider } from "@paypal/react-paypal-js";
 import { useState } from 'react'
-import { Pricing } from './Pricing'
-import { FreePricing } from "./FreePricing";
+import { Pricing } from '../Pricing'
+import { FreePricing } from "../FreePricing";
 import { paypalClientId } from "@/helpers/url";
 
 import { ToastContainer } from 'react-toastify';

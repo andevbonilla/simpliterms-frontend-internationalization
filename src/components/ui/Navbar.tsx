@@ -90,7 +90,7 @@ export const Navbar = ({
 
                 <Link href={`/`} title='logo'>
                     <Image
-                        src={require('../assets/simpliterms-logo.png')}
+                        src={require('../../assets/simpliterms-logo.png')}
                         alt='logo image'
                         width={60}
                         height={60}
