@@ -115,5 +115,21 @@
     "errorPassword": "La contraseña debe tener al menos 8 caracteres.",
     "errorPasswordRequired": "La contraseña es obligatoria.",
     "errorPasswordToolong": "La contraseña es demasiado larga."
+  },
+  "AccountPage": {
+      "nameInput": "NOMBRE: ",
+      "emailInput": "CORREO ELECTRÓNICO: ",
+      "availableCreditsInput": "CRÉDITOS DISPONIBLES: ",
+      "summariesLanguage": "IDIOMA DE LOS RESÚMENES: ",
+      "changeLanguageSummaries": "Cambiar idioma de los resúmenes",
+      "cancelSubButton": "Cancelar suscripción",
+      "logOutButton": "Cerrar sesión",
+      "changeLanguage": "Cambiar idioma",
+      "selectNewLanguage": "Seleccionar un nuevo idioma"
+  },
+  "ContactPage": {
+    "title": "Contáctanos",
+    "method1": "Correo electrónico:",
+    "textMethod1": "Puedes contactarnos a través del siguiente correo electrónico:"
   }
 }

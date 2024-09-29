@@ -115,5 +115,21 @@
     "errorPassword": "Das Passwort muss mindestens 8 Zeichen enthalten.",
     "errorPasswordRequired": "Passwort ist erforderlich.",
     "errorPasswordToolong": "Passwort ist zu lang."
+  },
+  "AccountPage": {
+      "nameInput": "NAME: ",
+      "emailInput": "E-MAIL: ",
+      "availableCreditsInput": "VERFÜGBARE GUTHABEN: ",
+      "summariesLanguage": "SPRACHE DER ZUSAMMENFASSUNGEN: ",
+      "changeLanguageSummaries": "Sprache der Zusammenfassungen ändern",
+      "cancelSubButton": "Abonnement kündigen",
+      "logOutButton": "Abmelden",
+      "changeLanguage": "Sprache ändern",
+      "selectNewLanguage": "Wählen Sie eine neue Sprache"
+  },
+  "ContactPage": {
+    "title": "Kontaktieren Sie uns",
+    "method1": "E-Mail:",
+    "textMethod1": "Sie können uns über die folgende E-Mail kontaktieren:"
   }
 }

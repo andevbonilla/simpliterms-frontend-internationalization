@@ -126,5 +126,10 @@
     "logOutButton": "Log Out",
     "changeLanguage": "Change Language",
     "selectNewLanguage": "Select a New Language"
+  },
+  "ContactPage": {
+    "title": "Contact Us",
+    "method1": "Email:",
+    "textMethod1": "You can contact us through the following email:"
   }
 }

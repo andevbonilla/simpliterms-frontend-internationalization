@@ -115,5 +115,21 @@
     "errorPassword": "A senha deve ter pelo menos 8 caracteres.",
     "errorPasswordRequired": "Senha é obrigatória.",
     "errorPasswordToolong": "Senha é muito longa."
+  },
+  "AccountPage": {
+      "nameInput": "NOME: ",
+      "emailInput": "E-MAIL: ",
+      "availableCreditsInput": "CRÉDITOS DISPONÍVEIS: ",
+      "summariesLanguage": "IDIOMA DOS RESUMOS: ",
+      "changeLanguageSummaries": "Alterar idioma dos resumos",
+      "cancelSubButton": "Cancelar assinatura",
+      "logOutButton": "Sair",
+      "changeLanguage": "Alterar idioma",
+      "selectNewLanguage": "Selecionar um novo idioma"
+    },
+  "ContactPage": {
+    "title": "Contate-nos",
+    "method1": "E-mail:",
+    "textMethod1": "Você pode nos contatar através do seguinte e-mail:"
   }
 }

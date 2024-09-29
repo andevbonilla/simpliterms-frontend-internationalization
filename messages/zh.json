@@ -115,5 +115,21 @@
     "errorPassword": "密码至少需要 8 个字符。",
     "errorPasswordRequired": "密码是必填项。",
     "errorPasswordToolong": "密码过长。"
+  },
+  "AccountPage": {
+      "nameInput": "姓名: ",
+      "emailInput": "电子邮件: ",
+      "availableCreditsInput": "可用积分: ",
+      "summariesLanguage": "摘要语言: ",
+      "changeLanguageSummaries": "更改摘要语言",
+      "cancelSubButton": "取消订阅",
+      "logOutButton": "登出",
+      "changeLanguage": "更改语言",
+      "selectNewLanguage": "选择新语言"
+    },
+  "ContactPage": {
+    "title": "联系我们",
+    "method1": "电子邮件:",
+    "textMethod1": "您可以通过以下电子邮件联系我们:"
   }
 }

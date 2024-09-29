@@ -115,5 +115,21 @@
     "errorPassword": "Пароль должен содержать не менее 8 символов.",
     "errorPasswordRequired": "Пароль обязателен.",
     "errorPasswordToolong": "Пароль слишком длинный."
+  },
+  "AccountPage": {
+      "nameInput": "ИМЯ: ",
+      "emailInput": "ЭЛ. ПОЧТА: ",
+      "availableCreditsInput": "ДОСТУПНЫЕ КРЕДИТЫ: ",
+      "summariesLanguage": "ЯЗЫК РЕЗЮМЕ: ",
+      "changeLanguageSummaries": "Изменить язык резюме",
+      "cancelSubButton": "Отменить подписку",
+      "logOutButton": "Выйти",
+      "changeLanguage": "Изменить язык",
+      "selectNewLanguage": "Выберите новый язык"
+  },
+  "ContactPage": {
+    "title": "Связаться с нами",
+    "method1": "Эл. почта:",
+    "textMethod1": "Вы можете связаться с нами через следующий адрес электронной почты:"
   }
 }

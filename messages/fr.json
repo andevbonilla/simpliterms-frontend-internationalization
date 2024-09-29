@@ -115,5 +115,21 @@
     "errorPassword": "Le mot de passe doit comporter au moins 8 caractères.",
     "errorPasswordRequired": "Mot de passe requis.",
     "errorPasswordToolong": "Mot de passe trop long."
+  },
+  "AccountPage": {
+      "nameInput": "NOM: ",
+      "emailInput": "EMAIL: ",
+      "availableCreditsInput": "CRÉDITS DISPONIBLES: ",
+      "summariesLanguage": "LANGUE DES RÉSUMÉS: ",
+      "changeLanguageSummaries": "Changer la langue des résumés",
+      "cancelSubButton": "Annuler l'abonnement",
+      "logOutButton": "Se déconnecter",
+      "changeLanguage": "Changer la langue",
+      "selectNewLanguage": "Sélectionnez une nouvelle langue"
+    },
+  "ContactPage": {
+      "title": "Nous contacter",
+      "method1": "Email:",
+      "textMethod1": "Vous pouvez nous contacter via l'email suivant:"
   }
 }

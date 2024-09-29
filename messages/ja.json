@@ -115,5 +115,21 @@
     "errorPassword": "パスワードは8文字以上である必要があります。",
     "errorPasswordRequired": "パスワードは必須です。",
     "errorPasswordToolong": "パスワードが長すぎます。"
+  },
+  "AccountPage": {
+      "nameInput": "名前: ",
+      "emailInput": "メール: ",
+      "availableCreditsInput": "利用可能なクレジット: ",
+      "summariesLanguage": "サマリーの言語: ",
+      "changeLanguageSummaries": "サマリーの言語を変更",
+      "cancelSubButton": "サブスクリプションをキャンセル",
+      "logOutButton": "ログアウト",
+      "changeLanguage": "言語を変更",
+      "selectNewLanguage": "新しい言語を選択"
+  },
+  "ContactPage": {
+    "title": "お問い合わせ",
+    "method1": "メール:",
+    "textMethod1": "以下のメールでお問い合わせいただけます:"
   }
 }

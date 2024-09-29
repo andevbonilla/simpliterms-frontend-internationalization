@@ -115,5 +115,21 @@
     "errorPassword": "पासवर्ड कम से कम 8 अक्षरों का होना चाहिए।",
     "errorPasswordRequired": "पासवर्ड आवश्यक है।",
     "errorPasswordToolong": "पासवर्ड बहुत लंबा है।"
+  },
+  "AccountPage": {
+      "nameInput": "नाम: ",
+      "emailInput": "ईमेल: ",
+      "availableCreditsInput": "उपलब्ध क्रेडिट्स: ",
+      "summariesLanguage": "सारांश की भाषा: ",
+      "changeLanguageSummaries": "सारांश की भाषा बदलें",
+      "cancelSubButton": "सदस्यता रद्द करें",
+      "logOutButton": "लॉग आउट",
+      "changeLanguage": "भाषा बदलें",
+      "selectNewLanguage": "नई भाषा चुनें"
+  },
+  "ContactPage": {
+    "title": "संपर्क करें",
+    "method1": "ईमेल:",
+    "textMethod1": "आप हमें निम्नलिखित ईमेल के माध्यम से संपर्क कर सकते हैं:"
   }
 }
