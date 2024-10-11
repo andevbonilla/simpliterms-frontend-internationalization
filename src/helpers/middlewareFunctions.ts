@@ -1,11 +1,12 @@
 import { backendUri } from "./url";
 
+// return -> true if Auth false is not auth
 export const validateIfAuthenticated = async(req: any) => {
 
             const cookieToken = req.cookies.get('x-token');
 
             if (!cookieToken) {
-                return true;
+                return false;
             }
 
             try {
@@ -17,23 +18,23 @@ export const validateIfAuthenticated = async(req: any) => {
                                                 },
                                             });
                 if (!response.ok) {
-                    return true;
+                    return false;
                 }
 
                 try {
                     const jsonresponse = await response.json();
                     if (!jsonresponse.token) {
-                        return true;
-                    }else{
                         return false;
+                    }else{
+                        return true;
                     }
                 } catch (error) {
-                    return true;
+                    return false;
                 }    
                 
                 
             } catch (error) {
-                return true;
+                return false;
             }
 
 }
