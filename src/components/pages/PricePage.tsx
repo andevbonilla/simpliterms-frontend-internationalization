@@ -14,8 +14,9 @@ export const PriceWraper = () => {
         return (
                 <div className='md:flex-row md:px-4 flex flex-col items-center justify-center'>
                         <PriceBox
+                                billedAnnually={false}
                                 actionButton={buyMonthAccess}
-                                price={"0"}
+                                price={"4.99"}
                                 textMonth={"month"}
                                 characteristics={[
                                         "Privacy Policy Summaries for one month",
@@ -26,8 +27,9 @@ export const PriceWraper = () => {
                                 desc={"Just one click on the extension will generate a very short automatic summary of the policies of the page you are on."}
                         />
                         <PriceBox
+                                billedAnnually={true}
                                 actionButton={buyYearAccess}
-                                price={"0"}
+                                price={"2.99"}
                                 textMonth={"month"}
                                 characteristics={[
                                         "Privacy Policy Summaries for one year",
