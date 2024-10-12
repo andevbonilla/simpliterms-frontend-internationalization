@@ -34,7 +34,7 @@ export const PriceBox = ({
 
     return (
 
-        <div className='flex flex-col items-center justify-center'>
+        <div className='h-full flex flex-col items-center justify-center'>
             {
                 billedAnnually &&
                 <div className='mt-10 md:mt-0 flex justify-center items-center bg-[#5712DF] bg-opacity-80 text-white font-bold rounded-t-lg py-2 px-[8vw]'>

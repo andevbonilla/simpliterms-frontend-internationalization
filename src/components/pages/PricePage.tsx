@@ -12,7 +12,7 @@ export const PriceWraper = () => {
         };
 
         return (
-                <div className='md:flex-row md:px-4 flex flex-col items-center justify-center'>
+                <div className='md:flex-row md:px-4 md:justify-start md:items-start flex flex-col items-center justify-center'>
                         <PriceBox
                                 billedAnnually={false}
                                 actionButton={buyMonthAccess}
@@ -32,6 +32,7 @@ export const PriceWraper = () => {
                                 price={"2.99"}
                                 textMonth={"month"}
                                 characteristics={[
+                                        "Saves $24",
                                         "Privacy Policy Summaries for one year",
                                         "Terms of use Summaries for one year",
                                         "24/7 customer support"
