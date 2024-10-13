@@ -32,7 +32,6 @@ export const PriceWraper = () => {
                         }
                         const response = await AuthJsonRequest(token, "POST", "/api/payment/checkout", dataToSend);
                         if (response.isError !== "") {
-                                console.log(response.isError)
                                 // show error alert
                                 setisLoading(false);
                                 return;
@@ -40,7 +39,9 @@ export const PriceWraper = () => {
 
                         // show success alert
                         setisLoading(false);
-
+                        if (response.data.url && response.data.url.length > 0) {
+                                router.push(response.data.url);
+                        }
 
                 } catch (error) {
                         console.log(error, "error buy monthly access.");
