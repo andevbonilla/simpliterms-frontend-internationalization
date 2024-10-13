@@ -7,7 +7,7 @@ import Cookies from 'js-cookie';
 
 import { backendUri } from "@/helpers/url";
 import { useGoogleLogin } from '@react-oauth/google';
-import { LoadingComponent } from "@/components/Loading";
+import { LoadingComponent } from "@/components/ui/loaders/Loading";
 
 
 export const LoginWraper = ({

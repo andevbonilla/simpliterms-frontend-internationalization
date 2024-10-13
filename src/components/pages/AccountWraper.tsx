@@ -14,7 +14,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { AskPopup } from '@/components/AskPopup';
-import { LoadingComponent } from '@/components/Loading';
+import { LoadingComponent } from '@/components/ui/loaders/Loading';
 
 export const AccountWraper = ({
     nameInput,

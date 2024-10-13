@@ -4,7 +4,7 @@ import { useRouter } from 'next/navigation';
 import { PriceBox } from '../ui/PriceBox';
 import { AuthJsonRequest } from '@/helpers/requests/AuthJsonRequest';
 import { useState } from "react";
-import { LoadingComponent } from "../Loading";
+import { LoadingClient } from "../ui/loaders/LoadingClient";
 
 export const PriceWraper = () => {
 
@@ -54,7 +54,7 @@ export const PriceWraper = () => {
         };
 
         if (isLoading) {
-                return <LoadingComponent />
+                return <LoadingClient />
         }
 
         return (
