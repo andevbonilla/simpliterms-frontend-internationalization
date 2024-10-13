@@ -1,7 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { useRouter } from 'next/router';
-import Cookies from 'js-cookie';
 import { Bebas_Neue } from 'next/font/google';
 import { faCheck } from '@fortawesome/free-solid-svg-icons';
 
@@ -74,6 +72,8 @@ export const PriceBox = ({
 
 
                     <button
+                        type='button'
+                        onClick={actionButton}
                         className="hover:bg-[#6324DF] transition-all bg-[#5712DF] w-full text-white py-2 mt-4 rounded"
                     >
                         Buy

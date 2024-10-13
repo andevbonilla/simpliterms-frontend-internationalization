@@ -1,15 +1,61 @@
 "use client"
+import Cookies from "js-cookie";
+import { useRouter } from 'next/navigation';
 import { PriceBox } from '../ui/PriceBox';
+import { AuthJsonRequest } from '@/helpers/requests/AuthJsonRequest';
+import { useState } from "react";
+import { LoadingComponent } from "../Loading";
 
 export const PriceWraper = () => {
 
-        const buyMonthAccess = () => {
+        const router = useRouter();
+        const [isLoading, setisLoading] = useState(false);
+
+        const buyMonthAccess = async () => {
+
+                const token = Cookies.get("x-token");
+                const email = Cookies.get("email");
+                const username = Cookies.get("username");
+
+                if (!token) {
+                        router.push("/auth/register");
+                        return;
+                };
+
+                setisLoading(true);
+
+                try {
+
+                        const dataToSend = {
+                                email,
+                                username
+                        }
+                        const response = await AuthJsonRequest(token, "POST", "/api/payment/checkout", dataToSend);
+                        if (response.isError !== "") {
+                                console.log(response.isError)
+                                // show error alert
+                                setisLoading(false);
+                                return;
+                        };
+
+                        // show success alert
+                        setisLoading(false);
+
+
+                } catch (error) {
+                        console.log(error, "error buy monthly access.");
+                        setisLoading(false);
+                }
 
         };
 
         const buyYearAccess = () => {
 
         };
+
+        if (isLoading) {
+                return <LoadingComponent />
+        }
 
         return (
                 <div className='md:flex-row md:px-4 md:justify-start md:items-start flex flex-col items-center justify-center'>
