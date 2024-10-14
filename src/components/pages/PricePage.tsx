@@ -11,7 +11,7 @@ export const PriceWraper = () => {
         const router = useRouter();
         const [isLoading, setisLoading] = useState(false);
 
-        const buyMonthAccess = async () => {
+        const buyAccess = async (accessType: string) => {
 
                 const token = Cookies.get("x-token");
 
@@ -24,7 +24,7 @@ export const PriceWraper = () => {
 
                 try {
 
-                        const response = await AuthJsonRequest(token, "POST", "/api/payment/checkout", {});
+                        const response = await AuthJsonRequest(token, "POST", "/api/payment/checkout", { accessType });
                         if (response.isError !== "") {
                                 // show error alert
                                 setisLoading(false);
@@ -44,10 +44,6 @@ export const PriceWraper = () => {
 
         };
 
-        const buyYearAccess = () => {
-
-        };
-
         if (isLoading) {
                 return <LoadingClient />
         }
@@ -55,8 +51,9 @@ export const PriceWraper = () => {
         return (
                 <div className='md:flex-row md:px-4 md:justify-start md:items-start flex flex-col items-center justify-center'>
                         <PriceBox
+                                type={"month"}
                                 billedAnnually={false}
-                                actionButton={buyMonthAccess}
+                                actionButton={buyAccess}
                                 price={"4.99"}
                                 textMonth={"month"}
                                 characteristics={[
@@ -68,8 +65,9 @@ export const PriceWraper = () => {
                                 desc={"Just one click on the extension will generate a very short automatic summary of the policies of the page you are on."}
                         />
                         <PriceBox
+                                type={"year"}
                                 billedAnnually={true}
-                                actionButton={buyYearAccess}
+                                actionButton={buyAccess}
                                 price={"2.99"}
                                 textMonth={"month"}
                                 characteristics={[

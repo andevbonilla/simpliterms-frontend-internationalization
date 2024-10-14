@@ -11,6 +11,7 @@ const bebas = Bebas_Neue({
 
 
 interface priceBoxInterface {
+    type: "year" | "month",
     actionButton: any,
     price: string,
     textMonth: string,
@@ -21,6 +22,7 @@ interface priceBoxInterface {
 }
 
 export const PriceBox = ({
+    type,
     actionButton,
     price,
     textMonth,
@@ -73,7 +75,7 @@ export const PriceBox = ({
 
                     <button
                         type='button'
-                        onClick={actionButton}
+                        onClick={() => actionButton(type)}
                         className="hover:bg-[#6324DF] transition-all bg-[#5712DF] w-full text-white py-2 mt-4 rounded"
                     >
                         Buy
