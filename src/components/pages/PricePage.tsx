@@ -14,8 +14,6 @@ export const PriceWraper = () => {
         const buyMonthAccess = async () => {
 
                 const token = Cookies.get("x-token");
-                const email = Cookies.get("email");
-                const username = Cookies.get("username");
 
                 if (!token) {
                         router.push("/auth/register");
@@ -26,11 +24,7 @@ export const PriceWraper = () => {
 
                 try {
 
-                        const dataToSend = {
-                                email,
-                                username
-                        }
-                        const response = await AuthJsonRequest(token, "POST", "/api/payment/checkout", dataToSend);
+                        const response = await AuthJsonRequest(token, "POST", "/api/payment/checkout", {});
                         if (response.isError !== "") {
                                 // show error alert
                                 setisLoading(false);
