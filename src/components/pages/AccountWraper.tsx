@@ -70,12 +70,10 @@ export const AccountWraper = ({
         username: '',
         email: '',
         credits: '0',
-        planType: '',
+        accessType: '',
         uid: '',
         summariesLanguage: ""
     });
-
-    const [openPopup, setOpenPopup] = useState(false);
 
     const [loading, setLoading] = useState(true);
 
@@ -85,7 +83,7 @@ export const AccountWraper = ({
             username: Cookies.get("username") || "",
             email: Cookies.get("email") || "",
             credits: Cookies.get("credits") || "",
-            planType: Cookies.get("plan-type") || "",
+            accessType: Cookies.get("access-type") || "",
             uid: Cookies.get("uid") || "",
             summariesLanguage: Cookies.get("summaries-language") || ""
         })
@@ -94,17 +92,9 @@ export const AccountWraper = ({
 
     const cardType = () => {
 
-        if (userInfo.planType === "free") {
+        if (userInfo.accessType === "month" || userInfo.accessType === "year") {
 
             return "bg-[#5712DF]";
-
-        } else if (userInfo.planType === "basic") {
-
-            return "bg-[#32EEB8]";
-
-        } else if (userInfo.planType === "pro") {
-
-            return "bg-black";
 
         } else {
 
@@ -128,18 +118,11 @@ export const AccountWraper = ({
 
         googleLogout();
 
-        Cookies.remove('x-token', { path: '/account' });
-        Cookies.remove('username', { path: '/account' });
-        Cookies.remove('email', { path: '/account' });
-        Cookies.remove('uid', { path: '/account' });
-        Cookies.remove('plan-type', { path: '/account' });
-        Cookies.remove('summaries-language', { path: '/account' });
-
         Cookies.remove('x-token', { path: '/' });
         Cookies.remove('username', { path: '/' });
         Cookies.remove('email', { path: '/' });
         Cookies.remove('uid', { path: '/' });
-        Cookies.remove('plan-type', { path: '/' });
+        Cookies.remove('access-type', { path: '/' });
         Cookies.remove('summaries-language', { path: '/' });
 
         setTimeout(() => {
@@ -148,46 +131,13 @@ export const AccountWraper = ({
 
     }
 
-    const cancelSubscription = async () => {
-
-        if (userInfo.planType === "") {
-            notifyError("There isn't a plan");
-            return;
-        }
-
-        try {
-
-            const { data: cancellationData } = await axios.put(`${backendUri}/api/payment/cancel/subscription`, {}, { headers: { 'Authorization': `Bearer ${(Cookies.get('x-token')) ? Cookies.get('x-token') : ''}` } });
-
-            if (cancellationData.status && cancellationData.status === "success") {
-                let creditsTransformed = addDotsToNumber(cancellationData.userDB.credits);
-                setuserInfo({
-                    ...userInfo,
-                    username: cancellationData.userDB.username,
-                    email: cancellationData.userDB.email,
-                    credits: creditsTransformed,
-                    planType: cancellationData.userDB.planType,
-                    uid: cancellationData.userDB.uid,
-                })
-                notifySuccess("The plan has been successfully canceled");
-            }
-
-        } catch (error) {
-            notifyError("Sorry there was an error trying to cancel the data");
-        }
-
-    }
 
     const changeSummariesLanguageDB = async () => {
 
         if (newLanguage === "") return;
 
-        if (userInfo.planType === "") {
-            notifyError("This option is not available for users without a plan.");
-            return;
-        }
-        if (userInfo.planType === "free") {
-            notifyError("if you have a free plan the summaries you will have are static so it will not be possible to change the language if you want to have real time summaries in more than 6 languages, upgrade to the pro or basic plan.");
+        if (userInfo.accessType === "") {
+            notifyError("This option is not available for users without acess to the tool.");
             return;
         }
 
@@ -230,24 +180,11 @@ export const AccountWraper = ({
             }
         }
         return newArray.reverse().join("");
-    }
-
-    const showPopup = () => {
-        setOpenPopup(true);
-    }
-
-    const hidePopup = () => {
-        setOpenPopup(false);
-    }
-
-    const acceptCancel = () => {
-        cancelSubscription();
-        setOpenPopup(false);
-    }
+    };
 
     const closeLanguagesWindow = () => {
         setShowLanguagesWindow(false);
-    }
+    };
 
     const modifyLenguageOfSummaries = (code: string) => {
         switch (code) {
@@ -279,13 +216,6 @@ export const AccountWraper = ({
 
     return (
         <>
-
-            {
-                openPopup && <AskPopup title={"Are you sure you want to cancel your subscription?"}
-                    hidePopup={hidePopup}
-                    acceptCancel={acceptCancel}
-                />
-            }
 
             {
                 showLanguagesWindow && <div className='z-[997] fixed w-full top-0 bottom-0 left-0 bg-black bg-opacity-25 flex justify-center items-center'>
@@ -341,7 +271,7 @@ export const AccountWraper = ({
 
                 <div className="md:w-[60%] shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]">
                     <div className={`${cardType()} h-24 p-6`}>
-                        <h1 className="text-white font-bold">{(userInfo.planType === "") ? "NO PLAN" : userInfo.planType.toUpperCase()}</h1>
+                        <h1 className="text-white font-bold">{(userInfo.accessType === "") ? "NO ACCESS" : userInfo.accessType.toUpperCase()}</h1>
                     </div>
                     <div className="p-6">
                         <div>
@@ -363,9 +293,6 @@ export const AccountWraper = ({
 
                         <div className='flex flex-col items-start justify-start overflow-hidden '>
                             <button type='button' onClick={changeSummariesLanguage} className="text-[#5712DF] rounded-lg mb-4 text-start"><FontAwesomeIcon className='mr-1' icon={faLanguage} /> {changeLanguageSummaries}</button>
-                            {
-                                (userInfo.planType !== "") && <button type='button' onClick={showPopup} className="text-[#5712DF] rounded-lg mb-4"><FontAwesomeIcon className='mr-1' width={20} height={20} icon={faBan} /> {cancelSubButton}</button>
-                            }
                             <button type='button' onClick={logOut} className="text-[#5712DF] rounded-lg"><FontAwesomeIcon className='mr-1' width={20} height={20} icon={faRightFromBracket} /> {logOutButton}</button>
                         </div>
 

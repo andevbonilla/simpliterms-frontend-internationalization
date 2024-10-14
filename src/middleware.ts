@@ -29,7 +29,7 @@
 //             req.cookies.delete("uid");
 //             req.cookies.delete("email");
 //             req.cookies.delete("username");
-//             req.cookies.delete("plan-type");
+//             req.cookies.delete("access-type");
 //             req.cookies.delete("credits");
 //             req.cookies.delete("summaries-language");
 //         }
@@ -76,7 +76,7 @@
 //                         response.cookies.set('uid', jsonresponse.user.uid.toString(), {path: '/', maxAge: 60 * 60 * 12});
 //                         response.cookies.set('email', jsonresponse.user.email.toString(), {path: '/', maxAge: 60 * 60 * 12});
 //                         response.cookies.set('username', jsonresponse.user.username.toString(), {path: '/', maxAge: 60 * 60 * 12});
-//                         response.cookies.set('plan-type', jsonresponse.user.planType.toString(), {path: '/', maxAge: 60 * 60 * 12});
+//                         response.cookies.set('access-type', jsonresponse.user.accessType.toString(), {path: '/', maxAge: 60 * 60 * 12});
 //                         response.cookies.set('credits', jsonresponse.user.credits.toString(), {path: '/', maxAge: 60 * 60 * 12});
 //                         response.cookies.set('summaries-language', jsonresponse.user.summariesLanguage.toString(), {path: '/', maxAge: 60 * 60 * 12});
 //                         return response;
@@ -223,7 +223,7 @@ function clearCookies(response: NextResponse) {
   response.cookies.delete({ name: 'uid', path: '/' });
   response.cookies.delete({ name: 'email', path: '/' });
   response.cookies.delete({ name: 'username', path: '/' });
-  response.cookies.delete({ name: 'plan-type', path: '/' });
+  response.cookies.delete({ name: 'access-type', path: '/' });
   response.cookies.delete({ name: 'credits', path: '/' });
   response.cookies.delete({ name: 'summaries-language', path: '/' });
 }
@@ -234,7 +234,36 @@ function setAuthCookies(response: NextResponse, jsonresponse: any) {
     maxAge: 60 * 60 * 12,
     httpOnly: false, // Permitir acceso desde JavaScript del cliente
   });
-  // ... resto de las cookies
+  response.cookies.set('credits', jsonresponse.user.credits, {
+    path: '/',
+    maxAge: 60 * 60 * 12,
+    httpOnly: false, // Permitir acceso desde JavaScript del cliente
+  });
+  response.cookies.set('access-type', jsonresponse.user.accessType, {
+    path: '/',
+    maxAge: 60 * 60 * 12,
+    httpOnly: false, // Permitir acceso desde JavaScript del cliente
+  });
+  response.cookies.set('summaries-language', jsonresponse.user.summariesLanguage, {
+    path: '/',
+    maxAge: 60 * 60 * 12,
+    httpOnly: false, // Permitir acceso desde JavaScript del cliente
+  });
+  response.cookies.set('email', jsonresponse.user.email, {
+    path: '/',
+    maxAge: 60 * 60 * 12,
+    httpOnly: false, // Permitir acceso desde JavaScript del cliente
+  });
+  response.cookies.set('username', jsonresponse.user.username, {
+    path: '/',
+    maxAge: 60 * 60 * 12,
+    httpOnly: false, // Permitir acceso desde JavaScript del cliente
+  });
+  response.cookies.set('uid', jsonresponse.user.uid, {
+    path: '/',
+    maxAge: 60 * 60 * 12,
+    httpOnly: false, // Permitir acceso desde JavaScript del cliente
+  });
 }
 
 export const config = {
