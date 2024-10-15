@@ -62,6 +62,8 @@
     "answer3": "SimpliTerms sucht nach Links, die mit den Richtlinien und Nutzungsbedingungen der Seite zusammenhängen, auf der du dich befindest. Es bewertet sie dann und verwendet das GPT-4o-Modell von OpenAI, um sie zusammenzufassen, wenn sie bestimmten Kriterien entsprechen.",
     "question4": "Was sind Credits?",
     "answer4": "Jede generierte Zusammenfassung erfordert eine Verarbeitung auf OpenAI-Servern, was Geld kostet. Diese Kosten hängen von Faktoren wie der Sprache der Bedingungen oder deren Länge ab. Um Verluste zu vermeiden, geben wir dir je nach deinem bezahlten Plan eine bestimmte Anzahl von Credits. Wenn eine Zusammenfassung 10 Credits kostet, ziehen wir diese 10 Credits von deinem Konto ab. Wenn du nicht genügend Credits hast, kannst du die Zusammenfassung nicht erstellen. Wenn dies der Fall ist, kannst du über den folgenden Link mehr Credits kaufen:",
+    "question5": "Was passiert, wenn ich für einen Monat oder ein Jahr Zugang bezahle, obwohl ich bereits Zugang habe?",
+    "answer5": "Es wird einfach gutgeschrieben. Wenn Sie zum Beispiel für 12 Monate Zugang bezahlt haben und für einen weiteren Monat bezahlen, wird dieser Monat zu den 12 Monaten hinzugefügt, sodass Sie 13 Monate haben und keinen Monat verlieren.",
     "buttonBuyCredits": "Mehr Credits kaufen"
   },
   "Footer": {

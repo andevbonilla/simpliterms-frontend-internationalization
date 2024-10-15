@@ -8,7 +8,9 @@ interface questions {
   question3: string,
   answer3: string,
   question4: string,
-  answer4: string
+  answer4: string,
+  question5: string,
+  answer5: string
 }
 
 export const Fqas = ({
@@ -19,7 +21,9 @@ export const Fqas = ({
   question3,
   answer3,
   question4,
-  answer4
+  answer4,
+  question5,
+  answer5
 }: questions) => {
 
 
@@ -29,29 +33,31 @@ export const Fqas = ({
         last={false}
         question={question1}
         answer={answer1}
-      >
-      </Question>
+      />
 
       <Question
         last={false}
         question={question2}
         answer={answer2}
-      >
-      </Question>
+      />
 
       <Question
         last={false}
         question={question3}
         answer={answer3}
-      >
-      </Question>
+      />
 
       <Question
         last={true}
         question={question4}
         answer={answer4}
-      >
-      </Question>
+      />
+
+      <Question
+        last={true}
+        question={question4}
+        answer={answer4}
+      />
     </>
   )
 }

@@ -62,6 +62,8 @@
     "answer3": "SimpliTerms recherche les liens liés aux politiques et aux conditions d'utilisation de la page sur laquelle vous êtes. Ensuite, il les évalue et, s'ils répondent à certains critères, il utilise le modèle GPT-4o d'OpenAI pour les résumer.",
     "question4": "Qu'est-ce que les crédits?",
     "answer4": "Chaque résumé généré nécessite un traitement sur les serveurs d'OpenAI, ce qui coûte de l'argent. Ce coût dépend de facteurs comme la langue dans laquelle les termes sont rédigés ou leur longueur. Pour éviter les pertes, nous vous donnons un certain nombre de crédits en fonction du plan que vous avez payé. Si un résumé coûte 10 crédits à générer, nous déduirons ces 10 crédits de votre compte. Si vous n'avez pas assez de crédits, vous ne pourrez pas générer le résumé. Si cela vous arrive, vous pouvez acheter plus de crédits via le lien suivant:",
+    "question5": "Que se passe-t-il si je paie pour un mois ou une année d'accès alors que j'ai déjà accès ?",
+    "answer5": "Cela sera simplement crédité. Par exemple, si vous avez payé pour 12 mois d'accès et que vous payez pour un mois supplémentaire, ce mois s'ajoutera aux 12 mois, vous aurez donc 13 mois et vous ne perdrez aucun mois.",
     "buttonBuyCredits": "Acheter plus de crédits"
   },
   "Footer": {

@@ -62,6 +62,8 @@
     "answer3": "SimpliTerms searches for links related to the policies and terms of the page you're on. It then evaluates them, and if they meet certain criteria, it uses OpenAI's GPT-4o model to summarize them.",
     "question4": "What are credits?",
     "answer4": "Each summary generated requires processing on OpenAI servers, which costs money. This cost depends on factors like the language the terms are in or how long they are. To avoid losses, we give you a certain amount of credits based on the plan you've paid for. If a summary costs 10 credits to make, we will deduct those 10 credits from your account. If you don't have enough credits, you won’t be able to generate the summary. If this happens, you can buy more credits through the following link:",
+    "question5": "What happens if I pay for access for a month or for a year already having access?",
+    "answer5": "It will simply be credited, for example if you paid for 12 months access and you pay for one month's access it will simply add that month to the 12 months so you will have 13 months, so you will not lose any month.",
     "buttonBuyCredits": "Buy More Credits"
   },
   "Footer": {

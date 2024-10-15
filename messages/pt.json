@@ -62,6 +62,8 @@
     "answer3": "O SimpliTerms busca os links relacionados às políticas e termos de uso da página em que você está. Em seguida, avalia-os e, se cumprirem certos critérios, usa o modelo GPT-4o da OpenAI para resumi-los.",
     "question4": "O que são créditos?",
     "answer4": "Cada resumo gerado requer processamento em servidores da OpenAI, o que nos custa dinheiro. Esse custo depende de fatores como o idioma dos termos ou o tamanho deles. Por isso, para evitar prejuízos, decidimos fornecer a você uma certa quantidade de créditos, dependendo do plano que você pagou. Se um resumo custar 10 créditos, descontaremos esses 10 créditos de sua conta. Se você não tiver créditos suficientes, não poderá gerar o resumo. Se isso acontecer, você pode comprar mais créditos no link a seguir:",
+    "question5": "O que acontece se eu pagar por um mês ou um ano de acesso já tendo acesso?",
+    "answer5": "Ele será simplesmente creditado. Por exemplo, se você pagou por 12 meses de acesso e pagar por mais um mês, esse mês será adicionado aos 12 meses, totalizando 13 meses, assim você não perderá nenhum mês.",
     "buttonBuyCredits": "Comprar mais Créditos"
   },
   "Footer": {

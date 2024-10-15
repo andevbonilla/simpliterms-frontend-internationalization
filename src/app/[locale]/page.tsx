@@ -146,6 +146,8 @@ export default function HomePage() {
                         answer3={fqasi18n("answer3")}
                         question4={fqasi18n("question4")}
                         answer4={fqasi18n("answer4")}
+                        question5={fqasi18n("question5")}
+                        answer5={fqasi18n("answer5")}
                     />
                 </div>
 
