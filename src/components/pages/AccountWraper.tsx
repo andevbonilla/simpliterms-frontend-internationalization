@@ -66,11 +66,11 @@ export const AccountWraper = ({
     const [newLanguage, setNewLenguage] = useState("");
     const [showLanguagesWindow, setShowLanguagesWindow] = useState(false);
 
-    const [userInfo, setuserInfo] = useState({
+    const [userInfo, setuserInfo] = useState<any>({
         username: '',
         email: '',
         credits: '0',
-        accessType: '',
+        accessDate: null,
         uid: '',
         summariesLanguage: ""
     });
@@ -83,7 +83,7 @@ export const AccountWraper = ({
             username: Cookies.get("username") || "",
             email: Cookies.get("email") || "",
             credits: Cookies.get("credits") || "",
-            accessType: Cookies.get("access-type") || "",
+            accessDate: Cookies.get("access-date") || "",
             uid: Cookies.get("uid") || "",
             summariesLanguage: Cookies.get("summaries-language") || ""
         })
@@ -92,7 +92,7 @@ export const AccountWraper = ({
 
     const cardType = () => {
 
-        if (userInfo.accessType === "month" || userInfo.accessType === "year") {
+        if (userInfo.accessDate !== null) {
 
             return "bg-[#5712DF]";
 
@@ -122,7 +122,7 @@ export const AccountWraper = ({
         Cookies.remove('username', { path: '/' });
         Cookies.remove('email', { path: '/' });
         Cookies.remove('uid', { path: '/' });
-        Cookies.remove('access-type', { path: '/' });
+        Cookies.remove('access-date', { path: '/' });
         Cookies.remove('summaries-language', { path: '/' });
 
         setTimeout(() => {
@@ -136,7 +136,7 @@ export const AccountWraper = ({
 
         if (newLanguage === "") return;
 
-        if (userInfo.accessType === "") {
+        if (new Date(userInfo.accessDate)) {
             notifyError("This option is not available for users without acess to the tool.");
             return;
         }
