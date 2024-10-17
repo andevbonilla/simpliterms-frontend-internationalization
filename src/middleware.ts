@@ -223,7 +223,7 @@ function clearCookies(response: NextResponse) {
   response.cookies.delete({ name: 'uid', path: '/' });
   response.cookies.delete({ name: 'email', path: '/' });
   response.cookies.delete({ name: 'username', path: '/' });
-  response.cookies.delete({ name: 'access-type', path: '/' });
+  response.cookies.delete({ name: 'access-date', path: '/' });
   response.cookies.delete({ name: 'credits', path: '/' });
   response.cookies.delete({ name: 'summaries-language', path: '/' });
 }
@@ -239,7 +239,7 @@ function setAuthCookies(response: NextResponse, jsonresponse: any) {
     maxAge: 60 * 60 * 12,
     httpOnly: false, // Permitir acceso desde JavaScript del cliente
   });
-  response.cookies.set('access-type', jsonresponse.user.accessType, {
+  response.cookies.set('access-date', jsonresponse.user.accessDate.toISOString(), {
     path: '/',
     maxAge: 60 * 60 * 12,
     httpOnly: false, // Permitir acceso desde JavaScript del cliente

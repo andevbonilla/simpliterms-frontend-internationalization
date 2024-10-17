@@ -208,7 +208,7 @@ export const RegisterWraper = ({
                 Cookies.set('x-token', SignUpData.token, { path: '/' });
                 Cookies.set('username', SignUpData.userDB.username, { path: '/' });
                 Cookies.set('email', SignUpData.userDB.email, { path: '/' });
-                Cookies.set('access-date', SignUpData.userDB.accessDate, { path: '/' });
+                Cookies.set('access-date', SignUpData.userDB.accessDate.toISOString(), { path: '/' });
                 Cookies.set('credits', SignUpData.userDB.credits, { path: '/' });
                 setTimeout(() => {
                     setIsLogin(false);
@@ -249,7 +249,7 @@ export const RegisterWraper = ({
                 Cookies.set('email', SignUpData.userDB.email, { path: '/' });
 
                 // Cookies.set('email', SignUpData.userDB.email, {path: '/account'});
-                Cookies.set('access-date', SignUpData.userDB.accessDate, { path: '/' });
+                Cookies.set('access-date', SignUpData.userDB.accessDate.toISOString(), { path: '/' });
 
                 // Cookies.set('email', SignUpData.userDB.email, {path: '/account'});
                 Cookies.set('credits', SignUpData.userDB.credits, { path: '/' });

@@ -5,15 +5,13 @@ import axios from 'axios';
 
 import { googleLogout } from '@react-oauth/google';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faBan, faLanguage, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
+import { faLanguage, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { Footer } from "@/components/ui/Footer";
 import { Navbar } from "@/components/ui/Navbar";
 import { backendUri } from '@/helpers/url';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
-import { AskPopup } from '@/components/AskPopup';
 import { LoadingComponent } from '@/components/ui/loaders/Loading';
 
 export const AccountWraper = ({
