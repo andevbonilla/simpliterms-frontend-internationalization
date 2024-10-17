@@ -229,42 +229,74 @@ function clearCookies(response: NextResponse) {
 }
 
 function setAuthCookies(response: NextResponse, jsonresponse: any) {
-  response.cookies.set('x-token', jsonresponse.token, {
-    path: '/',
-    maxAge: 60 * 60 * 12,
-    httpOnly: false, // Permitir acceso desde JavaScript del cliente
-  });
-  response.cookies.set('credits', jsonresponse.user.credits, {
-    path: '/',
-    maxAge: 60 * 60 * 12,
-    httpOnly: false, // Permitir acceso desde JavaScript del cliente
-  });
-  response.cookies.set('access-date', jsonresponse.user.accessDate.toISOString(), {
-    path: '/',
-    maxAge: 60 * 60 * 12,
-    httpOnly: false, // Permitir acceso desde JavaScript del cliente
-  });
-  response.cookies.set('summaries-language', jsonresponse.user.summariesLanguage, {
-    path: '/',
-    maxAge: 60 * 60 * 12,
-    httpOnly: false, // Permitir acceso desde JavaScript del cliente
-  });
-  response.cookies.set('email', jsonresponse.user.email, {
-    path: '/',
-    maxAge: 60 * 60 * 12,
-    httpOnly: false, // Permitir acceso desde JavaScript del cliente
-  });
-  response.cookies.set('username', jsonresponse.user.username, {
-    path: '/',
-    maxAge: 60 * 60 * 12,
-    httpOnly: false, // Permitir acceso desde JavaScript del cliente
-  });
-  response.cookies.set('uid', jsonresponse.user.uid, {
-    path: '/',
-    maxAge: 60 * 60 * 12,
-    httpOnly: false, // Permitir acceso desde JavaScript del cliente
-  });
-}
+  // Verificar y establecer 'x-token'
+  if (jsonresponse.token) {
+    response.cookies.set('x-token', jsonresponse.token, {
+      path: '/',
+      maxAge: 60 * 60 * 12,
+      httpOnly: false,
+    });
+  }
+
+  // Asegurarse de que 'user' existe
+  if (jsonresponse.user) {
+    const user = jsonresponse.user;
+
+    // Verificar y establecer 'credits'
+    if (user.credits !== undefined && user.credits !== null) {
+      response.cookies.set('credits', user.credits, {
+        path: '/',
+        maxAge: 60 * 60 * 12,
+        httpOnly: false,
+      });
+    }
+
+    // Verificar y establecer 'access-date'
+    if (user.accessType) {
+      response.cookies.set('access-date', user.accessType.toISOString(), {
+        path: '/',
+        maxAge: 60 * 60 * 12,
+        httpOnly: false,
+      });
+    }
+
+    // Verificar y establecer 'summaries-language'
+    if (user.summariesLanguage) {
+      response.cookies.set('summaries-language', user.summariesLanguage, {
+        path: '/',
+        maxAge: 60 * 60 * 12,
+        httpOnly: false,
+      });
+    }
+
+    // Verificar y establecer 'email'
+    if (user.email) {
+      response.cookies.set('email', user.email, {
+        path: '/',
+        maxAge: 60 * 60 * 12,
+        httpOnly: false,
+      });
+    }
+
+    // Verificar y establecer 'username'
+    if (user.username) {
+      response.cookies.set('username', user.username, {
+        path: '/',
+        maxAge: 60 * 60 * 12,
+        httpOnly: false,
+      });
+    }
+
+    // Verificar y establecer 'uid'
+    if (user.uid) {
+      response.cookies.set('uid', user.uid, {
+        path: '/',
+        maxAge: 60 * 60 * 12,
+        httpOnly: false,
+      });
+    }
+  }
+};
 
 export const config = {
   matcher: ['/((?!api|_next|.*\\..*).*)'],
