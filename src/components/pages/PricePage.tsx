@@ -2,7 +2,7 @@
 import Cookies from "js-cookie";
 import { useRouter } from 'next/navigation';
 import { PriceBox } from '../ui/PriceBox';
-import { AuthJsonRequest } from '@/helpers/requests/AuthJsonRequest';
+import { AuthJsonRequest } from '@/helpers/requests/AuthRequest';
 import { useState } from "react";
 import { LoadingClient } from "../ui/loaders/LoadingClient";
 
