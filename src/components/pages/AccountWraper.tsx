@@ -20,7 +20,6 @@ export const AccountWraper = ({
     availableCreditsInput,
     summariesLanguage,
     changeLanguageSummaries,
-    cancelSubButton,
     logOutButton,
     changeLanguage,
     selectNewLanguage,
@@ -88,9 +87,27 @@ export const AccountWraper = ({
 
     }
 
+    const showAccessStatus = () => {
+
+        const currentDate = new Date();
+
+        if (userInfo.accessDate !== null && new Date(userInfo.accessDate) < currentDate) {
+
+            return userInfo.accessDate.toString();
+
+        } else {
+
+            return "NO ACCESS";
+
+        }
+
+    }
+
     const cardType = () => {
 
-        if (userInfo.accessDate !== null) {
+        const currentDate = new Date();
+
+        if (userInfo.accessDate !== null && new Date(userInfo.accessDate) < currentDate) {
 
             return "bg-[#5712DF]";
 
@@ -269,7 +286,7 @@ export const AccountWraper = ({
 
                 <div className="md:w-[60%] shadow-[-10px_-10px_30px_4px_rgba(0,0,0,0.1),_10px_10px_30px_4px_rgba(45,78,255,0.15)]">
                     <div className={`${cardType()} h-24 p-6`}>
-                        <h1 className="text-white font-bold">{(userInfo.accessType === "") ? "NO ACCESS" : userInfo.accessType.toUpperCase()}</h1>
+                        <h1 className="text-white font-bold">{showAccessStatus()}</h1>
                     </div>
                     <div className="p-6">
                         <div>
