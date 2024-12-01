@@ -1,18 +1,16 @@
 "use client"
 import React, { useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
-import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import { googleLogout } from '@react-oauth/google';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLanguage, faRightFromBracket } from '@fortawesome/free-solid-svg-icons';
 import { Footer } from "@/components/ui/Footer";
 import { Navbar } from "@/components/ui/Navbar";
-import { backendUri } from '@/helpers/url';
-
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { LoadingComponent } from '@/components/ui/loaders/Loading';
+import { AuthRequest } from '@/helpers/requests/AuthRequest';
 
 export const AccountWraper = ({
     nameInput,
@@ -93,7 +91,7 @@ export const AccountWraper = ({
 
         if (userInfo.accessDate !== null && new Date(userInfo.accessDate) < currentDate) {
 
-            return userInfo.accessDate.toString();
+            return userInfo.accessDate.toISOString();
 
         } else {
 
@@ -151,27 +149,34 @@ export const AccountWraper = ({
 
         if (newLanguage === "") return;
 
-        if (new Date(userInfo.accessDate)) {
+        const hasAccess = new Date(userInfo.accessDate) < new Date()
+        if (!userInfo.accessDate || !hasAccess) {
             notifyError("This option is not available for users without acess to the tool.");
             return;
         }
 
         try {
 
-            const { data: languageData } = await axios.put(`${backendUri}/api/user/change-language`, { newLanguage }, { headers: { 'Authorization': `Bearer ${(Cookies.get('x-token')) ? Cookies.get('x-token') : ''}` } });
+            const token = (Cookies.get('x-token')) ? Cookies.get('x-token') : ''
+            const resp = await AuthRequest(token, "PUT", "/api/user/change-language", { newLanguage });
+            if (resp.isError && resp.isError.length > 0) {
+                notifyError(resp.isError);
+                return;
+            }
 
-            if (languageData.status && languageData.status === "success") {
+            if (resp.data && resp.data.status === "success") {
                 setuserInfo({
                     ...userInfo,
-                    summariesLanguage: languageData.userDB.summariesLanguage
+                    summariesLanguage: resp.data.userDB.summariesLanguage
                 })
-                notifySuccess(`Now all summaries you generate will be in: ${languageData.userDB.summariesLanguage}`);
+                notifySuccess(`Now all summaries you generate will be in: ${resp.data.userDB.summariesLanguage}`);
                 setShowLanguagesWindow(false);
             }
 
         } catch (error) {
             notifyError("Sorry there was an error trying to change the language");
         }
+
     }
 
     const changeSummariesLanguage = async () => {

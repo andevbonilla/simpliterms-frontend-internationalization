@@ -9,6 +9,8 @@ import Cookies from 'js-cookie';
 import { backendUri } from "@/helpers/url";
 import { useGoogleLogin } from '@react-oauth/google';
 import { LoadingComponent } from "@/components/ui/loaders/Loading";
+import { NotAuthRequest } from "@/helpers/requests/NotAuthRequest";
+import { useRouter } from "next/navigation";
 
 export const RegisterWraper = ({
     signUp,
@@ -70,6 +72,8 @@ export const RegisterWraper = ({
 
     const [error, setError] = useState('');
     const [isLogin, setIsLogin] = useState(false);
+
+    const router = useRouter();
 
     // form values
     const [username, setUsername] = useState("");
@@ -194,37 +198,32 @@ export const RegisterWraper = ({
 
         try {
 
-            const { data: SignUpData } = await axios.post(`${backendUri}/api/user`, {
+            const newUser = {
                 email,
                 password,
                 username
-            });
-
-            if (SignUpData) {
+            }
+            const resp = await NotAuthRequest("POST", "/api/user", newUser);
+            if (resp.isError && resp.isError.length > 0) {
                 setIsLogin(false);
+                setError(resp.isError);
+                return;
             }
 
-            if (SignUpData.status === "success") {
-                Cookies.set('x-token', SignUpData.token, { path: '/' });
-                Cookies.set('username', SignUpData.userDB.username, { path: '/' });
-                Cookies.set('email', SignUpData.userDB.email, { path: '/' });
-                Cookies.set('access-date', SignUpData.userDB.accessDate.toISOString(), { path: '/' });
-                Cookies.set('credits', SignUpData.userDB.credits, { path: '/' });
-                setTimeout(() => {
-                    setIsLogin(false);
-                    window.location.reload();
-                }, 100);
+            if (resp.data && resp.data.status === "success") {
+                Cookies.set('x-token', resp.data.token, { path: '/' });
+                Cookies.set('username', resp.data.userDB.username, { path: '/' });
+                Cookies.set('email', resp.data.userDB.email, { path: '/' });
+                if (resp.data.userDB.accessDate) {
+                    Cookies.set('access-date', resp.data.userDB.accessDate.toISOString(), { path: '/' });
+                }
+                Cookies.set('credits', resp.data.userDB.credits, { path: '/' });
+                router.push("/account");
             }
 
         } catch (error: any) {
             setIsLogin(false);
-            if (error.response && error.response.data.message) {
-                setError(error.response.data.message);
-            } else if (error.request) {
-                setError("No response from server please try again later");
-            } else {
-                setError("There was an error in the server please try again later");
-            }
+            setError("There was an error in the server please try again later");
         }
 
     }
@@ -249,7 +248,9 @@ export const RegisterWraper = ({
                 Cookies.set('email', SignUpData.userDB.email, { path: '/' });
 
                 // Cookies.set('email', SignUpData.userDB.email, {path: '/account'});
-                Cookies.set('access-date', SignUpData.userDB.accessDate.toISOString(), { path: '/' });
+                if (SignUpData.userDB.accessDate) {
+                    Cookies.set('access-date', SignUpData.userDB.accessDate.toISOString(), { path: '/' });
+                }
 
                 // Cookies.set('email', SignUpData.userDB.email, {path: '/account'});
                 Cookies.set('credits', SignUpData.userDB.credits, { path: '/' });

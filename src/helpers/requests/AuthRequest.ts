@@ -1,7 +1,7 @@
 // this is for all request that need authentication
 // -----JSON-----
 // token, method, path, objData
-export const AuthJsonRequest = async (token: string, method: "GET" | "POST" | "PUT" | "DELETE", path:string, objData: any) => {
+export const AuthRequest = async (token: any, method: "GET" | "POST" | "PUT" | "DELETE", path:string, objData: any) => {
 
     try {
 
