@@ -81,7 +81,16 @@ export const AccountWraper = ({
             accessDate: Cookies.get("access-date") || "",
             uid: Cookies.get("uid") || "",
             summariesLanguage: Cookies.get("summaries-language") || ""
-        })
+        });
+
+        const token = Cookies.get("x-token") ? Cookies.get("x-token") : null;
+        if (token) {
+            chrome.runtime.sendMessage(process.env.NEXT_PUBLIC_EXTENSION_ID, {
+                action: "SAVE_TOKEN",
+                token: token
+            });
+
+        };
 
     }
 

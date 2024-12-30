@@ -132,8 +132,11 @@ export const LoginWraper = ({
             }
 
             if (resp.data && resp.data.status === "success") {
-                console.log("tokee");
                 Cookies.set('x-token', resp.data.token, { path: '/' });
+                chrome.runtime.sendMessage(process.env.NEXT_PUBLIC_EXTENSION_ID, {
+                    action: "SAVE_TOKEN",
+                    token: resp.data.token
+                });
                 Cookies.set('username', resp.data.userDB.username, { path: '/' });
                 Cookies.set('email', resp.data.userDB.email, { path: '/' });
                 if (resp.data.userDB.accessDate) {
@@ -173,7 +176,12 @@ export const LoginWraper = ({
                 // Cookies.set('email', SignUpData.userDB.email, {path: '/account'});
                 if (SignUpData.userDB.accessDate) {
                     Cookies.set('access-date', SignUpData.userDB.accessDate.toISOString(), { path: '/' });
-                }
+                };
+
+                chrome.runtime.sendMessage(process.env.NEXT_PUBLIC_EXTENSION_ID, {
+                    action: "SAVE_TOKEN",
+                    token: SignUpData.token
+                });
 
                 // Cookies.set('email', SignUpData.userDB.email, {path: '/account'});
                 Cookies.set('credits', SignUpData.userDB.credits, { path: '/' });

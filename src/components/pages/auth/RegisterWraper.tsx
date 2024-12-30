@@ -212,6 +212,10 @@ export const RegisterWraper = ({
 
             if (resp.data && resp.data.status === "success") {
                 Cookies.set('x-token', resp.data.token, { path: '/' });
+                chrome.runtime.sendMessage(process.env.NEXT_PUBLIC_EXTENSION_ID, {
+                    action: "SAVE_TOKEN",
+                    token: resp.data.token
+                });
                 Cookies.set('username', resp.data.userDB.username, { path: '/' });
                 Cookies.set('email', resp.data.userDB.email, { path: '/' });
                 if (resp.data.userDB.accessDate) {
@@ -254,6 +258,11 @@ export const RegisterWraper = ({
 
                 // Cookies.set('email', SignUpData.userDB.email, {path: '/account'});
                 Cookies.set('credits', SignUpData.userDB.credits, { path: '/' });
+
+                chrome.runtime.sendMessage(process.env.NEXT_PUBLIC_EXTENSION_ID, {
+                    action: "SAVE_TOKEN",
+                    token: SignUpData.token
+                });
 
                 window.location.reload();
             }
