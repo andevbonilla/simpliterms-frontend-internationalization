@@ -1,7 +1,7 @@
 "use client"
 import Image from 'next/image'
 import Link from 'next/link'
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faLanguage, faXmark } from '@fortawesome/free-solid-svg-icons'
@@ -26,7 +26,13 @@ export const Navbar = ({
     const router = useRouter();
 
     const [menuActive, setmenuActive] = useState(false);
+    const [currentCode, setcurrentCode] = useState("en");
     const [showLenguageMenu, setshowLenguageMenu] = useState(false);
+
+    useEffect(() => {
+        setcurrentCode(localStorage.getItem("lang-code") || "en")
+    }, []);
+
 
     const handleMenu = () => {
         setmenuActive(!menuActive)
@@ -45,8 +51,9 @@ export const Navbar = ({
     }
 
     const setNewLenguage = (link: string, code: string) => {
-        localStorage.setItem("language", code);
-        router.push(link);
+        router.replace(link);
+        localStorage.setItem("lang-code", code);
+        setcurrentCode(code);
     }
 
     return (
@@ -59,7 +66,7 @@ export const Navbar = ({
                         <div className='bg-white p-10 rounded z-[999] overflow-y-scroll lg:overflow-hidden max-h-[80vh]'>
                             <h3 className='font-bold mb-8 text-xl'>{changeLanguage}</h3>
                             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4'>
-                                <button onClick={() => setNewLenguage("/", "")} className={`${(location.pathname === "/") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
+                                <button onClick={() => setNewLenguage("/en", "en")} className={`${(location.pathname === "/en") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
                                     English
                                 </button>
                                 <button onClick={() => setNewLenguage("/es", "es")} className={`${(location.pathname === "/es") ? "bg-slate-300" : ""} hover:bg-slate-300 transition-all p-4 rounded`}>
@@ -88,7 +95,7 @@ export const Navbar = ({
                     </div>
                 }
 
-                <Link href={`/`} title='logo'>
+                <Link href={`/${currentCode}`} title='logo'>
                     <Image
                         src={require('../../assets/simpliterms-logo.png')}
                         alt='logo image'
@@ -110,7 +117,7 @@ export const Navbar = ({
                             <Link onClick={goToLink} className='text-xl font-bold' href={`/#pricing`}>{pricingLink}</Link>
                         </li>
                         <li className='mr-4'>
-                            <Link onClick={goToLink} className='text-xl font-bold' href={"/account"}>{accountLink}</Link>
+                            <Link onClick={goToLink} className='text-xl font-bold' href={`${currentCode}/account`}>{accountLink}</Link>
                         </li>
                         <li>
                             <FontAwesomeIcon className='cursor-pointer' icon={faLanguage} size='2x' onClick={openMenuWindow} />
@@ -145,7 +152,7 @@ export const Navbar = ({
                                 <Link onClick={goToLink} className='text-2xl font-bold' href={`/#product`}>{pricingLink}</Link>
                             </li>
                             <li className='py-4'>
-                                <Link onClick={goToLink} className='text-2xl font-bold' href={"/account"}>{accountLink}</Link>
+                                <Link onClick={goToLink} className='text-2xl font-bold' href={`${currentCode}/account`}>{accountLink}</Link>
                             </li>
                         </ul>
                     </div>
