@@ -48,6 +48,18 @@
     "Advantage4Text": "Simply download the Google extension, sign in, and click on the extension logo to get a real-time summary of the page you are on.",
     "buttonDownload": "Download the extension NOW"
   },
+  "PriceBoxes": {
+    "mainTitle": "PRICING",
+    "boxOneTitle": "1-Month Access",
+    "boxTwoTitle": "12-Month Access",
+    "desc": "Just one click on the extension will generate a very short automatic summary of the policies of the page you are on.",
+    "adv1": "Privacy Policy Summaries for one month",
+    "adv2": "Terms of use Summaries for one month",
+    "adv3": "24/7 customer support",
+    "adv4": "Privacy Policy Summaries for one year",
+    "adv5": "Terms of use Summaries for one year",
+    "adv6": "Saves $24"
+  },
   "FeaturedPart": {
     "title": "Launched in:"
   },

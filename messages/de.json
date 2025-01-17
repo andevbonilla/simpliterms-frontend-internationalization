@@ -48,6 +48,18 @@
     "Advantage4Text": "Lade einfach die Google-Erweiterung herunter, melde dich an und klicke auf das Symbol der Erweiterung, um eine Echtzeit-Zusammenfassung der Seite zu erhalten, auf der du dich befindest.",
     "buttonDownload": "Lade die Erweiterung JETZT herunter"
   },
+  "PriceBoxes": {
+    "mainTitle": "PREISE",
+    "boxOneTitle": "1-Monat Zugang",
+    "boxTwoTitle": "12-Monat Zugang",
+    "desc": "Mit nur einem Klick auf die Erweiterung wird automatisch eine sehr kurze Zusammenfassung der Richtlinien der Seite erstellt, auf der Sie sich befinden.",
+    "adv1": "Datenschutzerklärungszusammenfassungen für einen Monat",
+    "adv2": "Nutzungsbedingungen-Zusammenfassungen für einen Monat",
+    "adv3": "Kundensupport rund um die Uhr",
+    "adv4": "Datenschutzerklärungszusammenfassungen für ein Jahr",
+    "adv5": "Nutzungsbedingungen-Zusammenfassungen für ein Jahr",
+    "adv6": "Spart $24"
+  },
   "FeaturedPart": {
     "title": "Veröffentlicht in:"
   },

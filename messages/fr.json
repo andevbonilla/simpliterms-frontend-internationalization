@@ -48,6 +48,18 @@
     "Advantage4Text": "Téléchargez simplement l'extension Google, connectez-vous et cliquez sur le logo de l'extension pour obtenir un résumé en temps réel de la page sur laquelle vous êtes.",
     "buttonDownload": "Téléchargez l'extension MAINTENANT"
   },
+  "PriceBoxes": {
+    "mainTitle": "TARIFS",
+    "boxOneTitle": "Accès 1 mois",
+    "boxTwoTitle": "Accès 12 mois",
+    "desc": "Un simple clic sur l'extension génère un résumé automatique très court des politiques de la page sur laquelle vous vous trouvez.",
+    "adv1": "Résumés des politiques de confidentialité pour un mois",
+    "adv2": "Résumés des conditions d'utilisation pour un mois",
+    "adv3": "Support client 24h/24 et 7j/7",
+    "adv4": "Résumés des politiques de confidentialité pour un an",
+    "adv5": "Résumés des conditions d'utilisation pour un an",
+    "adv6": "Économise $24"
+  },
   "FeaturedPart": {
     "title": "Lancé en:"
   },

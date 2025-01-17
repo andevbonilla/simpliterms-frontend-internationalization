@@ -2,11 +2,27 @@
 import Cookies from "js-cookie";
 import { useRouter } from 'next/navigation';
 import { PriceBox } from '../ui/PriceBox';
-import { AuthJsonRequest } from '@/helpers/requests/AuthRequest';
+import { AuthRequest } from '@/helpers/requests/AuthRequest';
 import { useState } from "react";
 import { LoadingClient } from "../ui/loaders/LoadingClient";
 
-export const PriceWraper = () => {
+interface PriceWraperInterface {
+        boxOneTitle: string,
+        boxTwoTitle: string,
+        desc: string,
+        listAdvantagesMonthPlan: Array<string>,
+        listAdvantagesYearPlan: Array<string>,
+}
+
+export const PriceWraper = (
+        {
+                boxOneTitle,
+                boxTwoTitle,
+                desc,
+                listAdvantagesMonthPlan,
+                listAdvantagesYearPlan,
+        }: PriceWraperInterface
+) => {
 
         const router = useRouter();
         const [isLoading, setisLoading] = useState(false);
@@ -24,7 +40,7 @@ export const PriceWraper = () => {
 
                 try {
 
-                        const response = await AuthJsonRequest(token, "POST", "/api/payment/checkout", { accessType });
+                        const response = await AuthRequest(token, "POST", "/api/payment/checkout", { accessType });
                         if (response.isError !== "") {
                                 // show error alert
                                 setisLoading(false);
@@ -57,12 +73,12 @@ export const PriceWraper = () => {
                                 price={"4.99"}
                                 textMonth={"month"}
                                 characteristics={[
-                                        "Privacy Policy Summaries for one month",
-                                        "Terms of use Summaries for one month",
-                                        "24/7 customer support"
+                                        listAdvantagesMonthPlan[0],
+                                        listAdvantagesMonthPlan[1],
+                                        listAdvantagesMonthPlan[2],
                                 ]}
-                                title={"1-Month Access"}
-                                desc={"Just one click on the extension will generate a very short automatic summary of the policies of the page you are on."}
+                                title={boxOneTitle}
+                                desc={desc}
                         />
                         <PriceBox
                                 type={"year"}
@@ -71,13 +87,13 @@ export const PriceWraper = () => {
                                 price={"2.99"}
                                 textMonth={"month"}
                                 characteristics={[
-                                        "Saves $24",
-                                        "Privacy Policy Summaries for one year",
-                                        "Terms of use Summaries for one year",
-                                        "24/7 customer support"
+                                        listAdvantagesYearPlan[2],
+                                        listAdvantagesYearPlan[0],
+                                        listAdvantagesYearPlan[1],
+                                        listAdvantagesYearPlan[3],
                                 ]}
-                                title={"12-Month Access"}
-                                desc={"Just one click on the extension will generate a very short automatic summary of the policies of the page you are on."}
+                                title={boxTwoTitle}
+                                desc={desc}
                         />
                 </div>
         )

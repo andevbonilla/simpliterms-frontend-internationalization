@@ -19,13 +19,24 @@ const bebas = Bebas_Neue({
 export default function HomePage() {
 
     const navbari18n = useTranslations('Navbar');
+
     const part1i18n = useTranslations('Part1');
+
     const summaryExamplei18n = useTranslations('SummariesPart');
+
     const howitworksi18n = useTranslations('HowItWorksPart');
+
+    const priceBoxesi18n = useTranslations('PriceBoxes');
+
     const advantagesi18n = useTranslations('AdvantagesPart');
+
     const featuredi18n = useTranslations('FeaturedPart');
+
     const fqasi18n = useTranslations('FQAsPart');
+
     const footeri18n = useTranslations('Footer');
+
+
 
     return (
         <>
@@ -126,10 +137,17 @@ export default function HomePage() {
 
 
                 <div className="pt-12 pb-6" id="pricing">
-                    <h3 className={`font-bold text-3xl pt-6 text-center ${bebas.className} underline decoration-[#5712DF] underline-offset-8`}>PRICING</h3>
+                    <h3 className={`font-bold text-3xl pt-6 text-center ${bebas.className} underline decoration-[#5712DF] underline-offset-8`}>
+                        {priceBoxesi18n("mainTitle")}
+                    </h3>
                 </div>
 
                 <PriceWraper
+                    boxOneTitle={priceBoxesi18n("boxOneTitle")}
+                    boxTwoTitle={priceBoxesi18n("boxTwoTitle")}
+                    desc={priceBoxesi18n("desc")}
+                    listAdvantagesMonthPlan={[priceBoxesi18n("adv1"), priceBoxesi18n("adv2"), priceBoxesi18n("adv3")]}
+                    listAdvantagesYearPlan={[priceBoxesi18n("adv4"), priceBoxesi18n("adv5"), priceBoxesi18n("adv6"), priceBoxesi18n("adv3")]}
                 />
 
                 <div className="md:px-[15%]">
