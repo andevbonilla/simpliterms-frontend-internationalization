@@ -10,6 +10,9 @@ interface PriceWraperInterface {
         boxOneTitle: string,
         boxTwoTitle: string,
         desc: string,
+        bestValue: string,
+        month: string,
+        buyButton: string,
         listAdvantagesMonthPlan: Array<string>,
         listAdvantagesYearPlan: Array<string>,
 }
@@ -21,6 +24,9 @@ export const PriceWraper = (
                 desc,
                 listAdvantagesMonthPlan,
                 listAdvantagesYearPlan,
+                bestValue,
+                month,
+                buyButton,
         }: PriceWraperInterface
 ) => {
 
@@ -67,11 +73,13 @@ export const PriceWraper = (
         return (
                 <div className='md:flex-row md:px-4 md:justify-start md:items-start flex flex-col items-center justify-center'>
                         <PriceBox
+                                bestValue={bestValue}
+                                buyButton={buyButton}
                                 type={"month"}
                                 billedAnnually={false}
                                 actionButton={buyAccess}
                                 price={"4.99"}
-                                textMonth={"month"}
+                                textMonth={month}
                                 characteristics={[
                                         listAdvantagesMonthPlan[0],
                                         listAdvantagesMonthPlan[1],
@@ -81,11 +89,13 @@ export const PriceWraper = (
                                 desc={desc}
                         />
                         <PriceBox
+                                bestValue={bestValue}
+                                buyButton={buyButton}
                                 type={"year"}
                                 billedAnnually={true}
                                 actionButton={buyAccess}
                                 price={"2.99"}
-                                textMonth={"month"}
+                                textMonth={month}
                                 characteristics={[
                                         listAdvantagesYearPlan[2],
                                         listAdvantagesYearPlan[0],

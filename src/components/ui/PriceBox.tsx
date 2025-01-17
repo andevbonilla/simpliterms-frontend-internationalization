@@ -18,7 +18,9 @@ interface priceBoxInterface {
     characteristics: String[],
     title: string,
     desc: string,
-    billedAnnually: boolean
+    billedAnnually: boolean,
+    bestValue: string,
+    buyButton: string,
 }
 
 export const PriceBox = ({
@@ -29,7 +31,9 @@ export const PriceBox = ({
     characteristics,
     title,
     desc,
-    billedAnnually
+    billedAnnually,
+    bestValue,
+    buyButton,
 }: priceBoxInterface) => {
 
     return (
@@ -38,7 +42,7 @@ export const PriceBox = ({
             {
                 billedAnnually &&
                 <div className='mt-10 md:mt-0 flex justify-center items-center bg-[#5712DF] bg-opacity-80 text-white font-bold rounded-t-lg py-2 px-[8vw]'>
-                    <h3 className='text-sm'>BEST VALUE</h3>
+                    <h3 className='text-smbestValue'>{bestValue}</h3>
                 </div>
             }
             <div className={`${!billedAnnually ? "mt-10" : ""} md:mx-4`}>
@@ -78,7 +82,7 @@ export const PriceBox = ({
                         onClick={() => actionButton(type)}
                         className="hover:bg-[#6324DF] transition-all bg-[#5712DF] w-full text-white py-2 mt-4 rounded"
                     >
-                        Buy
+                        {buyButton}
                     </button>
 
                 </div>

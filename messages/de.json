@@ -58,7 +58,10 @@
     "adv3": "Kundensupport rund um die Uhr",
     "adv4": "Datenschutzerklärungszusammenfassungen für ein Jahr",
     "adv5": "Nutzungsbedingungen-Zusammenfassungen für ein Jahr",
-    "adv6": "Spart $24"
+    "adv6": "Spart $24",
+    "buyButton": "Kaufen",
+    "month": "Monat",
+    "bestValue": "BESTER WERT"
   },
   "FeaturedPart": {
     "title": "Veröffentlicht in:"

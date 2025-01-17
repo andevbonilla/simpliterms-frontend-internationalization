@@ -58,7 +58,10 @@
     "adv3": "24/7 customer support",
     "adv4": "Privacy Policy Summaries for one year",
     "adv5": "Terms of use Summaries for one year",
-    "adv6": "Saves $24"
+    "adv6": "Saves $24",
+    "buyButton": "Buy",
+    "month": "month",
+    "bestValue": "BEST VALUE"
   },
   "FeaturedPart": {
     "title": "Launched in:"

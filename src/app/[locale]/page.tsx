@@ -146,6 +146,9 @@ export default function HomePage() {
                     boxOneTitle={priceBoxesi18n("boxOneTitle")}
                     boxTwoTitle={priceBoxesi18n("boxTwoTitle")}
                     desc={priceBoxesi18n("desc")}
+                    bestValue={priceBoxesi18n("bestValue")}
+                    month={priceBoxesi18n("month")}
+                    buyButton={priceBoxesi18n("buyButton")}
                     listAdvantagesMonthPlan={[priceBoxesi18n("adv1"), priceBoxesi18n("adv2"), priceBoxesi18n("adv3")]}
                     listAdvantagesYearPlan={[priceBoxesi18n("adv4"), priceBoxesi18n("adv5"), priceBoxesi18n("adv6"), priceBoxesi18n("adv3")]}
                 />

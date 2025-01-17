@@ -58,7 +58,10 @@
     "adv3": "Soporte al cliente 24/7",
     "adv4": "Resúmenes de políticas de privacidad por un año",
     "adv5": "Resúmenes de términos de uso por un año",
-    "adv6": "Ahorra $24"
+    "adv6": "Ahorra $24",
+    "buyButton": "Comprar",
+    "month": "mes",
+    "bestValue": "MEJOR VALOR"
   },
   "FeaturedPart": {
     "title": "Lanzado en:"

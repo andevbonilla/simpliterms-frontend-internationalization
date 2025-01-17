@@ -58,7 +58,10 @@
     "adv3": "Support client 24h/24 et 7j/7",
     "adv4": "Résumés des politiques de confidentialité pour un an",
     "adv5": "Résumés des conditions d'utilisation pour un an",
-    "adv6": "Économise $24"
+    "adv6": "Économise $24",
+    "buyButton": "Acheter",
+    "month": "mois",
+    "bestValue": "MEILLEUR RAPPORT QUALITÉ-PRIX"
   },
   "FeaturedPart": {
     "title": "Lancé en:"
