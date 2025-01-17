@@ -55,8 +55,6 @@
     "title": "PREGUNTAS FRECUENTES",
     "question1": "¿Qué es una extensión para navegadores?",
     "answer1": "Una extensión es una aplicación que puedes usar en tu navegador y que te ayuda en muchas cosas como traducir una página, cambiar el estilo de la página o, en este caso, resumir términos de cualquier página como lo hace SimpliTerms. Cada navegador tiene una tienda oficial donde puedes descargar estas extensiones, algo así como la app store en celulares. Por ejemplo, si usas Google, puedes buscar Chrome Web Store y ahí podrás descargar la que quieras.",
-    "question2": "¿Puedo pedir un reembolso?",
-    "answer2": "Claro que sí, en el siguiente enlace verás las políticas de reembolso y si las cumples, te reembolsaremos el total de tu compra.",
     "buttonRefund": "Pedir Reembolso",
     "question3": "¿Cómo se generan los resúmenes de las políticas y términos de cualquier web?",
     "answer3": "SimpliTerms busca los enlaces que estén relacionados con políticas y términos de uso de la página sobre la que estés. Después los evalúa y si cumplen con ciertos criterios, usa el modelo GPT-4o de Open AI para resumirlos.",

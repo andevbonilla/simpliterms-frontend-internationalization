@@ -3,8 +3,6 @@ import { Question } from "./Question";
 interface questions {
   question1: string,
   answer1: string,
-  question2: string,
-  answer2: string,
   question3: string,
   answer3: string,
   question4: string,
@@ -16,8 +14,6 @@ interface questions {
 export const Fqas = ({
   question1,
   answer1,
-  question2,
-  answer2,
   question3,
   answer3,
   question4,
@@ -37,12 +33,6 @@ export const Fqas = ({
 
       <Question
         last={false}
-        question={question2}
-        answer={answer2}
-      />
-
-      <Question
-        last={false}
         question={question3}
         answer={answer3}
       />
@@ -55,8 +45,8 @@ export const Fqas = ({
 
       <Question
         last={true}
-        question={question4}
-        answer={answer4}
+        question={question5}
+        answer={answer5}
       />
     </>
   )

@@ -55,8 +55,6 @@
     "title": "QUESTIONS FRÉQUENTES",
     "question1": "Qu'est-ce qu'une extension de navigateur?",
     "answer1": "Une extension est une application que vous pouvez utiliser dans votre navigateur et qui vous aide dans de nombreuses tâches comme traduire une page, changer le style de la page ou, dans ce cas, résumer les termes de n'importe quelle page comme le fait SimpliTerms. Chaque navigateur possède une boutique officielle où vous pouvez télécharger ces extensions, un peu comme l'App Store sur les téléphones. Par exemple, si vous utilisez Google, vous pouvez rechercher Chrome Web Store et télécharger celle que vous voulez.",
-    "question2": "Puis-je demander un remboursement?",
-    "answer2": "Bien sûr, dans le lien suivant, vous verrez la politique de remboursement et si vous remplissez les critères, nous vous rembourserons le montant total de votre achat.",
     "buttonRefund": "Demander un remboursement",
     "question3": "Comment sont générés les résumés des politiques et des termes de n'importe quel site web?",
     "answer3": "SimpliTerms recherche les liens liés aux politiques et aux conditions d'utilisation de la page sur laquelle vous êtes. Ensuite, il les évalue et, s'ils répondent à certains critères, il utilise le modèle GPT-4o d'OpenAI pour les résumer.",

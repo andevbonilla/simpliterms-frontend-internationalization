@@ -55,8 +55,6 @@
     "title": "HÄUFIG GESTELLTE FRAGEN",
     "question1": "Was ist eine Browser-Erweiterung?",
     "answer1": "Eine Erweiterung ist eine Anwendung, die du in deinem Browser verwenden kannst und die dir bei vielen Aufgaben hilft, z. B. beim Übersetzen einer Seite, beim Ändern des Seitenstils oder in diesem Fall beim Zusammenfassen von Bedingungen jeder Seite, wie es SimpliTerms tut. Jeder Browser hat einen offiziellen Store, in dem du diese Erweiterungen herunterladen kannst, ähnlich wie der App Store auf Mobiltelefonen. Wenn du zum Beispiel Google verwendest, kannst du nach dem Chrome Web Store suchen und die Erweiterung herunterladen, die du möchtest.",
-    "question2": "Kann ich eine Rückerstattung beantragen?",
-    "answer2": "Natürlich, im folgenden Link findest du die Rückerstattungsrichtlinien, und wenn du die Voraussetzungen erfüllst, erstatten wir dir den vollen Kaufbetrag zurück.",
     "buttonRefund": "Rückerstattung beantragen",
     "question3": "Wie werden die Zusammenfassungen der Richtlinien und Bedingungen jeder Website erstellt?",
     "answer3": "SimpliTerms sucht nach Links, die mit den Richtlinien und Nutzungsbedingungen der Seite zusammenhängen, auf der du dich befindest. Es bewertet sie dann und verwendet das GPT-4o-Modell von OpenAI, um sie zusammenzufassen, wenn sie bestimmten Kriterien entsprechen.",

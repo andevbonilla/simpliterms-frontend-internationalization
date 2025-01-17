@@ -140,8 +140,6 @@ export default function HomePage() {
                     <Fqas
                         question1={fqasi18n("question1")}
                         answer1={fqasi18n("answer1")}
-                        question2={fqasi18n("question2")}
-                        answer2={fqasi18n("answer2")}
                         question3={fqasi18n("question3")}
                         answer3={fqasi18n("answer3")}
                         question4={fqasi18n("question4")}

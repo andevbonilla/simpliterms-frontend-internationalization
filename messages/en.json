@@ -55,8 +55,6 @@
     "title": "FREQUENTLY ASKED QUESTIONS",
     "question1": "What is a browser extension?",
     "answer1": "An extension is an application you can use in your browser to help with tasks like translating a page, changing the page style, or in this case, summarizing terms from any page as SimpliTerms does. Every browser has an official store where you can download these extensions, much like the app store on phones. For example, if you use Google, you can search for Chrome Web Store and download the one you want from there.",
-    "question2": "Can I request a refund?",
-    "answer2": "Of course, in the following link, you will see the refund policy, and if you meet the criteria, we will refund your total purchase.",
     "buttonRefund": "Request Refund",
     "question3": "How are the summaries of policies and terms from any website generated?",
     "answer3": "SimpliTerms searches for links related to the policies and terms of the page you're on. It then evaluates them, and if they meet certain criteria, it uses OpenAI's GPT-4o model to summarize them.",
