@@ -47,7 +47,9 @@ export default function HomePage() {
                 </p>
 
                 <div className="flex justify-center mb-12">
-                    <Link title="Extension Link" target="_blank" href={"https://chrome.google.com/webstore/detail/simpliterms/fnobmoedmogehbcdcmjojaebjhegalce"} className="hover:bg-[#6324DF] transition-all rounded bg-[#5712DF] text-white font-bold border-none px-6 py-4 text-xl brightness">{part1i18n("ButtonStart")}</Link>
+                    <Link title="Extension Link" target="_blank" href={"https://chrome.google.com/webstore/detail/simpliterms/fnobmoedmogehbcdcmjojaebjhegalce"} className="hover:bg-[#6324DF] transition-all rounded bg-[#5712DF] text-white font-bold border-none px-6 py-4 text-xl brightness">
+                        {part1i18n("ButtonStart")}
+                    </Link>
                 </div>
 
                 <div className="md:grid-cols-2 grid grid-cols-1 gap-4">

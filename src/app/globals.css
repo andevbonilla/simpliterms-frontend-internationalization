@@ -1,3 +1,39 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.rotate-animated {
+  animation: rotate 1s ease 0s infinite;
+}
+
+.brightness {
+  /* box-shadow: 0px 0px 28px 0px rgba(87, 18, 223, .75); */
+  animation: brightnessAnimation 1000ms linear infinite;
+}
+
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes brightnessAnimation {
+  0% {
+    box-shadow: 0px 0px 15px 1px rgba(87, 18, 223, .60);
+  }
+  50% {
+     box-shadow: 0px 0px 30px 6px rgba(87, 18, 223, .60);
+  }
+  100% {
+     box-shadow: 0px 0px 15px 1px rgba(87, 18, 223, .60);
+  }
+}
