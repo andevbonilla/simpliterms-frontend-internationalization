@@ -5,7 +5,8 @@ const loginPage = () => {
 
   const loginPagei18n = useTranslations('LoginPage');
 
-  return (
+  return ( 
+    // the login wraper of the app
     <LoginWraper
       signIn={loginPagei18n("signIn")}
       googleButton={loginPagei18n("googleButton")}
