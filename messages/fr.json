@@ -172,5 +172,14 @@
     "propertyDescription": "Vous ne pouvez pas déclarer de propriété intellectuelle ou exclusive sur aucun de nos produits, modifiés ou non. Tous les produits sont la propriété des fournisseurs de contenu. Sauf indication contraire, nos produits sont fournis sans aucune garantie, expresse ou implicite. En aucun cas, cette entreprise ne sera responsable de tout dommage, y compris, mais sans s'y limiter, les dommages directs, indirects, spéciaux, accessoires ou consécutifs, ou d'autres pertes résultant de l'utilisation ou de l'incapacité d'utiliser nos produits.",
     "refundAndGuaranteePolicyTitle": "POLITIQUE DE REMBOURSEMENT ET DE GARANTIE",
     "refundAndGuaranteePolicyDescription": "Les remboursements seront approuvés tant que la raison du remboursement est que le programme auquel vous vous êtes abonné était une fraude ou des informations trompeuses, sinon il n'y aura pas de remboursement."
+  },
+  "V2part": {
+    "title": "Il est maintenant là !",
+    "newFeature1": "Interface plus rapide, plus utile et visuellement attrayante",
+    "newFeature2": "Extension disponible en 6+ langues",
+    "newFeature3": "Réponses générées par IA améliorées",
+    "newFeature4": "Meilleure détection des politiques sur la page web que vous consultez",
+    "newFeature5": "Tarification et plans simplifiés",
+    "buttonAdd": "Téléchargez l'extension V2"
   }
 }

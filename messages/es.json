@@ -172,5 +172,14 @@
     "propertyDescription": "No puedes declarar propiedad intelectual o exclusiva de ninguno de nuestros productos, modificados o sin modificar. Todos los productos son propiedad de los proveedores de contenido. A menos que se especifique lo contrario, nuestros productos se proporcionan sin ningún tipo de garantía, expresa o implícita. En ningún caso esta empresa será responsable de daños que incluyan, pero no se limiten a, daños directos, indirectos, especiales, incidentales o consecuentes u otras pérdidas resultantes del uso o la imposibilidad de uso de nuestros productos.",
     "refundAndGuaranteePolicyTitle": "POLÍTICA DE REEMBOLSO Y GARANTÍA",
     "refundAndGuaranteePolicyDescription": "Los reembolsos serán aprobados siempre que la razón del reembolso sea porque el programa al que te suscribiste fue fraude o información engañosa, de lo contrario no habrá reembolso."
+  },
+  "V2part": {
+    "title": "¡Ya está aquí!",
+    "newFeature1": "Interfaz más rápida, útil y visualmente atractiva",
+    "newFeature2": "Extensión disponible en 6+ idiomas",
+    "newFeature3": "Respuestas generadas por IA mejoradas",
+    "newFeature4": "Mejor detección de políticas en la página web que visitas",
+    "newFeature5": "Precios y planes simplificados",
+    "buttonAdd": "Descarga la Extensión V2"
   }
 }

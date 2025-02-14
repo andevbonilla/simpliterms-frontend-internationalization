@@ -172,5 +172,14 @@
     "propertyDescription": "Sie dürfen für keines unserer Produkte, sei es modifiziert oder unmodifiziert, geistiges oder exklusives Eigentum beanspruchen. Alle Produkte sind Eigentum der Inhaltsanbieter. Sofern nicht anders angegeben, werden unsere Produkte ohne jegliche Garantie, weder ausdrücklich noch stillschweigend, bereitgestellt. In keinem Fall haftet dieses Unternehmen für Schäden, einschließlich, aber nicht beschränkt auf direkte, indirekte, besondere, zufällige oder Folgeschäden oder andere Verluste, die sich aus der Nutzung oder der Unfähigkeit zur Nutzung unserer Produkte ergeben.",
     "refundAndGuaranteePolicyTitle": "RÜCKERSTATTUNGS- UND GARANTIERICHTLINIE",
     "refundAndGuaranteePolicyDescription": "Rückerstattungen werden genehmigt, sofern der Grund für die Rückerstattung darin besteht, dass das von Ihnen abonnierte Programm betrügerisch war oder irreführende Informationen enthielt. Andernfalls erfolgt keine Rückerstattung."
+  },
+  "V2part": {
+    "title": "Ist jetzt da!",
+    "newFeature1": "Schnellere, nützlichere und optisch ansprechende Benutzeroberfläche",
+    "newFeature2": "Erweiterung in über 6 Sprachen verfügbar",
+    "newFeature3": "Verbesserte KI-generierte Antworten",
+    "newFeature4": "Bessere Erkennung von Richtlinien auf der von Ihnen besuchten Webseite",
+    "newFeature5": "Vereinfachte Preisgestaltung und Pläne",
+    "buttonAdd": "Laden Sie die V2-Erweiterung herunter"
   }
 }

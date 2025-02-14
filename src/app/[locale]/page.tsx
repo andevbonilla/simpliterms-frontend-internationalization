@@ -21,6 +21,8 @@ export default function HomePage() {
     const navbari18n = useTranslations('Navbar');
 
     const part1i18n = useTranslations('Part1');
+    
+    const v2Parti18n = useTranslations('V2part');
 
     const summaryExamplei18n = useTranslations('SummariesPart');
 
@@ -98,6 +100,41 @@ export default function HomePage() {
                         title={summaryExamplei18n("header2")}
                         iframa=""
                     />
+                </div>
+
+                {/* message for the v2 version */}
+                <div className="pt-12 pb-6 lg:mx-[10%] flex flex-col items-center">
+                    
+                    <div className='flex items-end w-full justify-center'>
+                        <h3 className='text-[5rem] font-bold text-[#5712DF] ${bebas.className}'>V2</h3>
+                        <h4 className={`ml-2 text-[3rem] ${bebas.className}`}>{v2Parti18n("title")}</h4>
+                    </div>
+
+                    <ul className='flex flex-col justify-center items-start mt-[2rem]'>
+                        <li className='mb-4 text-[1.2rem]'>
+                            - {v2Parti18n("newFeature1")}
+                        </li>
+                        <li className='mb-4 text-[1.2rem]'>
+                            - {v2Parti18n("newFeature2")}
+                        </li>
+                        <li className='mb-4 text-[1.2rem]'>
+                            - {v2Parti18n("newFeature3")}
+                        </li>
+                        <li className='mb-4 text-[1.2rem]'>
+                            - {v2Parti18n("newFeature4")}
+                        </li>
+                        <li className='text-[1.2rem]'>
+                            - {v2Parti18n("newFeature5")}
+                        </li>
+                    </ul>
+                    
+
+                    <div className="flex justify-center">
+                        <Link title="Extension Link" target="_blank" href={"https://chrome.google.com/webstore/detail/simpliterms/fnobmoedmogehbcdcmjojaebjhegalce"} className="hover:bg-[#6324DF] mt-20 transition-all rounded bg-[#5712DF] text-white font-bold border-none px-6 py-4 text-xl brightness">
+                            {v2Parti18n("buttonAdd")}
+                        </Link>
+                    </div>
+
                 </div>
 
                 <div className="pt-12 flex flex-col items-center md:px-[20%]" id="product">

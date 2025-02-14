@@ -172,5 +172,14 @@
     "propertyDescription": "You cannot declare intellectual or exclusive property to any of our products, modified or unmodified. All products are the property of the content providers. Unless otherwise specified, our products are provided without any kind of warranty, express or implied. In no way will this company be liable for any damages including, but not limited to, direct, indirect, special, incidental, or consequential damages or other losses resulting from the use or inability to use our products.",
     "refundAndGuaranteePolicyTitle": "REFUND AND GUARANTEE POLICY",
     "refundAndGuaranteePolicyDescription": "Refunds will be approved as long as the reason for the refund is because the program you subscribed to was fraud or misleading information, otherwise there will be no refund."
+  },
+  "V2part": {
+    "title": "Is now here!",
+    "newFeature1": "Faster, more useful, and visually appealing interface",
+    "newFeature2": "Extension available in 6+ languages",
+    "newFeature3": "Improved AI-generated responses",
+    "newFeature4": "Better detection of policies on the webpage you're visiting",
+    "newFeature5": "Simplified pricing and plans",
+    "buttonAdd": "Download the V2 Extension"
   }
 }
