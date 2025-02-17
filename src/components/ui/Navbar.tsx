@@ -2,7 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
-import simplitermsLogo from "../../../assets/simpliterms-logo.png"
+import simplitermsLogo from "@/assets/simpliterms-logo.png"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faLanguage, faXmark } from '@fortawesome/free-solid-svg-icons'
