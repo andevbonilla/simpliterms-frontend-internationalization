@@ -57,7 +57,7 @@ export async function middleware(request: NextRequest) {
         setAuthCookies(response, jsonresponse);
         return response;
       }
-    } catch (error) {
+    } catch (_error) {
       response = NextResponse.redirect(loginRedirectURL);
       clearCookies(response);
       return response;
