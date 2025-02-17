@@ -1,6 +1,12 @@
 import React from 'react';
 
-export const AskPopup = ({title, hidePopup, acceptCancel}:any) => {
+interface AskPopupInterface {
+  title: string, 
+  hidePopup: any, 
+  acceptCancel: any
+}
+
+export const AskPopup = ({title, hidePopup, acceptCancel}: AskPopupInterface) => {
     
   return (
     <div className='fixed h-screen w-full bg-black bg-opacity-70 overflow-hidden flex justify-center items-center z-40 px-[10%] md:px-[30%]'>
