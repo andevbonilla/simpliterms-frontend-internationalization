@@ -10,6 +10,8 @@ import { useGoogleLogin } from '@react-oauth/google';
 import { LoadingComponent } from "@/components/ui/loaders/Loading";
 import { NotAuthRequest } from "@/helpers/requests/NotAuthRequest";
 import { useRouter } from "next/navigation";
+import simplitermsLogo from "../../../assets/simpliterms-logo.png"
+import googleLogo from "@/assets/google-svgrepo-com.svg"
 
 
 export const LoginWraper = ({
@@ -197,7 +199,7 @@ export const LoginWraper = ({
                     <div className="flex flex-col items-center">
                         <Link href={`/`} title='logo' className="mb-4">
                             <Image
-                                src={require('@/assets/simpliterms-logo.png')}
+                                src={simplitermsLogo}
                                 alt='logo image'
                                 width={60}
                                 height={60}
@@ -215,7 +217,7 @@ export const LoginWraper = ({
                             type="button"
                             className=" text-base text-[#3c4043] transition-all hover:bg-[#F8FAFF] justify-center font-bold w-full flex items-center rounded text-center py-3 px-[2rem] bg-white border-2 border-[#dadce0]">
                             <Image
-                                src={require('@/assets/google-svgrepo-com.svg')}
+                                src={googleLogo}
                                 alt='google svg icon'
                                 width={25}
                                 height={25}

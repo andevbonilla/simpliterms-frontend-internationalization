@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react';
+import simplitermsLogo from "../../../assets/simpliterms-logo.png"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faLanguage, faXmark } from '@fortawesome/free-solid-svg-icons'
@@ -97,7 +98,7 @@ export const Navbar = ({
 
                 <Link href={`/${currentCode}`} title='logo'>
                     <Image
-                        src={require('../../assets/simpliterms-logo.png')}
+                        src={simplitermsLogo}
                         alt='logo image'
                         width={60}
                         height={60}

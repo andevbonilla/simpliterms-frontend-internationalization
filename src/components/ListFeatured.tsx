@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import React from 'react'
+import logoToolify from "../assets/logo-toolify.png"
 
 export const ListFeatured = () => {
     return (
@@ -9,7 +10,7 @@ export const ListFeatured = () => {
             </a>
             <a title="product hunt logo" href="https://www.toolify.ai/tool/simpliterms" target="_blank">
                 <Image
-                    src={require("@/assets/logo-toolify.png")}
+                    src={logoToolify}
                     alt='Simpliterms Reviews: Details, Pricing, Core features, Use cases, Simpliterms alternatives'
                     width={200}
                     height={200}
