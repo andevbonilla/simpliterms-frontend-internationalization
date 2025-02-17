@@ -11,7 +11,6 @@ import { Footer } from "@/components/ui/Footer";
 import { Navbar } from "@/components/ui/Navbar";
 import { LoadingComponent } from '@/components/ui/loaders/Loading';
 import { AuthRequest } from '@/helpers/requests/AuthRequest';
-import { error } from 'console';
 
 export const AccountWraper = ({
     nameInput,

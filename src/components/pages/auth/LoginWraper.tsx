@@ -144,8 +144,8 @@ export const LoginWraper = ({
                 router.push("/account");
             }
 
-        } catch (_error: any) {
-            console.log("sdsds333")
+        } catch (error) {
+            console.log(error, "error trying to login")
             setIsLogin(false);
             setError("There was an error in the server please try again later");
         }
