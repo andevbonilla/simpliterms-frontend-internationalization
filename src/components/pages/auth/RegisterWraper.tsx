@@ -225,6 +225,7 @@ export const RegisterWraper = ({
             }
 
         } catch (error: any) {
+            console.log(error, "error trying to register the app");
             setIsLogin(false);
             setError("There was an error in the server please try again later");
         }
@@ -261,7 +262,10 @@ export const RegisterWraper = ({
                 window.location.reload();
             }
         },
-        onError: err => setError('There was an error in google authentication, please try again.')
+        onError: error => {
+            console.log(error, "error from google auth");
+            setError('There was an error in google authentication, please try again.')
+        }
     });
 
     if (isLogin) {

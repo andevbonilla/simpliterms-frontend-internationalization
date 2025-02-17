@@ -28,12 +28,14 @@ export const validateIfAuthenticated = async(req: any) => {
                     }else{
                         return true;
                     }
-                } catch (_error) {
+                } catch (error) {
+                    console.log(error);
                     return false;
                 }    
                 
                 
-            } catch (_error) {
+            } catch (error) {
+                console.log(error);
                 return false;
             }
 

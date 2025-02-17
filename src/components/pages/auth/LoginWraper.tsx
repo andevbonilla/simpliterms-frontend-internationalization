@@ -182,7 +182,10 @@ export const LoginWraper = ({
                 window.location.reload();
             }
         },
-        onError: _error => setError('There was an error in google authentication, please try again.')
+        onError: error => {
+            console.log(error, "error from google Auth");
+            setError('There was an error in google authentication, please try again.')
+        }
     });
 
     if (isLogin) {

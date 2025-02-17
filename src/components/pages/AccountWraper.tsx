@@ -11,6 +11,7 @@ import { Footer } from "@/components/ui/Footer";
 import { Navbar } from "@/components/ui/Navbar";
 import { LoadingComponent } from '@/components/ui/loaders/Loading';
 import { AuthRequest } from '@/helpers/requests/AuthRequest';
+import { error } from 'console';
 
 export const AccountWraper = ({
     nameInput,
@@ -173,7 +174,8 @@ export const AccountWraper = ({
                 setShowLanguagesWindow(false);
             }
 
-        } catch (_error) {
+        } catch (error) {
+            console.log(error, "Changing the language");
             notifyError("Sorry there was an error trying to change the language");
         }
 
