@@ -1,7 +1,7 @@
 import { LoginWraper } from "@/components/pages/auth/LoginWraper";
 import { useTranslations } from "next-intl";
 
-const loginPage = () => {
+const LoginPage = () => {
 
   const loginPagei18n = useTranslations('LoginPage');
 
@@ -26,4 +26,4 @@ const loginPage = () => {
 
 }
 
-export default loginPage;
+export default LoginPage;
