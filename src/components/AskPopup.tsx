@@ -10,8 +10,16 @@ export const AskPopup = ({title, hidePopup, acceptCancel}:any) => {
             <h3 className='font-bold text-2xl pb-10'>{title}</h3>
 
             <div>
-                <button onClick={hidePopup} className='bg-red-500 text-white py-2 px-4 mr-10'>Cancel</button>
-                <button onClick={acceptCancel} className='bg-[#5712DF] text-white py-2 px-4'>Accept</button>
+                <button 
+                  onClick={hidePopup} 
+                  className='bg-red-500 text-white py-2 px-4 mr-10'>
+                    Cancel
+                </button>
+                <button 
+                  onClick={acceptCancel} 
+                  className='bg-[#5712DF] text-white py-2 px-4'>
+                    Accept
+                </button>
             </div>
 
         </div>

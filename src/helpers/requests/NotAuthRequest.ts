@@ -49,7 +49,8 @@ export const NotAuthRequest = async (method: "GET" | "POST" | "PUT" | "DELETE", 
             data 
         };
 
-    } catch (error) {
+    } catch (_error) {
+        console.log(_error, "Error doing the request Not Auth");
         return {
             isError: "sorry there was an error in the server",
         };

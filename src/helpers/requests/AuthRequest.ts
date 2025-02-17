@@ -57,7 +57,8 @@ export const AuthRequest = async (token: any, method: "GET" | "POST" | "PUT" | "
             data 
         };
 
-    } catch (error) {
+    } catch (_error) {
+        console.log(_error, "Error doing the request Auth");
         return {
             isError: "sorry there was an error in the server",
         };
