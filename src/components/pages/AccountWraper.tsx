@@ -173,21 +173,19 @@ export const AccountWraper = ({
                 setShowLanguagesWindow(false);
             }
 
-        } catch (error) {
+        } catch (_error) {
             notifyError("Sorry there was an error trying to change the language");
         }
 
     }
 
     const changeSummariesLanguage = async () => {
-
         setShowLanguagesWindow(true);
-
     }
 
-    const addDotsToNumber = (num: Number) => {
-        let newArray = []
-        let arrayDigits = num.toString().split('').reverse();
+    const addDotsToNumber = (num: number) => {
+        const newArray = []
+        const arrayDigits = num.toString().split('').reverse();
         let i = 0;
         let amount = 0;
         for (const digit of arrayDigits) {

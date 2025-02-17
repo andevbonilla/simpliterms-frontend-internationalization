@@ -15,7 +15,7 @@ interface priceBoxInterface {
     actionButton: any,
     price: string,
     textMonth: string,
-    characteristics: String[],
+    characteristics: string[],
     title: string,
     desc: string,
     billedAnnually: boolean,

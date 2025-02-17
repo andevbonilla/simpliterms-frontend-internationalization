@@ -144,7 +144,7 @@ export const LoginWraper = ({
                 router.push("/account");
             }
 
-        } catch (error: any) {
+        } catch (_error: any) {
             console.log("sdsds333")
             setIsLogin(false);
             setError("There was an error in the server please try again later");
@@ -182,7 +182,7 @@ export const LoginWraper = ({
                 window.location.reload();
             }
         },
-        onError: err => setError('There was an error in google authentication, please try again.')
+        onError: _error => setError('There was an error in google authentication, please try again.')
     });
 
     if (isLogin) {
