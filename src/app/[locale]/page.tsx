@@ -68,35 +68,11 @@ export default function HomePage() {
                 <div className="md:grid-cols-2 grid grid-cols-1 gap-4">
                     <div className="md:mr-2">
                         <BoxExample
-                            summarieText1={summaryExamplei18n("summarieText1")}
-                            summarieHeader1={summaryExamplei18n("summarieHeader1")}
-                            summarieText2={summaryExamplei18n("summarieText2")}
-                            summarieHeader2={summaryExamplei18n("summarieHeader2")}
-                            summarieText3={summaryExamplei18n("summarieText3")}
-                            summarieHeader3={summaryExamplei18n("summarieHeader3")}
-                            summarieText4={summaryExamplei18n("summarieText4")}
-                            summarieHeader4={summaryExamplei18n("summarieHeader4")}
-                            summarieText5={summaryExamplei18n("summarieText5")}
-                            summarieHeader5={summaryExamplei18n("summarieHeader5")}
-                            summarieText6={summaryExamplei18n("summarieText6")}
-                            summarieHeader6={summaryExamplei18n("summarieHeader6")}
                             title={summaryExamplei18n("header1")}
                             iframa="https://policies.google.com/terms?gl=CO&hl=es"
                         />
                     </div>
                     <BoxExample
-                        summarieText1={summaryExamplei18n("summarieText1")}
-                        summarieHeader1={summaryExamplei18n("summarieHeader1")}
-                        summarieText2={summaryExamplei18n("summarieText2")}
-                        summarieHeader2={summaryExamplei18n("summarieHeader2")}
-                        summarieText3={summaryExamplei18n("summarieText3")}
-                        summarieHeader3={summaryExamplei18n("summarieHeader3")}
-                        summarieText4={summaryExamplei18n("summarieText4")}
-                        summarieHeader4={summaryExamplei18n("summarieHeader4")}
-                        summarieText5={summaryExamplei18n("summarieText5")}
-                        summarieHeader5={summaryExamplei18n("summarieHeader5")}
-                        summarieText6={summaryExamplei18n("summarieText6")}
-                        summarieHeader6={summaryExamplei18n("summarieHeader6")}
                         title={summaryExamplei18n("header2")}
                         iframa=""
                     />
