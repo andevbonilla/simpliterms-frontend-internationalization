@@ -15,22 +15,38 @@ export const BoxExample = (
       {(iframa.length === 0) &&
         <div className="h-[25rem] overflow-scroll pb-4 text-base">
 
-              <div className="flex mt-[2rem] justify-center items-center bg-[#F5F5F5] rounded-[2rem] py-[1rem] px-[2rem]">
-                
+              {/* odometer */}
+              <div className="flex mt-[2rem] justify-center items-center bg-[#F5F5F5] rounded-[2rem] py-[1rem] px-[2rem]">        
+                {/* taffic light */}
                 <div className="bg-black rounded-[1rem] py-[.5rem] px-[.8rem]">
-                  <div className="w-[]" id="red-ball"></div>
-                  <div className="w-[]" id="yellow-ball"></div>
-                  <div className="w-[]" id="green-ball"></div>
+                  <div className="w-[1.3rem] h-[1.3rem] rounded-full opacity-50 mb-[.4rem] bg-[red]" id="red-ball"></div>
+                  <div className="w-[1.3rem] h-[1.3rem] rounded-full opacity-50 mb-[.4rem] bg-[yellow]" id="yellow-ball"></div>
+                  <div className="w-[1.3rem] h-[1.3rem] rounded-full opacity-50 bg-[#00B600]" id="green-ball"></div>
                 </div>
-
-                <div className="grade-explanation">
-                  <h2 id="grade-level"></h2>
-                  <p id="grade-text"></p>
+                {/* grade esplanation */}
+                <div className="ml-[2rem]">
+                  <h2 className="text-[.9rem] font-bold mb-[.1rem]">
+                      Moderate
+                  </h2>
+                  <p>
+                    
+                  </p>
                 </div>
-
               </div>
 
-              <ul id="simpli-summary-terms" className="simpli-summary">  
+              <ul id="simpli-summary-terms" className="simpli-summary">
+                <div>
+                  <h3>HGJDHGJ</h3>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia aliquid repellendus, vero expedita quis, illum enim officia eos eveniet necessitatibus ratione eligendi sint repudiandae doloremque.</p>
+                </div>  
+                <div>
+                  <h3>HGJDHGJ</h3>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia aliquid repellendus, vero expedita quis, illum enim officia eos eveniet necessitatibus ratione eligendi sint repudiandae doloremque.</p>
+                </div>
+                <div>
+                  <h3>HGJDHGJ</h3>
+                  <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quia aliquid repellendus, vero expedita quis, illum enim officia eos eveniet necessitatibus ratione eligendi sint repudiandae doloremque.</p>
+                </div>
               </ul>
 
         </div>
