@@ -17,22 +17,6 @@
     "Subtitle": "Die Nutzungsbedingungen und Datenschutzrichtlinien haben in der Regel zwischen 3.000 und 10.000+ Wörter und sind schwer zu verstehen. SimpliTerms informiert dich mit nur einem Klick auf das Symbol schnell darüber, was du akzeptierst.",
     "ButtonStart": "Zu Chrome hinzufügen"
   },
-  "SummariesPart": {
-    "header1": "Ohne SimpliTerms:",
-    "header2": "Mit SimpliTerms:",
-    "summarieHeader1": "Gesammelte Daten:",
-    "summarieText1": "Google sammelt Informationen von Nutzern, wenn sie seine Dienste nutzen, einschließlich Kontodaten, generierter Inhalte und Aktivitäten auf seinen Plattformen.",
-    "summarieHeader2": "Nutzerrechte:",
-    "summarieText2": "Nutzer behalten die Rechte an ihren Inhalten, obwohl sie Google eine Lizenz zur Nutzung erteilen. Sie haben das Recht, auf ihre persönlichen Daten zuzugreifen, sie zu aktualisieren und zu löschen.",
-    "summarieHeader3": "Datenweitergabe:",
-    "summarieText3": "Google kann Daten mit Dritten teilen, um seine Dienste zu verbessern oder gesetzlichen Verpflichtungen nachzukommen, verpflichtet sich jedoch, die Privatsphäre der Nutzer zu schützen.",
-    "summarieHeader4": "Verantwortlichkeiten:",
-    "summarieText4": "Nutzer müssen die Bedingungen einhalten, andere respektieren und die Dienste nicht missbrauchen. Google behält sich das Recht vor, unangemessene Inhalte zu entfernen und Konten zu sperren.",
-    "summarieHeader5": "Vertragsdauer:",
-    "summarieText5": "Die Bedingungen gelten, solange der Nutzer die Dienste nutzt. Änderungen werden im Voraus mitgeteilt.",
-    "summarieHeader6": "Fazit:",
-    "summarieText6": "Die Annahme dieser Bedingungen ist entscheidend für die Nutzung der Google-Dienste. Es kommt dem Nutzer zugute, indem es den Zugang zu nützlichen Tools gewährleistet, beinhaltet jedoch auch Verantwortung bei der Nutzung."
-  },
   "HowItWorksPart": {
     "title": "WIE FUNKTIONIERT ES?"
   },
@@ -181,5 +165,18 @@
     "newFeature4": "Bessere Erkennung von Richtlinien auf der von Ihnen besuchten Webseite",
     "newFeature5": "Vereinfachte Preisgestaltung und Pläne",
     "buttonAdd": "Laden Sie die V2-Erweiterung herunter"
+  },
+  "ExampleSummary": {
+    "header1": "Ohne SimpliTerms:",
+    "header2": "Mit SimpliTerms:",
+    "ExplanationText": "Diese Richtlinien legen strenge und präzise Verpflichtungen fest, die die Beziehung zwischen dem Nutzer und Google regeln und ein ernsthaftes Engagement implizieren.",
+    "title1": "Altersanforderungen und Verantwortung",
+    "desc1": "Es ist verpflichtend, das Mindestalter für die Verwaltung eines Google-Kontos zu erfüllen; wenn dies nicht der Fall ist, ist die Erlaubnis eines gesetzlichen Vormunds erforderlich, der für die Nutzung des Dienstes verantwortlich ist. Einige Dienste haben zusätzliche Anforderungen.",
+    "title2": "Beziehung und Erwartungen",
+    "desc2": "Es definiert, was der Nutzer von Google erwarten kann und welche Verpflichtungen er erfüllen muss, und schafft so einen klaren vertraglichen Rahmen.",
+    "title3": "Inhalt und geistiges Eigentum",
+    "desc3": "Es regelt die Rechte an den erstellten Inhalten, sowohl vom Nutzer als auch von Google, und legt Lizenzen und Einschränkungen fest.",
+    "title4": "Verhalten und verbotene Nutzung",
+    "desc4": "Es legt strenge Regeln fest, die Missbrauch, Betrug, Hacking und schädliches Verhalten verbieten und eine sichere Umgebung gewährleisten."
   }
 }

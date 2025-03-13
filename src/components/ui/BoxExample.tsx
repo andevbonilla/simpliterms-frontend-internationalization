@@ -1,13 +1,33 @@
 interface BoxExampleInterface {
   title: string,
-  iframa: string
+  iframa: string,
+  ExplanationText: string,
+  title1: string,
+  desc1: string,
+  title2: string,
+  desc2: string,
+  title3: string,
+  desc3: string,
+  title4: string,
+  desc4: string,
 }
 
 export const BoxExample = (
   {
     title,
     iframa,
+    ExplanationText,
+    title1,
+    desc1,
+    title2,
+    desc2,
+    title3,
+    desc3,
+    title4,
+    desc4,
   }: BoxExampleInterface) => {
+
+
   return (
     <div className="shadow-[rgba(0,_0,_0,_0.25)_0px_25px_50px_-12px] bg-gray-100 border-cyan-950 border-2 border-solid rounded-md">
       <h3 className={`font-bold ${(iframa.length === 0) ? 'bg-[#5712DF] text-white' : 'bg-gray-300'} px-4 py-3 text-lg`}>{title}</h3>
@@ -16,7 +36,7 @@ export const BoxExample = (
         <div className="h-[25rem] overflow-scroll p-8 text-base">
 
           {/* odometer */}
-          <div className="flex mt-[2rem] justify-center items-center bg-[#dddddd] rounded-[2rem] py-[1.2rem] px-[2rem] w-auto">
+          <div className="flex justify-center items-center bg-[#dddddd] rounded-[2rem] py-[1.2rem] px-[2rem] w-auto">
             {/* taffic light */}
             <div className="bg-black rounded-[1rem] py-[.5rem] px-[.8rem]">
               <div className="w-[1.3rem] h-[1.3rem] rounded-full opacity-50 mb-[.4rem] bg-[red]" id="red-ball"></div>
@@ -29,27 +49,27 @@ export const BoxExample = (
                 Moderate
               </h2>
               <p className="text-[.9rem]">
-                Estas políticas imponen obligaciones estrictas y precisas que regulan la relación entre el usuario y Google, lo que implica un compromiso serio.
+                {ExplanationText}
               </p>
             </div>
           </div>
 
           <ul id="simpli-summary-terms" className="simpli-summary">
             <div className="mb-3">
-              <h3 className="font-bold text-[.8rem]">Requisitos de Edad y Responsabilidad</h3>
-              <p>Es obligatorio cumplir con la edad mínima para gestionar una Cuenta de Google; si no se cumple, se requiere permiso de un tutor legal, quien será responsable del uso del servicio. Algunos servicios tienen requisitos adicionales.</p>
+              <h3 className="font-bold text-[.8rem]">{title1}</h3>
+              <p>{desc1}</p>
             </div>
             <div className="mb-3">
-              <h3 className="font-bold text-[.8rem]">Relación y Expectativas</h3>
-              <p>Define lo que el usuario puede esperar de Google y las obligaciones que debe cumplir, estableciendo un marco contractual claro.</p>
+              <h3 className="font-bold text-[.8rem]">{title2}</h3>
+              <p>{desc2}</p>
             </div>
             <div className="mb-3">
-              <h3 className="font-bold text-[.8rem]">Contenido y Propiedad Intelectual</h3>
-              <p>Regula los derechos sobre el contenido generado, tanto por el usuario como por Google, y establece licencias y restricciones.</p>
+              <h3 className="font-bold text-[.8rem]">{title3}</h3>
+              <p>{desc3}</p>
             </div>
             <div className="mb-3">
-              <h3 className="font-bold text-[.8rem]">Conducta y Uso Prohibido</h3>
-              <p>Establece normas estrictas que prohíben abusos, fraudes, hacking y comportamientos dañinos, garantizando un entorno seguro.</p>
+              <h3 className="font-bold text-[.8rem]">{title4}</h3>
+              <p>{desc4}</p>
             </div>
           </ul>
 

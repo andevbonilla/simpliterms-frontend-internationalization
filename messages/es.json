@@ -17,22 +17,6 @@
     "Subtitle": "Los términos de uso y privacidad suelen tener entre 3,000 y 10,000+ palabras y son difíciles de entender. SimpliTerms, con tan solo un clic sobre su ícono, te informará rápidamente qué estás aceptando.",
     "ButtonStart": "Agregar a chrome"
   },
-  "SummariesPart": {
-    "header1": "Sin SimpliTerms:",
-    "header2": "Con SimpliTerms:",
-    "summarieHeader1": "Datos Recopilados:",
-    "summarieText1": "Google recopila información de los usuarios al utilizar sus servicios, incluyendo datos de cuenta, contenido generado y actividad en sus plataformas.",
-    "summarieHeader2": "Derechos del Usuario:",
-    "summarieText2": "Los usuarios mantienen derechos sobre su contenido, aunque otorgan a Google una licencia para usarlo. Tienen derecho a acceder, actualizar y eliminar su información personal.",
-    "summarieHeader3": "Compartición de Datos:",
-    "summarieText3": "Google puede compartir datos con terceros para mejorar sus servicios o cumplir con obligaciones legales, pero se compromete a proteger la privacidad del usuario.",
-    "summarieHeader4": "Responsabilidades:",
-    "summarieText4": "Los usuarios deben cumplir con las condiciones, respetar a otros y no abusar de los servicios. Google se reserva el derecho de eliminar contenido inapropiado y suspender cuentas.",
-    "summarieHeader5": "Duración del Acuerdo:",
-    "summarieText5": "Las condiciones son válidas mientras el usuario utilice los servicios. Los cambios se comunicarán con antelación.",
-    "summarieHeader6": "Conclusión:",
-    "summarieText6": "Aceptar estos términos es crucial para usar los servicios de Google. Beneficia al usuario al garantizar el acceso a herramientas útiles, pero implica una responsabilidad en su uso."
-  },
   "HowItWorksPart": {
     "title": "¿CÓMO FUNCIONA?"
   },
@@ -181,5 +165,18 @@
     "newFeature4": "Mejor detección de políticas en la página web que visitas",
     "newFeature5": "Precios y planes simplificados",
     "buttonAdd": "Descarga la Extensión V2"
+  },
+  "ExampleSummary": {
+    "header1": "Sin SimpliTerms:",
+    "header2": "Con SimpliTerms:",
+    "ExplanationText": "Estas políticas imponen obligaciones estrictas y precisas que regulan la relación entre el usuario y Google, lo que implica un compromiso serio.",
+    "title1": "Requisitos de Edad y Responsabilidad",
+    "desc1": "Es obligatorio cumplir con la edad mínima para gestionar una Cuenta de Google; si no se cumple, se requiere permiso de un tutor legal, quien será responsable del uso del servicio. Algunos servicios tienen requisitos adicionales.",
+    "title2": "Relación y Expectativas",
+    "desc2": "Define lo que el usuario puede esperar de Google y las obligaciones que debe cumplir, estableciendo un marco contractual claro.",
+    "title3": "Contenido y Propiedad Intelectual",
+    "desc3": "Regula los derechos sobre el contenido generado, tanto por el usuario como por Google, y establece licencias y restricciones.",
+    "title4": "Conducta y Uso Prohibido",
+    "desc4": "Establece normas estrictas que prohíben abusos, fraudes, hacking y comportamientos dañinos, garantizando un entorno seguro."
   }
 }

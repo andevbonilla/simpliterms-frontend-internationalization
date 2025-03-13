@@ -21,10 +21,10 @@ export default function HomePage() {
     const navbari18n = useTranslations('Navbar');
 
     const part1i18n = useTranslations('Part1');
-    
+
     const v2Parti18n = useTranslations('V2part');
 
-    const summaryExamplei18n = useTranslations('SummariesPart');
+    const summaryExamplei18n = useTranslations('ExampleSummary');
 
     const howitworksi18n = useTranslations('HowItWorksPart');
 
@@ -70,17 +70,35 @@ export default function HomePage() {
                         <BoxExample
                             title={summaryExamplei18n("header1")}
                             iframa="https://policies.google.com/terms?gl=CO&hl=es"
+                            ExplanationText={summaryExamplei18n("ExplanationText")}
+                            title1={""}
+                            desc1={""}
+                            title2={""}
+                            desc2={""}
+                            title3={""}
+                            desc3={""}
+                            title4={""}
+                            desc4={""}
                         />
                     </div>
                     <BoxExample
                         title={summaryExamplei18n("header2")}
                         iframa=""
+                        ExplanationText={summaryExamplei18n("ExplanationText")}
+                        title1={summaryExamplei18n("title1")}
+                        desc1={summaryExamplei18n("desc1")}
+                        title2={summaryExamplei18n("title2")}
+                        desc2={summaryExamplei18n("desc2")}
+                        title3={summaryExamplei18n("title3")}
+                        desc3={summaryExamplei18n("desc3")}
+                        title4={summaryExamplei18n("title4")}
+                        desc4={summaryExamplei18n("desc4")}
                     />
                 </div>
 
                 {/* message for the v2 version */}
                 <div className="pt-12 pb-6 lg:mx-[10%] flex flex-col items-center">
-                    
+
                     <div className='flex items-end w-full justify-center'>
                         <h3 className='text-[5rem] font-bold text-[#5712DF] ${bebas.className}'>V2</h3>
                         <h4 className={`ml-2 text-[3rem] ${bebas.className}`}>{v2Parti18n("title")}</h4>
@@ -103,7 +121,7 @@ export default function HomePage() {
                             - {v2Parti18n("newFeature5")}
                         </li>
                     </ul>
-                    
+
 
                     <div className="flex justify-center">
                         <Link title="Extension Link" target="_blank" href={"https://chrome.google.com/webstore/detail/simpliterms/fnobmoedmogehbcdcmjojaebjhegalce"} className="hover:bg-[#6324DF] mt-20 transition-all rounded bg-[#5712DF] text-white font-bold border-none px-6 py-4 text-xl brightness">

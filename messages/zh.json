@@ -17,22 +17,6 @@
     "Subtitle": "使用条款和隐私政策通常有 3,000 到 10,000+ 字，并且难以理解。SimpliTerms 只需点击图标即可快速告知您所接受的内容。",
     "ButtonStart": "添加到 Chrome"
   },
-  "SummariesPart": {
-    "header1": "没有 SimpliTerms:",
-    "header2": "使用 SimpliTerms:",
-    "summarieHeader1": "收集的数据:",
-    "summarieText1": "Google 在用户使用其服务时收集信息，包括帐户数据、生成的内容和平台活动。",
-    "summarieHeader2": "用户权利:",
-    "summarieText2": "用户保留其内容的权利，尽管他们授予 Google 使用的许可。他们有权访问、更新和删除个人信息。",
-    "summarieHeader3": "数据共享:",
-    "summarieText3": "Google 可以与第三方共享数据，以改进其服务或履行法律义务，但承诺保护用户隐私。",
-    "summarieHeader4": "责任:",
-    "summarieText4": "用户必须遵守条款，尊重他人，不滥用服务。Google 保留删除不当内容和暂停帐户的权利。",
-    "summarieHeader5": "协议期限:",
-    "summarieText5": "只要用户使用服务，这些条件就有效。更改将提前通知。",
-    "summarieHeader6": "结论:",
-    "summarieText6": "接受这些条款对于使用 Google 的服务至关重要。它通过确保访问有用工具为用户带来好处，但也意味着在使用中的责任。"
-  },
   "HowItWorksPart": {
     "title": "它如何运作?"
   },
@@ -181,5 +165,18 @@
     "newFeature4": "更好地检测您所访问网页上的政策",
     "newFeature5": "简化的定价和计划",
     "buttonAdd": "下载V2扩展程序"
+  },
+  "ExampleSummary": {
+    "header1": "没有 SimpliTerms:",
+    "header2": "使用 SimpliTerms:",
+    "ExplanationText": "这些政策规定了严格而精确的义务，规范用户与 Google 之间的关系，这意味着一种严肃的承诺。",
+    "title1": "年龄要求和责任",
+    "desc1": "管理 Google 账户必须满足最低年龄要求；如果不满足，需获得法定监护人的许可，后者将对该服务的使用负责。一些服务有额外要求。",
+    "title2": "关系与期望",
+    "desc2": "定义了用户对 Google 的期望以及必须履行的义务，建立了明确的合同框架。",
+    "title3": "内容与知识产权",
+    "desc3": "规定了由用户和 Google 生成的内容的权利，并设定了许可和限制。",
+    "title4": "行为和禁止使用",
+    "desc4": "制定了严格的规则，禁止滥用、欺诈、黑客行为和有害行为。"
   }
 }
