@@ -11,7 +11,7 @@ export const AuthRequest = async (token: any, method: "GET" | "POST" | "PUT" | "
             };
         };
 
-        const backendLink = `${process.env.NEXT_PUBLIC_BACKEND_LINK}${path}`;
+        const backendLink = `https://simpliterms-backend-production.up.railway.app${path}`;
 
         let response;
 

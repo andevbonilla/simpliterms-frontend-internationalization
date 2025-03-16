@@ -5,7 +5,7 @@ export const NotAuthRequest = async (method: "GET" | "POST" | "PUT" | "DELETE", 
 
     try {
 
-        const backendLink = `${process.env.NEXT_PUBLIC_BACKEND_LINK}${path}`;
+        const backendLink = `https://simpliterms-backend-production.up.railway.app${path}`;
 
         let response;
 
